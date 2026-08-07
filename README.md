@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <!-- entry-count-start --><a href="#contents"><img src="https://img.shields.io/badge/Entries-862-000000?style=for-the-badge&labelColor=000000" alt="Entries"></a><!-- entry-count-end -->
+  <!-- entry-count-start --><a href="#contents"><img src="https://img.shields.io/badge/Entries-861-000000?style=for-the-badge&labelColor=000000" alt="Entries"></a><!-- entry-count-end -->
   <a href="https://github.com/chrisliu298/awesome-rubric-rewards/stargazers"><img src="https://img.shields.io/github/stars/chrisliu298/awesome-rubric-rewards?style=for-the-badge&logo=github&logoColor=white&label=Stars&labelColor=000000&color=000000" alt="GitHub Stars"></a>
   <a href="https://github.com/chrisliu298/awesome-rubric-rewards/network/members"><img src="https://img.shields.io/github/forks/chrisliu298/awesome-rubric-rewards?style=for-the-badge&logo=github&logoColor=white&label=Forks&labelColor=000000&color=000000" alt="GitHub Forks"></a>
   <a href="https://github.com/chrisliu298/awesome-rubric-rewards/commits"><img src="https://img.shields.io/github/last-commit/chrisliu298/awesome-rubric-rewards?style=for-the-badge&logo=github&logoColor=white&label=Last%20Commit&labelColor=000000&color=000000" alt="Last Commit"></a>
@@ -560,7 +560,7 @@ Reward-model versus verifier is not a boundary this list observes. What matters 
 - [OpenComputer: Verifiable Software Worlds for Computer-Use Agents](https://arxiv.org/abs/2605.19769) *(2026)* — Builds executable state checkers as first-class verifiers, outperforming a judge model.
 - [CUA-Gym: Scaling Verifiable Training Environments and Tasks for Computer-Use Agents](https://arxiv.org/abs/2605.25624) *(2026)* — Adversarially coupled agents co-synthesize task, environment, and reward together.
 - [TRON: Targeted Rule-Verifiable Online Environments for Visual Reasoning RL](https://arxiv.org/abs/2606.01599) *(2026)* — Generator-verifier programs produce difficulty-controlled visual tasks with exact rewards.
-- [Quantitative Video World Model Evaluation for Geometric-Consistency](https://arxiv.org/abs/2605.15185) *(2026)* — PDI-Bench lifts tracked objects to world space and computes three named geometric residuals.
+- [Quantitative Video World Model Evaluation for Geometric-Consistency](https://arxiv.org/abs/2605.15185) *(2026)* — PDI-Bench lifts tracked objects to world space to score three named geometric failure dimensions.
 - [Taming Camera-Controlled Video Generation with Verifiable Geometry Reward](https://arxiv.org/abs/2512.02870) *(2025)* — Scores segment-wise camera-pose alignment between estimated generated and reference 3D trajectories.
 - [SPATIALALIGN: Aligning Dynamic Spatial Relationships in Video Generation](https://arxiv.org/abs/2602.22745) *(2026)* — Geometric verifier checks whether prompted dynamic spatial relationships actually hold in generated video.
 - [RLGF: Reinforcement Learning with Geometric Feedback for Autonomous Driving Video Generation](https://arxiv.org/abs/2509.16500) *(2025)* — Hierarchical geometric reward separates point-line-plane alignment from scene occupancy coherence.
@@ -568,7 +568,7 @@ Reward-model versus verifier is not a boundary this list observes. What matters 
 - [RLAR: An Agentic Reward System for Multi-task Reinforcement Learning on Large Language Models](https://arxiv.org/abs/2603.00724) *(2026)* — A reward agent synthesizes programmatic verifiers per query, tracking distribution shift during training.
 - [JURY-RL: Votes Propose, Proofs Dispose for Label-Free RLVR](https://arxiv.org/abs/2604.25419) *(2026)* — Rewards only plurality-voted answers that a formal proof checker independently confirms.
 - [Diagnosing Under-Development of Irreversible Processes in Video Generation](https://arxiv.org/abs/2608.00617) *(2026)* — Null-tests irreversibility metrics, surfacing a computable directional-progress plus stasis-rate protocol.
-- [Inference-Time Scaling for Joint Audio-Video Generation](https://arxiv.org/abs/2606.03183) *(2026)* — Fuses four named verifiers under adaptive reward weighting for best-of-N audio-video selection.
+- [Inference-Time Scaling for Joint Audio-Video Generation](https://arxiv.org/abs/2606.03183) *(2026)* — Adaptive reward weighting calibrates heterogeneous verifier variances online for best-of-N joint audio-video selection.
 - [RAPO++: Cross-Stage Prompt Optimization for Text-to-Video Generation via Data Alignment and Test-Time Scaling](https://arxiv.org/abs/2510.20206) *(2025)* — Closed-loop prompt optimizer refining against semantic, spatial, temporal, and optical-flow feedback signals.
 - [Codifying the Judge: Scalable Evaluation via Program Distillation](https://arxiv.org/abs/2607.22561) *(2026)* — Distills judge decision logic into a committee of inspectable, editable scoring programs with fallback.
 - [VerifiAgent: a Unified Verification Agent in Language Model Reasoning](https://arxiv.org/abs/2504.00406) *(2025)* — Pairs completeness and consistency meta-checks with reasoning-type-selected verification tools instead of one fixed verifier.
@@ -898,8 +898,7 @@ Judging whether a generated video follows its prompt and stays self-consistent i
 - [VISTA: A Test-Time Self-Improving Video Generation Agent](https://arxiv.org/abs/2510.15831) *(2025)* — Three specialized critique agents score visual, audio, and contextual fidelity inside an iterative loop.
 - [HunyuanVideo 1.5 Technical Report](https://arxiv.org/abs/2511.18870) *(2025)* — Post-training reward model scores text alignment, image alignment, quality, and motion as separate axes.
 - [Waver: Wave Your Way to Lifelike Video Generation](https://arxiv.org/abs/2508.15761) *(2025)* — Quality judge predicts an overall label alongside separately scored defect dimensions.
-- [Seedance 1.5 pro: A Native Audio-Visual Joint Generation Foundation Model](https://arxiv.org/abs/2512.13507) *(2025)* — Trains three named RLHF reward models and maximizes their aggregate for joint audio-video post-training.
-- [LongCat-Video Technical Report](https://arxiv.org/abs/2510.22200) *(2025)* — Multi-reward RLHF combining named in-house reward models with an external aesthetic reward model.
+- [LongCat-Video Technical Report](https://arxiv.org/abs/2510.22200) *(2025)* — Multi-reward GRPO sums group-normalized advantages from three reward models, resisting the hacking single-reward training induces.
 - [A Systematic Post-Train Framework for Video Generation](https://arxiv.org/abs/2604.25427) *(2026)* — Four-stage pipeline whose GRPO stage scores perceptual quality and temporal coherence separately.
 - [Hierarchical Fine-grained Preference Optimization for Physically Plausible Video Generation](https://arxiv.org/abs/2508.10858) *(2025)* — PhysHPO aligns four separately defined hierarchical preference levels rather than one global judgment.
 - [AlignHuman: Improving Motion and Fidelity via Timestep-Segment Preference Optimization for Audio-Driven Human Animation](https://arxiv.org/abs/2506.11144) *(2025)* — Trains one expert LoRA per named dimension, each activated in different denoising-timestep intervals.
@@ -1025,7 +1024,7 @@ Whether criteria-based judging is reliable at all.
 - [Can LLM-as-a-Judge Reliably Verify Rubrics in Agentic Scenarios?](https://arxiv.org/abs/2606.29920) *(2026)* — Meta-evaluates judge reliability at rubric scoring specifically on long, complex agentic outputs.
 - [Autorubric: Unifying Rubric-based LLM Evaluation](https://arxiv.org/abs/2603.00077) *(2026)* — Unifies binary, ordinal, and nominal criteria under one framework with bias mitigation.
 - [RubricBench: Aligning Model-Generated Rubrics with Human Standards](https://arxiv.org/abs/2603.01562) *(2026)* — Benchmarks model-generated criteria against expert-annotated ones over curated pairs.
-- [SLVMEval: Synthetic Meta Evaluation Benchmark for Text-to-Long Video Generation](https://arxiv.org/abs/2603.29186) *(2026)* — Synthetic degradation pairs across ten aspects meta-evaluate long-video judges and reward models.
+- [SLVMEval: Synthetic Meta Evaluation Benchmark for Text-to-Long Video Generation](https://arxiv.org/abs/2603.29186) *(2026)* — Synthetic degradation pairs across ten aspects meta-evaluate automatic text-to-long-video evaluation systems.
 - [Physics-IQ Verified](https://arxiv.org/abs/2606.18943) *(2026)* — Audits a physics benchmark's ground truth and reweights its scoring to equal-weight sample-level criteria.
 - [Rethinking Reward Signals in Video GRPO: When Scores Become Targets](https://arxiv.org/abs/2511.19356) *(2025)* — Diagnoses Goodhart saturation and shortcut exploitation per reward component, then adaptively reweights them.
 - [VF-Eval: Evaluating Multimodal LLMs for Generating Feedback on AIGC Videos](https://arxiv.org/abs/2505.23693) *(2025)* — Decomposes judge quality on generated video into four separately scored feedback tasks.
