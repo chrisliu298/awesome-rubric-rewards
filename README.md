@@ -1033,6 +1033,7 @@ Contributions welcome! Please open a PR if you know of papers, datasets, benchma
   title = {{Awesome Rubric Rewards}},
   author = {Liu, Chris Yuhao and others},
   year = {2026},
+  doi = {10.5281/zenodo.21831038},
   url = {https://github.com/chrisliu298/awesome-rubric-rewards},
   version = {v1.0.0}
 }
