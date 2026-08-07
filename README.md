@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <!-- entry-count-start --><a href="#contents"><img src="https://img.shields.io/badge/Entries-646-000000?style=for-the-badge&labelColor=000000" alt="Entries"></a><!-- entry-count-end -->
+  <!-- entry-count-start --><a href="#contents"><img src="https://img.shields.io/badge/Entries-652-000000?style=for-the-badge&labelColor=000000" alt="Entries"></a><!-- entry-count-end -->
   <a href="https://github.com/chrisliu298/awesome-rubric-rewards/stargazers"><img src="https://img.shields.io/github/stars/chrisliu298/awesome-rubric-rewards?style=for-the-badge&logo=github&logoColor=white&label=Stars&labelColor=000000&color=000000" alt="GitHub Stars"></a>
   <a href="https://github.com/chrisliu298/awesome-rubric-rewards/network/members"><img src="https://img.shields.io/github/forks/chrisliu298/awesome-rubric-rewards?style=for-the-badge&logo=github&logoColor=white&label=Forks&labelColor=000000&color=000000" alt="GitHub Forks"></a>
   <a href="https://github.com/chrisliu298/awesome-rubric-rewards/commits"><img src="https://img.shields.io/github/last-commit/chrisliu298/awesome-rubric-rewards?style=for-the-badge&logo=github&logoColor=white&label=Last%20Commit&labelColor=000000&color=000000" alt="Last Commit"></a>
@@ -279,6 +279,7 @@ The heart of the list: work where a rubric produces the training signal.
 - [Bootstrapping Post-training Signals for Open-ended Tasks via Rubric-based Self-play on Pre-training Text](https://arxiv.org/abs/2604.20051) *(2026)* — Self-play over raw pretraining text bootstraps criteria reward with no labels.
 - [Rubric-based On-policy Distillation](https://arxiv.org/abs/2605.07396) *(2026)* — Scores student rollouts against generated weighted criteria instead of matching teacher logits.
 - [ARCANE: A Multi-Agent Framework for Interpretable and Configurable Alignment](https://arxiv.org/abs/2512.06196) *(2025)* — Represents stakeholder preferences as weighted verifiable criteria generated per request, optimized by regularized policy updates.
+- [Improving Data and Reward Design for Scientific Reasoning in Large Language Models](https://arxiv.org/abs/2602.08321) *(2026)* — Builds fine-grained criteria for open-ended science answers and trains against them for stability.
 - [RLBFF: Binary Flexible Feedback to bridge between Human Feedback & Verifiable Rewards](https://arxiv.org/abs/2509.21319) *(2025)* — Converts free-text human feedback into binary principles usable as verifiable-style rewards.
 - [RubricEM: Meta-RL with Rubric-guided Policy Decomposition beyond Verifiable Rewards](https://arxiv.org/abs/2605.10899) *(2026)* — Uses criteria as a shared interface across agent, judge, and memory in a meta-RL loop.
 - [Reward and Guidance through Rubrics: Promoting Exploration to Improve Multi-Domain Reasoning](https://arxiv.org/abs/2511.12344) *(2025)* — Criteria-driven dense rewards widen exploration across several reasoning domains at once.
@@ -713,6 +714,7 @@ Criteria-decomposed rewards outside text. For single-scalar visual preference sc
 - [Qwen-Image-2.0-RL Technical Report](https://arxiv.org/abs/2606.27608) *(2026)* — Composite pointwise reward models with chain-of-thought scoring drive diffusion RLHF.
 - [RationalRewards: Reasoning Rewards Scale Visual Generation Both Training and Test Time](https://arxiv.org/abs/2604.11626) *(2026)* — Emits explicit multi-dimensional critiques before scoring, serving both training reward and test-time refinement.
 - [Unified Personalized Reward Model for Vision Generation](https://arxiv.org/abs/2602.02380) *(2026)* — Instantiates fine-grained criteria per request rather than scoring against one fixed evaluation rubric.
+- [AVE-Compass: Towards Holistic Evaluation for Audio-Video Editing Abilities](https://arxiv.org/abs/2607.24821) *(2026)* — Grades audio-video edits against thousands of checklist items plus a separate realism rubric.
 - [FilmBench: A Film-Grade Benchmark for Cinematic Video Generation](https://arxiv.org/abs/2607.24241) *(2026)* — Scores generated video against a three-level taxonomy of cinematic craft criteria.
 - [RubiCap: Rubric-Guided Reinforcement Learning for Dense Image Captioning](https://arxiv.org/abs/2603.09160) *(2026)* — Applies criteria-guided reward specifically to dense image captioning.
 - [Visual Preference Optimization with Rubric Rewards](https://arxiv.org/abs/2604.13029) *(2026)* — Builds instance-specific essential-and-additional checklists to filter visual preference pairs.
@@ -899,6 +901,7 @@ Three strata cut across domain: **expert-authored** criteria written once by spe
 | [MiroEval](https://arxiv.org/abs/2603.28407) | 2026 | Multimodal research | Per-query criteria plus atomic-claim factuality |
 | [Expert Consulting Benchmark](https://arxiv.org/abs/2605.17554) | 2026 | Consulting | Deterministic verifiers plus an expert criterion set |
 | [ProfBench](https://arxiv.org/abs/2510.18941) | 2025 | Professional reasoning | Criteria requiring expertise to answer and to grade |
+| [COMPOSITE-Stem](https://arxiv.org/abs/2604.09836) | 2026 | Doctoral STEM | Criterion-based rubrics with an LLM-jury protocol beside exact match |
 | [PRBench](https://arxiv.org/abs/2511.11562) | 2025 | Legal and finance | Large expert-authored criteria sets |
 | [$OneMillion-Bench](https://arxiv.org/abs/2603.07980) | 2026 | Multi-domain expert | Accuracy, coherence, professional compliance |
 | [PLawBench](https://arxiv.org/abs/2601.16669) | 2026 | Legal practice | Expert-designed criteria across legal scenarios |
@@ -938,6 +941,7 @@ Three strata cut across domain: **expert-authored** criteria written once by spe
 | [AgentBoard](https://arxiv.org/abs/2401.13178) | 2024 | Multi-turn agents | Fine-grained subgoal-completion progress |
 | [MultiChallenge](https://arxiv.org/abs/2501.17399) | 2025 | Multi-turn chat | Four per-turn challenge categories |
 | [PresentBench](https://arxiv.org/abs/2603.07244) | 2026 | Slide generation | Binary checklist items on content and layout |
+| [GDP.pdf](https://arxiv.org/abs/2607.11192) | 2026 | Professional PDF QA | A rubric of atomic criteria reported beside strict pass rates |
 | [TechImage-Bench](https://arxiv.org/abs/2512.12220) | 2025 | Technical images | Binary criteria mined from textbooks |
 | [StrongREJECT](https://arxiv.org/abs/2402.10260) | 2024 | Safety | Detailed harmfulness rubric for jailbreak responses |
 | [Claw-Eval](https://arxiv.org/abs/2604.06132) | 2026 | Autonomous agents | Trajectory-aware safety and robustness criteria |
@@ -968,6 +972,7 @@ Rubrics shaping human labels rather than model rewards. A small literature, but 
 
 - [When LLM Essays Outscore Student Essays: What a Korean Writing Rubric Rewards and Where Readers Disagree](https://arxiv.org/abs/2601.19913) *(2026)* — A sixteen-criterion rubric shows where human readers diverge while applying shared criteria.
 - [Diverging Preferences: When do Annotators Disagree and do Models Know?](https://arxiv.org/abs/2410.14632) *(2024)* — A taxonomy of disagreement sources shows most divergence traces to task underspecification or style.
+- [Using Natural Language Explanations to Rescale Human Judgments](https://arxiv.org/abs/2305.14770) *(2023)* — Rescores annotator Likert ratings against a shared scoring guide using their written explanations.
 - [AutoSCORE: Enhancing Automated Scoring with Multi-Agent Large Language Models via Structured Component Recognition](https://arxiv.org/abs/2509.21910) *(2025)* — Structured component recognition makes automated criteria scoring decomposable.
 - [Rubric-Guided Fine-tuning of SpeechLLMs for Multi-Aspect, Multi-Rater L2 Reading-Speech Assessment](https://arxiv.org/abs/2603.16889) *(2026)* — Models multiple raters explicitly rather than collapsing them to one consensus label.
 
@@ -975,6 +980,7 @@ Rubrics shaping human labels rather than model rewards. A small literature, but 
 
 - [InfiMed-ORBIT: Aligning LLMs on Open-Ended Complex Tasks via Rubric-Based Incremental Training](https://arxiv.org/abs/2510.15859) *(2025)* — Case-conditioned criteria act as adaptive guides for incremental clinical RL.
 - [Baichuan-M2: Scaling Medical Capability with Large Verifier System](https://arxiv.org/abs/2509.02208) *(2025)* — Pairs a patient simulator with a clinical criteria generator producing multi-dimensional metrics for medical RL.
+- [QED-Nano: Teaching a Tiny Model to Prove Hard Theorems](https://arxiv.org/abs/2604.04898) *(2026)* — Trains a small theorem prover with criteria-based rewards plus an iterative summarize-and-refine cache.
 - [ClinAlign: Scaling Healthcare Alignment from Clinician Preference](https://arxiv.org/abs/2602.09653) *(2026)* — Distills physician-refined criteria into reusable clinical principles for offline alignment and self-revision.
 - [Benchmarking and Learning Real-World Customer Service Dialogue](https://arxiv.org/abs/2510.22143) *(2025)* — Distills expert dialogue patterns, then trains with criteria-aware staged exploration for service agents.
 - [Improving Heart-Focused Medical Question Answering in LLMs via Variance-Aware Rubric Rewards with GRPO](https://arxiv.org/abs/2606.05174) *(2026)* — Variance-aware criteria weighting targeting cardiology question answering.
