@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <!-- entry-count-start --><a href="#contents"><img src="https://img.shields.io/badge/Entries-839-000000?style=for-the-badge&labelColor=000000" alt="Entries"></a><!-- entry-count-end -->
+  <!-- entry-count-start --><a href="#contents"><img src="https://img.shields.io/badge/Entries-880-000000?style=for-the-badge&labelColor=000000" alt="Entries"></a><!-- entry-count-end -->
   <a href="https://github.com/chrisliu298/awesome-rubric-rewards/stargazers"><img src="https://img.shields.io/github/stars/chrisliu298/awesome-rubric-rewards?style=for-the-badge&logo=github&logoColor=white&label=Stars&labelColor=000000&color=000000" alt="GitHub Stars"></a>
   <a href="https://github.com/chrisliu298/awesome-rubric-rewards/network/members"><img src="https://img.shields.io/github/forks/chrisliu298/awesome-rubric-rewards?style=for-the-badge&logo=github&logoColor=white&label=Forks&labelColor=000000&color=000000" alt="GitHub Forks"></a>
   <a href="https://github.com/chrisliu298/awesome-rubric-rewards/commits"><img src="https://img.shields.io/github/last-commit/chrisliu298/awesome-rubric-rewards?style=for-the-badge&logo=github&logoColor=white&label=Last%20Commit&labelColor=000000&color=000000" alt="Last Commit"></a>
@@ -479,6 +479,7 @@ Structurally rubrics under different names.
 - [YESciEval: Robust LLM-as-a-Judge for Scientific Question Answering](https://arxiv.org/abs/2505.14279) *(2025)* — Combines fine-grained criteria assessment with reinforcement learning to mitigate evaluator optimism bias.
 - [Reward Modeling for Scientific Writing Evaluation](https://arxiv.org/abs/2601.11374) *(2026)* — Cost-efficient reward models reasoning over task-dependent multi-faceted criteria.
 - [ToolRM: Towards Agentic Tool-Use Reward Modeling](https://arxiv.org/abs/2510.26167) *(2025)* — Builds tool-use preference data by rule-based scoring across multiple sampled dimensions.
+- [Think Twice: Branch-and-Rethink Reasoning Reward Model](https://arxiv.org/abs/2510.23596) *(2025)* — Writes out instance-critical evaluation dimensions, then rereads the response targeting exactly those.
 
 ### Multi-attribute and multi-objective reward models
 
@@ -550,6 +551,8 @@ Reward-model versus verifier is not a boundary this list observes. What matters 
 - [SPATIALALIGN: Aligning Dynamic Spatial Relationships in Video Generation](https://arxiv.org/abs/2602.22745) *(2026)* — Geometric verifier checks whether prompted dynamic spatial relationships actually hold in generated video.
 - [RLGF: Reinforcement Learning with Geometric Feedback for Autonomous Driving Video Generation](https://arxiv.org/abs/2509.16500) *(2025)* — Hierarchical geometric reward separates point-line-plane alignment from scene occupancy coherence.
 - [CreFlow: Corrective Reflow for Sparse-Reward Embodied Video Diffusion RL](https://arxiv.org/abs/2605.14274) *(2026)* — Composes manipulation requirements as linear temporal logic constraints returning localized per-constraint violations.
+- [RLAR: An Agentic Reward System for Multi-task Reinforcement Learning on Large Language Models](https://arxiv.org/abs/2603.00724) *(2026)* — A reward agent synthesizes programmatic verifiers per query, tracking distribution shift during training.
+- [JURY-RL: Votes Propose, Proofs Dispose for Label-Free RLVR](https://arxiv.org/abs/2604.25419) *(2026)* — Rewards only plurality-voted answers that a formal proof checker independently confirms.
 - [Diagnosing Under-Development of Irreversible Processes in Video Generation](https://arxiv.org/abs/2608.00617) *(2026)* — Null-tests irreversibility metrics, surfacing a computable directional-progress plus stasis-rate protocol.
 - [Inference-Time Scaling for Joint Audio-Video Generation](https://arxiv.org/abs/2606.03183) *(2026)* — Fuses four named verifiers under adaptive reward weighting for best-of-N audio-video selection.
 - [RAPO++: Cross-Stage Prompt Optimization for Text-to-Video Generation via Data Alignment and Test-Time Scaling](https://arxiv.org/abs/2510.20206) *(2025)* — Closed-loop prompt optimizer refining against semantic, spatial, temporal, and optical-flow feedback signals.
@@ -584,6 +587,7 @@ Reward-model versus verifier is not a boundary this list observes. What matters 
 - [ToolPRMBench: Evaluating and Advancing Process Reward Models for Tool-using Agents](https://arxiv.org/abs/2601.12294) *(2026)* — Step-level benchmark isolating single-step from multi-step tool-agent failures via multi-model-verified action pairs.
 - [Entropy-Regularized Process Reward Model](https://arxiv.org/abs/2412.11006) *(2024)* — Adds entropy regularization to step-level reward modeling for multi-step mathematical reasoning.
 - [Stop Summation: Min-Form Credit Assignment Is All Process Reward Model Needs for Reasoning](https://arxiv.org/abs/2504.15275) *(2025)* — Traces process-reward hacking to summation-form credit assignment, replacing it with a min-form rule.
+- [SEVA: Self-Evolving Verification Agent with Process Reward for Fact Attribution](https://arxiv.org/abs/2606.29713) *(2026)* — Decomposes verification quality into independently weighted process components replacing an opaque binary label.
 
 ## LLM-as-a-Judge
 
@@ -619,6 +623,7 @@ The substrate rubric rewards are built on. Kept deliberately compact relative to
 - [REAL: Regression-Aware Reinforcement Learning for LLM-as-a-Judge](https://arxiv.org/abs/2603.17145) *(2026)* — Adds a regression objective so ordinal scoring errors are penalized proportionally.
 - [Foundational Automatic Evaluators](https://arxiv.org/abs/2510.17793) *(2025)* — Scales iterative rejection-sampling fine-tuning to build reasoning-centric evaluators.
 - [Foundational Autoraters: Taming Large Language Models for Better Automatic Evaluation](https://arxiv.org/abs/2407.10817) *(2024)* — Trains an autorater family across many human-judgment tasks, then distills it.
+- [Incentivizing Agentic Reasoning in LLM Judges via Tool-Integrated Reinforcement Learning](https://arxiv.org/abs/2510.23038) *(2025)* — Trains a judge to call a code executor for constraint checks beyond text-only reasoning.
 
 ### Critic models and explainable metrics
 
@@ -702,6 +707,7 @@ The substrate rubric rewards are built on. Kept deliberately compact relative to
 - [Cheating Automatic LLM Benchmarks: Null Models Achieve High Win Rates](https://arxiv.org/abs/2410.07137) *(2024)* — Constant content-free responses exploit length and style bias to top major benchmarks.
 - [A Coin Flip for Safety: LLM Judges Fail to Reliably Measure Adversarial Robustness](https://arxiv.org/abs/2603.06594) *(2026)* — Audits harmfulness judges against human labels, finding accuracy near chance under red-teaming shift.
 - [Security in LLM-as-a-Judge: A Comprehensive SoK](https://arxiv.org/abs/2603.29403) *(2026)* — Systematizes judge security into attacks on judges, attacks via judges, and judge-based defenses.
+- [Helpful Agent Meets Deceptive Judge: Understanding Vulnerabilities in Agentic Workflows](https://arxiv.org/abs/2506.03332) *(2025)* — Web-evidence-grounded adversarial critiques flip correct agent answers, exposing judge feedback as an attack surface.
 
 ### Multi-agent, debate, and ensemble judges
 
@@ -711,6 +717,8 @@ The substrate rubric rewards are built on. Kept deliberately compact relative to
 - [Emergence of Biased Consensus in Multi-Agent LLM Debates](https://arxiv.org/abs/2608.02827) *(2026)* — Shows debate among homogeneous judges converges on shared bias rather than cancelling it.
 - [Who can we trust? LLM-as-a-jury for Comparative Assessment](https://arxiv.org/abs/2602.16610) *(2026)* — Adds a per-judge discriminator parameter so jury aggregation infers rankings and judge reliability together.
 - [Leveraging LLMs as Meta-Judges: A Multi-Agent Framework for Evaluating LLM Judgments](https://arxiv.org/abs/2504.17087) *(2025)* — Builds an expert rubric, then uses multi-agent meta-judges to score and filter weak judgments.
+- [Approximating Human Preferences Using a Multi-Judge Learned System](https://arxiv.org/abs/2510.25884) *(2025)* — Learns an aggregator over rubric-conditioned judge scores to model persona-based human preferences.
+- [RoPoLL: Robust Panel of LLM Judges](https://arxiv.org/abs/2606.30931) *(2026)* — Replaces jury mean aggregation with a geometric median bounding bias under contaminated judges.
 
 ### Efficient judges
 
@@ -792,6 +800,7 @@ Criteria-decomposed rewards outside text. For single-scalar visual preference sc
 - [FilmBench: A Film-Grade Benchmark for Cinematic Video Generation](https://arxiv.org/abs/2607.24241) *(2026)* — Scores generated video against a three-level taxonomy of cinematic craft criteria.
 - [RubiCap: Rubric-Guided Reinforcement Learning for Dense Image Captioning](https://arxiv.org/abs/2603.09160) *(2026)* — Applies criteria-guided reward specifically to dense image captioning.
 - [Visual Preference Optimization with Rubric Rewards](https://arxiv.org/abs/2604.13029) *(2026)* — Builds instance-specific essential-and-additional checklists to filter visual preference pairs.
+- [Leveraging Verifier-Based Reinforcement Learning in Image Editing](https://arxiv.org/abs/2604.27505) *(2026)* — Splits each editing instruction into principles checked separately before aggregating an interpretable reward.
 
 ### Question decomposition for text-to-image
 
@@ -813,6 +822,7 @@ Three parallel lineages independently invented "decompose the prompt into checka
 **Reasoning family**
 
 - [LLMScore: Unveiling the Power of Large Language Models in Text-to-Image Synthesis Evaluation](https://arxiv.org/abs/2305.11116) *(2023)* — Decomposes images into global and region-level descriptions scored by multi-granularity reasoning.
+- [Factuality Matters: When Image Generation and Editing Meet Structured Visuals](https://arxiv.org/abs/2510.05091) *(2025)* — Grades structured-visual factuality through a multi-round question-answering protocol instead of aesthetic preference.
 
 ### Multimodal judges and reward models
 
@@ -831,6 +841,7 @@ Three parallel lineages independently invented "decompose the prompt into checka
 - [Omni-RRM: Advancing Omni Reward Modeling via Automatic Rubric-Grounded Preference Synthesis](https://arxiv.org/abs/2602.00846) *(2026)* — Synthesizes criteria-grounded preference justifications spanning text, image, video, and audio.
 - [VLFeedback: A Large-Scale AI Feedback Dataset for Large Vision-Language Models Alignment](https://arxiv.org/abs/2410.09421) *(2024)* — Multi-aspect feedback annotating helpfulness, visual faithfulness, and safety separately, used to train Silkie.
 - [Mitigating Perceptual Judgment Bias in Multimodal LLM-as-a-Judge via Perceptual Perturbation and Reward Modeling](https://arxiv.org/abs/2606.02578) *(2026)* — Uses visual perturbations to correct judges rewarding plausible text over visual truth.
+- [ARM-Thinker: Reinforcing Multimodal Generative Reward Models with Agentic Tool Use and Visual Reasoning](https://arxiv.org/abs/2512.05111) *(2025)* — Reward model invokes cropping and retrieval tools to ground each judgment in verifiable evidence.
 
 ### Multimodal reasoning rubrics
 
@@ -842,6 +853,7 @@ Three parallel lineages independently invented "decompose the prompt into checka
 - [Grounding the Score: Explicit Visual Premise Verification for Reliable Vision-Language Process Reward Models](https://arxiv.org/abs/2603.16253) *(2026)* — Adds explicit visual-premise verification to reduce ungrounded step scoring.
 - [Improving Vision-language Models with Perception-centric Process Reward Models](https://arxiv.org/abs/2604.24583) *(2026)* — Grounds process errors at token level by extracting image-related claims for verification.
 - [Judging the Judges: Can Large Vision-Language Models Fairly Evaluate Chart Comprehension and Reasoning?](https://arxiv.org/abs/2505.08468) *(2025)* — Pairwise and pointwise criteria for grading chart comprehension.
+- [Multimodal Reinforcement Learning with Adaptive Verifier for AI Agents](https://arxiv.org/abs/2512.03438) *(2025)* — Selects per-sample scoring functions grading answer accuracy, spatiotemporal grounding, and reasoning quality separately.
 
 ### Video
 
@@ -881,6 +893,8 @@ Judging whether a generated video follows its prompt and stays self-consistent i
 - [HuM-Eval: A Coarse-to-Fine Framework for Human-Centric Video Evaluation](https://arxiv.org/abs/2604.25361) *(2026)* — Layers a coarse VLM quality pass over pose-based anatomical and 3D-motion-stability checks.
 - [Towards A Better Metric for Text-to-Video Generation](https://arxiv.org/abs/2401.07781) *(2024)* — T2VScore separates text-video alignment from a mixture-of-experts video quality score, each human-calibrated.
 - [AesRM: Improving Video Aesthetics with Expert-Level Feedback](https://arxiv.org/abs/2604.28078) *(2026)* — Hierarchical aesthetic rubric of fifteen sub-criteria trains a chain-of-thought video reward model.
+- [AIGVE-MACS: Unified Multi-Aspect Commenting and Scoring Model for AI-Generated Video Evaluation](https://arxiv.org/abs/2507.01255) *(2025)* — Emits a language comment alongside a numerical score for each of nine annotated aspects.
+- [CaC: Advancing Video Reward Models via Hierarchical Spatiotemporal Concentrating](https://arxiv.org/abs/2605.11723) *(2026)* — Coarse-to-fine anomaly reward model attributes defects to grounded spatiotemporal regions rather than one score.
 - [Omni-Judge: Can Omni-LLMs Serve as Human-Aligned Judges for Text-Conditioned Audio-Video Generation?](https://arxiv.org/abs/2602.01623) *(2026)* — Chain-of-thought omni-LLM judge scored against nine named perceptual and cross-modal alignment metrics.
 - [Thinking with Frames: Generative Video Distortion Evaluation via Frame Reward Model](https://arxiv.org/abs/2601.04033) *(2026)* — REACT scores structural distortions frame-by-frame against an explicit taxonomy with per-instance attribution.
 - [FantasyTalking2: Timestep-Layer Adaptive Preference Optimization for Audio-Driven Portrait Animation](https://arxiv.org/abs/2508.11255) *(2025)* — Talking-Critic scores named preference dimensions fused by timestep-layer adaptive multi-expert optimization.
@@ -921,6 +935,7 @@ Judging whether a generated video follows its prompt and stays self-consistent i
 - [Seedance 1.0: Exploring the Boundaries of Video Generation Models](https://arxiv.org/abs/2506.09113) *(2025)* — Backpropagates a composite of three separately trained reward models through the predicted clean video.
 - [LongCat-Video-Avatar 1.5 Technical Report](https://arxiv.org/abs/2605.26486) *(2026)* — Multi-reward GRPO whose per-frame and temporally partitioned terms localize specific avatar defects.
 - [InfLVG: Reinforce Inference-Time Consistent Long Video Generation with GRPO](https://arxiv.org/abs/2505.17574) *(2025)* — Context-selection policy trained on named semantic-alignment, cross-scene-consistency, and artifact-reduction reward components.
+- [WorldCycle: Self-Verifiable Reinforcement Learning for Long-Horizon Video World Models](https://arxiv.org/abs/2608.04964) *(2026)* — Reversible action cycles yield annotation-free spatial-closure and temporal-consistency rewards without ground-truth futures.
 
 #### Rewards for video understanding
 
@@ -945,6 +960,7 @@ An emerging area: one 2020 anchor, then almost everything from late 2025 onward.
 - [CMI-RewardBench: Evaluating Music Reward Models with Compositional Multimodal Instruction](https://arxiv.org/abs/2603.00610) *(2026)* — Benchmarks music reward models across musicality, text alignment, and compositional instruction dimensions.
 - [AVBench: Human-Aligned and Automated Evaluation Benchmark for Audio-Video Generative Models](https://arxiv.org/abs/2605.24652) *(2026)* — Integrates ten human-centric dimensions spanning visual quality, audio quality, and cross-modal consistency.
 - [Reinforcement Learning with Evolving Rubrics as Rewards for Audio Reasoning](https://arxiv.org/abs/2608.02831) *(2026)* — Self-evolving audio-grounded criteria supervise audio reasoning beyond text-only rubrics.
+- [AcoustiTrace: When Plausible Sound Violates Physics](https://arxiv.org/abs/2608.02035) *(2026)* — Attributes audio-video violations to eight acoustic-process dimensions grounded in measurable physical quantities.
 
 ### 3D generation
 
@@ -973,6 +989,7 @@ The densest 2026 area. Verification mechanisms here — environment-state probin
 - [OSReward: Instituting Standardized Evaluation for Cross-Platform Computer-Use Reward Models](https://arxiv.org/abs/2607.28609) *(2026)* — Standardized cross-platform protocol replacing hand-written per-task verifiers.
 - [MagicGUI-RMS: A Multi-Agent Reward Model System for Self-Evolving GUI Agents via Automated Feedback Reflux](https://arxiv.org/abs/2601.13060) *(2026)* — Reflows automated feedback so interface agents self-improve while cutting annotation cost.
 - [IntentScore: Intent-Conditioned Action Evaluation for Computer-Use Agents](https://arxiv.org/abs/2604.05157) *(2026)* — Plan-aware reward model scoring candidate interface actions from offline data.
+- [SeekJudge: A Practical Reward Framework for Reinforcement Learning in Computer-Use Agents](https://arxiv.org/abs/2607.23263) *(2026)* — Role-specialized agents seek trajectory evidence to emit step-level verdicts replacing brittle rule-based supervision.
 
 ### Embodied and robotic verification
 
@@ -984,6 +1001,7 @@ The densest 2026 area. Verification mechanisms here — environment-state probin
 - [Scaling Verification Can Be More Effective than Scaling Policy Learning for Vision-Language-Action Alignment](https://arxiv.org/abs/2602.12281) *(2026)* — Shows compute spent on a verifier can beat compute spent on more policy training.
 - [Reward as An Agent for Embodied World Models](https://arxiv.org/abs/2606.19990) *(2026)* — An agentic reward framework actively evaluates generated behaviors to resist reward hacking.
 - [RoboAlign-R1: Distilled Multimodal Reward Alignment for Robot Video World Models](https://arxiv.org/abs/2605.03821) *(2026)* — Defines robot-centric judge dimensions for aligning video world models via RL.
+- [RDA: Reward Design Agent for Reinforcement Learning](https://arxiv.org/abs/2606.01672) *(2026)* — Vision-language agent revises executable reward code from visual trajectory critiques instead of coarse success rates.
 
 ### Rubric rewards for agents, tool use, and software engineering
 
@@ -1004,6 +1022,7 @@ The densest 2026 area. Verification mechanisms here — environment-state probin
 - [PRBench: End-to-end Paper Reproduction in Physics Research](https://arxiv.org/abs/2603.27646) *(2026)* — Grades end-to-end physics paper reproduction against detailed scoring rubrics and verified ground truth.
 - [Mock Worlds, Real Skills: Building Small Agentic Language Models with Synthetic Tasks, Simulated Environments, and Rubric-Based Rewards](https://arxiv.org/abs/2601.22511) *(2026)* — Trains small agentic models entirely in synthetic environments graded by criteria.
 - [CLI-Universe: Towards Verifiable Task Synthesis Engine for Terminal Agents](https://arxiv.org/abs/2606.22883) *(2026)* — Validates synthesized terminal tasks against explicit criteria for correctness and coverage.
+- [Auto-Eval Judge: Towards a General Agentic Framework for Task Completion Evaluation](https://arxiv.org/abs/2508.05508) *(2025)* — Decomposes tasks into sub-tasks validated by aspect-specific modules, targeting domain-independent agent evaluation.
 
 ### Rubric rewards for deep research
 
@@ -1143,6 +1162,28 @@ Three strata cut across domain: **expert-authored** criteria written once by spe
 | [Physion-Eval](https://arxiv.org/abs/2603.19607) | 2026 | Physical realism | Expert reasoning traces localizing twenty-two named physical-failure categories |
 | [TiViBench](https://arxiv.org/abs/2511.13704) | 2025 | Image-to-video reasoning | Structural, spatial, symbolic, and action-planning reasoning dimensions |
 | [SafeGen-Bench](https://arxiv.org/abs/2606.01481) | 2026 | Video safety | Ten malicious categories spanning risky temporal sequences and behaviors |
+| [T2VPhysBench](https://arxiv.org/abs/2505.00337) | 2025 | Text-to-video physics | Twelve enumerated physical laws each scored separately by humans |
+| [VideoVerse](https://arxiv.org/abs/2510.08398) | 2025 | World-model video | Ten per-prompt dimensions targeting event-level temporal causality |
+| [IVEBench](https://arxiv.org/abs/2510.11647) | 2025 | Instruction-guided video editing | Video quality, instruction compliance, and video fidelity |
+| [LoCoT2V-Bench](https://arxiv.org/abs/2510.26412) | 2025 | Long-form text-to-video | Five dimensions including a human-expectation realization degree |
+| [V-ReasonBench](https://arxiv.org/abs/2511.16668) | 2025 | Video generation reasoning | Structured, spatial, pattern-based, and physical reasoning scored apart |
+| [RULER-Bench](https://arxiv.org/abs/2512.02622) | 2025 | Rule-based video reasoning | Per-video checklists spanning six cognitive rule categories |
+| [VIPER](https://arxiv.org/abs/2512.24952) | 2025 | Generative video reasoning | Hierarchical rubric grading intermediate frame-reasoning validity |
+| [WorldBench](https://arxiv.org/abs/2601.21282) | 2026 | World-model physics | One isolated physical concept per diagnostic test |
+| [UniEditBench](https://arxiv.org/abs/2604.15871) | 2026 | Image and video editing | Structural fidelity, text alignment, background consistency, and naturalness |
+| [WorldMark](https://arxiv.org/abs/2604.21686) | 2026 | Interactive video world models | Direction accuracy, purity, response latency, and motion stability |
+| [BRITE](https://arxiv.org/abs/2605.00873) | 2026 | Implausible-scenario video | Human-verified question-answer criteria covering audio-visual consistency |
+| [Edit-Compass](https://arxiv.org/abs/2605.13062) | 2026 | Image editing | Structured-reasoning scoring rubrics across progressively harder editing categories |
+| [LongAV-Compass](https://arxiv.org/abs/2605.26244) | 2026 | Minute-scale audio-visual | Within-segment quality, cross-segment consistency, and narrative coherence |
+| [DirectorBench](https://arxiv.org/abs/2605.30090) | 2026 | Long-form video generation | Forty checkpoint criteria across script, visual, audio, and stability |
+| [CoVEBench](https://arxiv.org/abs/2606.08415) | 2026 | Complex video editing | Checklist items covering requested edits and preservation constraints |
+| [MultiRef-Compass](https://arxiv.org/abs/2607.14189) | 2026 | Multi-reference audio-video | Four dimensions decomposed into fourteen auditable sub-metrics |
+| [CultureVidBench](https://arxiv.org/abs/2608.01942) | 2026 | Cultural text-to-video | Fourteen cultural aspects scored for faithfulness and rendering |
+| [WorldExam](https://arxiv.org/abs/2608.02603) | 2026 | Video world models | Visual quality, control adherence, spatial consistency, and world reactivity |
+| [OmniEdit-Bench](https://arxiv.org/abs/2608.05049) | 2026 | Instruction-based video editing | Preservation, realism, and consistency gated on edit accuracy |
+| [GAUGE](https://arxiv.org/abs/2608.05948) | 2026 | Physical fidelity | Task-specific physical observables calibrated from real-world trajectories |
+| [Mind2Web 2](https://arxiv.org/abs/2506.21506) | 2025 | Agentic search | Tree-structured per-task rubrics grading correctness and source attribution |
+| [FinResearchBench](https://arxiv.org/abs/2507.16248) | 2025 | Financial research agents | Extracted logic trees of the research outcome per task type |
 | [StrongREJECT](https://arxiv.org/abs/2402.10260) | 2024 | Safety | Detailed harmfulness rubric for jailbreak responses |
 | [Claw-Eval](https://arxiv.org/abs/2604.06132) | 2026 | Autonomous agents | Trajectory-aware safety and robustness criteria |
 | [RefGrader](https://arxiv.org/abs/2510.09021) | 2025 | Math proofs | Problem-specific criteria for partial credit |
