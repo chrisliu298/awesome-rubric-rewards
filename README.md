@@ -222,6 +222,7 @@ Background rather than subject matter. These explain why modern rubric rewards l
 - [Libra: Assessing and Improving Reward Model by Learning to Think](https://arxiv.org/abs/2507.21645) *(2025)* — Trains the reward model to reason before scoring rather than regress a scalar directly.
 - [ImplicitRM: Unbiased Reward Modeling from Implicit Preference Data](https://arxiv.org/abs/2603.23184) *(2026)* — Learns rewards from click-like implicit signals via stratification correcting action bias.
 - [Sharpe Ratio-Guided Active Learning for Preference Optimization in RLHF](https://arxiv.org/abs/2503.22137) *(2025)* — Selects preference pairs by a risk-adjusted acquisition function rather than raw uncertainty.
+- [LoRe: Personalizing LLMs via Low-Rank Reward Modeling](https://arxiv.org/abs/2504.14439) *(2025)* — Decomposes per-user reward into a shared low-rank basis for efficient personalization.
 - [What Makes a Reward Model a Good Teacher? An Optimization Perspective](https://arxiv.org/abs/2503.15477) *(2025)* — Shows reward-model accuracy alone fails to predict downstream RL success.
 
 ### LLM-as-a-judge origins
@@ -245,7 +246,6 @@ Background rather than subject matter. These explain why modern rubric rewards l
 Where the word comes from. Analytic versus holistic rubrics, inter-rater reliability, and automated scoring long predate this literature and anticipate several of its findings.
 
 - [The challenges of changing teaching assistants' grading practices: Requiring students to show evidence of understanding](https://arxiv.org/abs/2102.07295) *(2021)* — Graders handed a rubric still skip requiring evidence, tracing resistance to prior habits.
-- [AutoSCORE: Enhancing Automated Scoring with Multi-Agent Large Language Models via Structured Component Recognition](https://arxiv.org/abs/2509.21910) *(2025)* — Structured component recognition makes automated criteria scoring decomposable.
 - [Designing Reliable LLM-Assisted Rubric Scoring for Constructed Responses: Evidence from Physics Exams](https://arxiv.org/abs/2604.12227) *(2026)* — Fine-grained checklist criteria improve scoring consistency more than holistic ones.
 - [LLM Essay Scoring Under Holistic and Analytic Rubrics: Prompt Effects and Bias](https://arxiv.org/abs/2604.00259) *(2026)* — Compares holistic against analytic criteria prompting for effects on scoring bias.
 
@@ -330,6 +330,7 @@ Where criteria come from is its own research problem. The four-way split below f
 - [ARES: Automated Rubric Synthesis for Scalable LLM Reinforcement Learning](https://arxiv.org/abs/2605.23454) *(2026)* — Co-generates questions, references, and weighted criteria from raw documents in one pass.
 - [Qworld: Question-Specific Evaluation Criteria for LLMs](https://arxiv.org/abs/2603.23522) *(2026)* — Builds per-question criteria via a recursive expansion tree of scenarios and binary checks.
 - [SedarEval: Automated Evaluation using Self-Adaptive Rubrics](https://arxiv.org/abs/2501.15595) *(2025)* — Generates per-question rubrics carrying explicit scoring and deduction points, then trains a matching evaluator.
+- [RubricRAG: Towards Interpretable and Reliable LLM Evaluation via Domain Knowledge Retrieval for Rubric Generation](https://arxiv.org/abs/2603.20882) *(2026)* — Retrieves criteria from related queries at inference time to ground evaluation.
 - [Many Voices, One Reward: Multi-Role Rubric Generation for LLM Judging and Reward Modeling](https://arxiv.org/abs/2607.01830) *(2026)* — Elicits criteria from complementary evaluator roles into one auditable scorer.
 - [Automated Rubrics for Reliable Evaluation of Medical Dialogue Systems](https://arxiv.org/abs/2601.15161) *(2026)* — Retrieval-augmented multi-agent pipeline decomposes medical evidence into atomic-fact criteria per instance.
 - [Generating Data-Driven Reasoning Rubrics for Domain-Adaptive Reward Modeling](https://arxiv.org/abs/2602.06795) *(2026)* — Builds granular reasoning-error taxonomies to train domain-adaptive classifiers.
@@ -347,7 +348,6 @@ Where criteria come from is its own research problem. The four-way split below f
 - [Learning Query-Specific Rubrics from Human Preferences for DeepResearch Report Generation](https://arxiv.org/abs/2602.03619) *(2026)* — Trains criteria generators by RL on human preference data over research reports.
 - [Support Vector Rubrics: Closing the Gap Between Self-Generated and Human Rubrics](https://arxiv.org/abs/2606.08077) *(2026)* — Recasts rubric construction as max-margin boundary learning over preference data.
 - [CritiQ: Mining Data Quality Criteria from Human Preferences](https://arxiv.org/abs/2502.19279) *(2025)* — Mines explicit data-quality criteria from preference judgments instead of hand-crafted rules.
-- [Feedback-to-Rubrics: Can We Learn Expert Criteria from Inline Comments?](https://arxiv.org/abs/2605.29857) *(2026)* — Distills reusable criteria from accumulated inline human comments on drafts.
 
 ### Iterative refinement
 
@@ -356,7 +356,7 @@ Where criteria come from is its own research problem. The four-way split below f
 - [Generating and Refining Dynamic Evaluation Rubrics for LLM-as-a-Judge](https://arxiv.org/abs/2605.30568) *(2026)* — A meta-judge reward signal iteratively fine-tunes a criteria generator without annotation.
 - [Confusion-Aware Rubric Optimization for LLM-based Automated Grading](https://arxiv.org/abs/2603.00451) *(2026)* — Diagnoses grading errors via confusion-matrix analysis, then synthesizes targeted fixes.
 - [OptimSyn: Influence-Guided Rubrics Optimization for Synthetic Data Generation](https://arxiv.org/abs/2604.00536) *(2026)* — Uses gradient-based influence estimates to optimize synthetic-data criteria.
-- [RubricRAG: Towards Interpretable and Reliable LLM Evaluation via Domain Knowledge Retrieval for Rubric Generation](https://arxiv.org/abs/2603.20882) *(2026)* — Retrieves domain knowledge to ground criteria generation.
+- [Feedback-to-Rubrics: Can We Learn Expert Criteria from Inline Comments?](https://arxiv.org/abs/2605.29857) *(2026)* — Iteratively refines criteria by observing comment-wise mismatches against accumulated human feedback.
 - [AdaRubric: Task-Adaptive Rubrics for Reliable LLM Agent Evaluation and Reward Learning](https://arxiv.org/abs/2603.21362) *(2026)* — Generates task-adaptive criteria on the fly without manual design.
 - [iRULER: Intelligible Rubric-Based User-Defined LLM Evaluation for Revision](https://arxiv.org/abs/2602.12779) *(2026)* — Scaffolds writing review by user-defined criteria, refining them through a rubric-of-rubrics loop.
 
@@ -451,7 +451,6 @@ Structurally rubrics under different names.
 - [Preference-Aware Rubric Learning for Personalized Evaluation](https://arxiv.org/abs/2605.31545) *(2026)* — Learns individualized criteria adapting reward to a specific user's preferences.
 - [Personalized RewardBench: Evaluating Reward Models with Human Aligned Personalization](https://arxiv.org/abs/2604.07343) *(2026)* — Evaluates reward models against individually tailored criteria, not one universal rubric.
 - [EVALUESTEER: Measuring Reward Model Steerability Towards Values and Preferences](https://arxiv.org/abs/2510.06370) *(2025)* — Benchmarks whether reward models track a stated user value and style profile.
-- [LoRe: Personalizing LLMs via Low-Rank Reward Modeling](https://arxiv.org/abs/2504.14439) *(2025)* — Decomposes per-user reward into a shared low-rank basis for efficient personalization.
 
 ### Multi-attribute and multi-objective reward models
 
@@ -513,7 +512,7 @@ Reward-model versus verifier is not a boundary this list observes. What matters 
 - [Co-Evolving LLM Coder and Unit Tester via Reinforcement Learning](https://arxiv.org/abs/2506.03136) *(2025)* — Co-trains a generator and a unit-test writer against each other without ground-truth tests.
 - [Large Language Models are Better Reasoners with Self-Verification](https://arxiv.org/abs/2212.09561) *(2022)* — Backward-verifies candidate answers against their own premises to rerank solutions.
 - [On the Self-Verification Limitations of Large Language Models on Reasoning and Planning Tasks](https://arxiv.org/abs/2402.08115) *(2024)* — Finds self-critique alone degrades accuracy while sound external verification helps.
-- [The Invisible Leash: Why RLVR May or May Not Escape Its Origin](https://arxiv.org/abs/2507.14843) *(2025)* — Argues verifiable-reward RL stays anchored near the base prior, motivating richer criteria.
+- [The Invisible Leash: Why RLVR May or May Not Escape Its Origin](https://arxiv.org/abs/2507.14843) *(2025)* — Shows verifiable-reward RL mainly sharpens solutions the base model already reaches, narrowing exploration.
 
 ## Process Reward Models and Step-Level Criteria
 
@@ -573,7 +572,7 @@ The substrate rubric rewards are built on. Kept deliberately compact relative to
 - [CriticEval: Evaluating Large Language Model as Critic](https://arxiv.org/abs/2402.13764) *(2024)* — Benchmarks scalar and textual critique ability for scalable-oversight research.
 - [LLM Critics Help Catch LLM Bugs](https://arxiv.org/abs/2407.00215) *(2024)* — An RLHF-trained critic catches naturally occurring code bugs that human reviewers missed.
 - [TIGERScore: Towards Building Explainable Metric for All Text Generation Tasks](https://arxiv.org/abs/2310.00752) *(2023)* — Instruction-tuned metric produces error-localized natural-language critique scores.
-- [INSTRUCTSCORE: Explainable Text Generation Evaluation with Finegrained Feedback](https://arxiv.org/abs/2305.14282) *(2023)* — Fine-tunes a diagnostic metric combining frontier critiques with human feedback.
+- [INSTRUCTSCORE: Explainable Text Generation Evaluation with Finegrained Feedback](https://arxiv.org/abs/2305.14282) *(2023)* — Fine-tunes a diagnostic metric from model critiques guided by a human-authored error taxonomy.
 - [xFinder: Large Language Models as Automated Evaluators for Reliable Evaluation](https://arxiv.org/abs/2405.11874) *(2024)* — Replaces brittle regex answer extraction with a dedicated small extractor model.
 - [OS-Themis: A Scalable Critic Framework for Generalist GUI Rewards](https://arxiv.org/abs/2603.19191) *(2026)* — Adapts the critic-as-judge pattern to reward interface-agent trajectories at scale.
 
@@ -616,7 +615,7 @@ The substrate rubric rewards are built on. Kept deliberately compact relative to
 - [Reliability without Validity: A Systematic, Large-Scale Evaluation of LLM-as-a-Judge Models](https://arxiv.org/abs/2606.19544) *(2026)* — Shows agreement and consistency do not guarantee the judge measures the intended construct.
 - [Through the Judge's Eyes: Inferred Thinking Traces Improve Reliability of LLM Raters](https://arxiv.org/abs/2510.25860) *(2025)* — Infers human annotators' latent reasoning from label-only ratings to guide model raters.
 - [Who's Your Judge? On the Detectability of LLM-Generated Judgments](https://arxiv.org/abs/2509.25154) *(2025)* — Tests whether model-authored judgments are statistically distinguishable from human ones.
-- [LLMs Cannot Reliably Judge (Yet?): A Comprehensive Assessment on the Robustness of LLM-as-a-Judge](https://arxiv.org/abs/2506.09443) *(2025)* — Shows adversarial prompts manipulate outcomes despite high nominal accuracy.
+- [LLMs Cannot Reliably Judge (Yet?): A Comprehensive Assessment on the Robustness of LLM-as-a-Judge](https://arxiv.org/abs/2506.09443) *(2025)* — Shows adversarial prompts reliably manipulate judge outcomes across many attack and defense pairings.
 - [How to Evaluate Reward Models for RLHF](https://arxiv.org/abs/2410.14872) *(2024)* — Proposes benchmarks testing whether a reward model actually improves downstream policies.
 - [Aligning with Human Judgement: The Role of Pairwise Preference in Large Language Model Evaluators](https://arxiv.org/abs/2403.16950) *(2024)* — Recasts evaluation as preference-based ranking rather than calibrating a judge's absolute scores.
 - [How to Correctly Report LLM-as-a-Judge Evaluations](https://arxiv.org/abs/2511.21140) *(2025)* — A plug-in correction for judge sensitivity and specificity, yielding principled confidence intervals.
@@ -632,8 +631,8 @@ The substrate rubric rewards are built on. Kept deliberately compact relative to
 - [Is LLM-as-a-Judge Robust? Investigating Universal Adversarial Attacks on Zero-shot LLM Assessment](https://arxiv.org/abs/2402.14016) *(2024)* — Short universal adversarial phrases transfer across prompts to inflate scores.
 - [Optimization-based Prompt Injection Attack to LLM-as-a-Judge](https://arxiv.org/abs/2403.17710) *(2024)* — A gradient-optimized injected sequence forces the judge to pick the attacker's response.
 - [Adversarial Attacks on LLM-as-a-Judge Systems: Insights from Prompt Injections](https://arxiv.org/abs/2504.18333) *(2025)* — Measures how content-author versus system-prompt injection attacks transfer across judge models.
-- [Investigating the Vulnerability of LLM-as-a-Judge Architectures to Prompt-Injection Attacks](https://arxiv.org/abs/2505.13348) *(2025)* — Probes single- versus multi-judge architectures for injected-instruction susceptibility.
-- [On the Adversarial Robustness of Multimodal LLM Judges](https://arxiv.org/abs/2606.15608) *(2026)* — First score-inflating attack framework against multimodal judges, testing committee defenses.
+- [Investigating the Vulnerability of LLM-as-a-Judge Architectures to Prompt-Injection Attacks](https://arxiv.org/abs/2505.13348) *(2025)* — Formalizes comparative-undermining and justification-manipulation injection attacks against judge decisions.
+- [On the Adversarial Robustness of Multimodal LLM Judges](https://arxiv.org/abs/2606.15608) *(2026)* — First framework evaluating multimodal judge robustness, introducing a transferable score-inflating attack.
 - [Cheating Automatic LLM Benchmarks: Null Models Achieve High Win Rates](https://arxiv.org/abs/2410.07137) *(2024)* — Constant content-free responses exploit length and style bias to top major benchmarks.
 - [A Coin Flip for Safety: LLM Judges Fail to Reliably Measure Adversarial Robustness](https://arxiv.org/abs/2603.06594) *(2026)* — Audits harmfulness judges against human labels, finding accuracy near chance under red-teaming shift.
 
@@ -650,7 +649,7 @@ The substrate rubric rewards are built on. Kept deliberately compact relative to
 - [Reinforcement Learning-based Knowledge Distillation with LLM-as-a-Judge](https://arxiv.org/abs/2604.02621) *(2026)* — Distills a judge's single-token reward signal into student models over unlabeled data.
 - [Reasoning Is Not Free: Robust Adaptive Cost-Efficient Routing for LLM-as-a-Judge](https://arxiv.org/abs/2605.10805) *(2026)* — Routes each case between reasoning and non-reasoning judges to balance cost.
 - [RTLC: Research, Teach-to-Learn, Critique](https://arxiv.org/abs/2605.13695) *(2026)* — Three-stage prompting lifts judge accuracy with no fine-tuning.
-- [You Only Judge Once: Multi-response Reward Modeling in a Single Forward Pass](https://arxiv.org/abs/2604.10966) *(2026)* — Scores many candidate responses in one forward pass rather than one at a time.
+- [You Only Judge Once: Multi-response Reward Modeling in a Single Forward Pass](https://arxiv.org/abs/2604.10966) *(2026)* — Scores multiple image and video candidates in a single vision-language forward pass.
 
 ## Reward Hacking and Robustness
 
@@ -750,7 +749,7 @@ Three parallel lineages independently invented "decompose the prompt into checka
 - [BaseReward: A Strong Baseline for Multimodal Reward Model](https://arxiv.org/abs/2509.16127) *(2025)* — Distills which design choices actually matter for multimodal reward modeling.
 - [Advancing Multimodal Judge Models through a Capability-Oriented Benchmark and MCTS-Driven Data Generation](https://arxiv.org/abs/2603.00546) *(2026)* — Organizes judge evaluation by capability and synthesizes harder training data by search.
 - [Omni-RRM: Advancing Omni Reward Modeling via Automatic Rubric-Grounded Preference Synthesis](https://arxiv.org/abs/2602.00846) *(2026)* — Synthesizes criteria-grounded preference justifications spanning text, image, video, and audio.
-- [VLFeedback: A Large-Scale AI Feedback Dataset for Large Vision-Language Models Alignment](https://arxiv.org/abs/2410.09421) *(2024)* — Multi-aspect feedback annotating helpfulness, faithfulness, and ethics separately, used to train Silkie.
+- [VLFeedback: A Large-Scale AI Feedback Dataset for Large Vision-Language Models Alignment](https://arxiv.org/abs/2410.09421) *(2024)* — Multi-aspect feedback annotating helpfulness, visual faithfulness, and safety separately, used to train Silkie.
 - [Mitigating Perceptual Judgment Bias in Multimodal LLM-as-a-Judge via Perceptual Perturbation and Reward Modeling](https://arxiv.org/abs/2606.02578) *(2026)* — Uses visual perturbations to correct judges rewarding plausible text over visual truth.
 
 ### Multimodal reasoning rubrics
@@ -810,7 +809,7 @@ The densest 2026 area. Verification mechanisms here — environment-state probin
 - [AgentV-RL: Scaling Reward Modeling with Agentic Verifier](https://arxiv.org/abs/2604.16004) *(2026)* — Turns reward modeling into tool-augmented deliberation with forward and backward verifiers.
 - [Interactive Reward Agent: GUI Task Evaluation via Environment-State Verification](https://arxiv.org/abs/2607.25904) *(2026)* — Proposes completion conditions then verifies them by invoking system and app tools.
 - [OSReward: Instituting Standardized Evaluation for Cross-Platform Computer-Use Reward Models](https://arxiv.org/abs/2607.28609) *(2026)* — Standardized cross-platform protocol replacing hand-written per-task verifiers.
-- [MagicGUI-RMS: A Multi-Agent Reward Model System for Self-Evolving GUI Agents via Automated Feedback Reflux](https://arxiv.org/abs/2601.13060) *(2026)* — Reflows automated feedback so interface agents self-improve without new labels.
+- [MagicGUI-RMS: A Multi-Agent Reward Model System for Self-Evolving GUI Agents via Automated Feedback Reflux](https://arxiv.org/abs/2601.13060) *(2026)* — Reflows automated feedback so interface agents self-improve while cutting annotation cost.
 - [IntentScore: Intent-Conditioned Action Evaluation for Computer-Use Agents](https://arxiv.org/abs/2604.05157) *(2026)* — Plan-aware reward model scoring candidate interface actions from offline data.
 
 ### Embodied and robotic verification
@@ -959,6 +958,7 @@ Rubrics shaping human labels rather than model rewards. A small literature, but 
 
 - [When LLM Essays Outscore Student Essays: What a Korean Writing Rubric Rewards and Where Readers Disagree](https://arxiv.org/abs/2601.19913) *(2026)* — A sixteen-criterion rubric shows where human readers diverge while applying shared criteria.
 - [Diverging Preferences: When do Annotators Disagree and do Models Know?](https://arxiv.org/abs/2410.14632) *(2024)* — A taxonomy of disagreement sources shows most divergence traces to task underspecification or style.
+- [AutoSCORE: Enhancing Automated Scoring with Multi-Agent Large Language Models via Structured Component Recognition](https://arxiv.org/abs/2509.21910) *(2025)* — Structured component recognition makes automated criteria scoring decomposable.
 - [Rubric-Guided Fine-tuning of SpeechLLMs for Multi-Aspect, Multi-Rater L2 Reading-Speech Assessment](https://arxiv.org/abs/2603.16889) *(2026)* — Models multiple raters explicitly rather than collapsing them to one consensus label.
 
 ## Domain-Specific Rubric RL
@@ -998,7 +998,7 @@ Of the open frontier recipes checked against their primary sources, only Kimi K2
 - [A Survey of Process Reward Models: From Outcome Signals to Process Supervisions for Large Language Models](https://arxiv.org/abs/2510.08049) *(2025)* — Surveys process-reward data construction, architectures, and use in search and RL.
 - [Reward Models in Deep Reinforcement Learning: A Survey](https://arxiv.org/abs/2506.15421) *(2025)* — Systematic review of reward model foundations and methodologies across RL settings.
 - [Reward Modeling for Reinforcement Learning-Based LLM Reasoning: Design, Challenges, and Evaluation](https://arxiv.org/abs/2602.09305) *(2026)* — Surveys design choices and open challenges for reasoning-focused reward models.
-- [GUI Agents with Reinforcement Learning: Toward Digital Inhabitants](https://arxiv.org/abs/2604.27955) *(2026)* — Organizes interface-agent RL around process rewards and continual reward updates.
+- [GUI Agents with Reinforcement Learning: Toward Digital Inhabitants](https://arxiv.org/abs/2604.27955) *(2026)* — Surveys interface-agent RL via an offline, online, and hybrid taxonomy of training strategies.
 
 ## Tooling, Frameworks, and Leaderboards
 
