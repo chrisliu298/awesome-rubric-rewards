@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite it as below."
+title: "Awesome Rubric Rewards"
+type: software
+authors:
+  - family-names: "Liu"
+    given-names: "Chris Yuhao"
+repository-code: "https://github.com/chrisliu298/awesome-rubric-rewards"
+url: "https://github.com/chrisliu298/awesome-rubric-rewards"
+abstract: "A curated collection of papers, datasets, benchmarks, and code for rubric rewards: rubrics, checklists, criteria sets, principles, constitutions, and scoring guides used to score, rank, verify, filter, or train modern generative models."
+license: "CC0-1.0"
+version: "v1.0.0"
+date-released: "2026-08-07"
