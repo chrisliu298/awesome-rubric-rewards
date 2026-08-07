@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <!-- entry-count-start --><a href="#contents"><img src="https://img.shields.io/badge/Entries-652-000000?style=for-the-badge&labelColor=000000" alt="Entries"></a><!-- entry-count-end -->
+  <!-- entry-count-start --><a href="#contents"><img src="https://img.shields.io/badge/Entries-667-000000?style=for-the-badge&labelColor=000000" alt="Entries"></a><!-- entry-count-end -->
   <a href="https://github.com/chrisliu298/awesome-rubric-rewards/stargazers"><img src="https://img.shields.io/github/stars/chrisliu298/awesome-rubric-rewards?style=for-the-badge&logo=github&logoColor=white&label=Stars&labelColor=000000&color=000000" alt="GitHub Stars"></a>
   <a href="https://github.com/chrisliu298/awesome-rubric-rewards/network/members"><img src="https://img.shields.io/github/forks/chrisliu298/awesome-rubric-rewards?style=for-the-badge&logo=github&logoColor=white&label=Forks&labelColor=000000&color=000000" alt="GitHub Forks"></a>
   <a href="https://github.com/chrisliu298/awesome-rubric-rewards/commits"><img src="https://img.shields.io/github/last-commit/chrisliu298/awesome-rubric-rewards?style=for-the-badge&logo=github&logoColor=white&label=Last%20Commit&labelColor=000000&color=000000" alt="Last Commit"></a>
@@ -294,6 +294,7 @@ The heart of the list: work where a rubric produces the training signal.
 - [Mitigating False Credit Propagation: Probabilistic Graphical Reward Aggregation for Rubric-Based Reinforcement Learning](https://arxiv.org/abs/2606.03361) *(2026)* — A graphical model over criterion prerequisites withholds credit when a licensing condition went unmet.
 - [Tournament-GRPO: Group-Wise Tournament Rewards for Reinforcement Learning in Open-Ended Long-Form Generation](https://arxiv.org/abs/2605.26958) *(2026)* — Criteria-guided tournaments among same-query rollouts produce normalized group rewards.
 - [LLM-as-a-Coach: Experiential Learning for Non-Verifiable Tasks](https://arxiv.org/abs/2607.18110) *(2026)* — Distills judge critiques into reusable experiential knowledge instead of scalarizing criteria into one reward.
+- [ArenaRL: Scaling RL for Open-Ended Agents via Tournament-based Relative Ranking](https://arxiv.org/abs/2601.06487) *(2026)* — Multi-level criteria drive pairwise tournament ranking in place of pointwise scalar scoring.
 - [Experience is the Best Teacher: Motivating Effective Exploration in Reinforcement Learning for LLMs](https://arxiv.org/abs/2603.20046) *(2026)* — Treats rollouts that miss criteria as hindsight guidance, bonusing high-improvement responses.
 - [RuCL: Stratified Rubric-Based Curriculum Learning for Multimodal Large Language Model Reasoning](https://arxiv.org/abs/2602.21628) *(2026)* — Stratifies criteria by model competence to weight curriculum rewards across stages.
 - [SCRIBE: Structured Mid-Level Supervision for Tool-Using Language Models](https://arxiv.org/abs/2601.03555) *(2026)* — Routes subgoals to skill-prototype verifiers instead of one monolithic judge, cutting variance.
@@ -363,6 +364,7 @@ Where criteria come from is its own research problem. The four-way split below f
 - [Feedback-to-Rubrics: Can We Learn Expert Criteria from Inline Comments?](https://arxiv.org/abs/2605.29857) *(2026)* — Iteratively refines criteria by observing comment-wise mismatches against accumulated human feedback.
 - [AdaRubric: Task-Adaptive Rubrics for Reliable LLM Agent Evaluation and Reward Learning](https://arxiv.org/abs/2603.21362) *(2026)* — Generates task-adaptive criteria on the fly without manual design.
 - [iRULER: Intelligible Rubric-Based User-Defined LLM Evaluation for Revision](https://arxiv.org/abs/2602.12779) *(2026)* — Scaffolds writing review by user-defined criteria, refining them through a rubric-of-rubrics loop.
+- [ARISE: Agentic Rubric-Guided Iterative Survey Engine for Automated Scholarly Paper Generation](https://arxiv.org/abs/2511.17689) *(2025)* — Reviewer agents grade drafted surveys against a behaviorally anchored rubric inside a refinement loop.
 
 ### Online and co-evolving generation
 
@@ -386,6 +388,7 @@ Structurally rubrics under different names.
 - [TICKing All the Boxes: Generated Checklists Improve LLM Evaluation and Generation](https://arxiv.org/abs/2410.03608) *(2024)* — Auto-generated per-instruction checklists raise agreement over holistic scoring.
 - [AutoChecklist: Composable Pipelines for Checklist Generation and Scoring with LLM-as-a-Judge](https://arxiv.org/abs/2603.07019) *(2026)* — Modular generator-refiner-scorer pipeline with several criteria-derivation strategies.
 - [RocketEval: Efficient Automated LLM Evaluation via Grading Checklist](https://arxiv.org/abs/2503.05142) *(2025)* — Reframes evaluation as instance-specific checklist grading by lightweight judges, reweighted against human labels.
+- [RubRIX: Rubric-Driven Risk Mitigation in Caregiver-AI Interactions](https://arxiv.org/abs/2601.13235) *(2026)* — Scores caregiving responses across five clinician-validated ethical-care risk dimensions, guiding iterative refinement.
 - [Checklist Engineering Empowers Multilingual LLM Judges](https://arxiv.org/abs/2507.06774) *(2025)* — Training-free checklist prompting brings small multilingual judges to frontier-judge agreement.
 - [CheckEval: A reliable LLM-as-a-Judge framework for evaluating text generation using checklists](https://arxiv.org/abs/2403.18771) *(2024)* — Replaces subjective Likert scoring with decomposed binary checklist questions to cut rating variance.
 - [CM2: Reinforcement Learning with Checklist Rewards for Multi-Turn and Multi-Step Agentic Tool Use](https://arxiv.org/abs/2602.12268) *(2026)* — Decomposes each turn into binary checklist criteria with grounded evidence.
@@ -505,6 +508,7 @@ Reward-model versus verifier is not a boundary this list observes. What matters 
 - [An Efficient Rubric-based Generative Verifier for Search-Augmented LLMs](https://arxiv.org/abs/2510.14660) *(2025)* — Treats atomic information nuggets as structured criteria, distilling a compact verifier.
 - [The Art of Building Verifiers for Computer Use Agents](https://arxiv.org/abs/2604.06240) *(2026)* — A practical playbook for constructing programmatic verifiers grading interface trajectories.
 - [Time To Impeach LLM-as-a-Judge: Programs are the Future of Evaluation](https://arxiv.org/abs/2506.10403) *(2025)* — Synthesizes executable auditable judging programs in place of opaque model scores.
+- [Agentic Reward Modeling: Integrating Human Preferences with Verifiable Correctness Signals for Reliable Reward Systems](https://arxiv.org/abs/2502.19328) *(2025)* — Routes a preference model alongside verifiable factuality and instruction-following checks through a reward agent.
 - [When Many Answers Are Valid, Voting Fails: Symbolic Verification for Best-of-K Causal Reasoning in LLMs](https://arxiv.org/abs/2608.03506) *(2026)* — A training-free symbolic verifier scores causal traces against named causal axioms.
 - [CHiL(L)Grader: Calibrated Human-in-the-Loop Short-Answer Grading](https://arxiv.org/abs/2603.11957) *(2026)* — Routes low-confidence gradings to humans while adapting the grader to evolving criteria.
 - [EDIT: Evidence-Diagnosed Intervention Training for Rule-Faithful LLM Grading](https://arxiv.org/abs/2606.06350) *(2026)* — Locates grading errors via posterior mark drift, then revises steps against an explicit mark scheme.
@@ -533,6 +537,7 @@ Reward-model versus verifier is not a boundary this list observes. What matters 
 - [CoLD: Counterfactually-Guided Length Debiasing for Process Reward Models in Mathematical Reasoning](https://arxiv.org/abs/2507.15698) *(2025)* — Uses counterfactual step edits to remove a spurious preference for longer steps.
 - [Beyond Outcome Verification: Verifiable Process Reward Models for Structured Reasoning](https://arxiv.org/abs/2601.17223) *(2026)* — Checks intermediate steps with deterministic verifiers for risk-of-bias assessment in evidence synthesis.
 - [Dynamic and Generalizable Process Reward Modeling](https://arxiv.org/abs/2507.17849) *(2025)* — Stores multi-dimensional reward criteria in an explicit tree, selecting per step by Pareto dominance.
+- [PRMBench: A Fine-grained and Challenging Benchmark for Process-Level Reward Models](https://arxiv.org/abs/2501.03124) *(2025)* — Grades process reward models on explicit simplicity, soundness, and sensitivity error dimensions.
 - [RLAnything: Forge Environment, Policy, and Reward Model in Completely Dynamic RL System](https://arxiv.org/abs/2602.02488) *(2026)* — Co-trains a step-wise generative reward model with the policy via consistency feedback.
 - [ExpRL: Exploratory RL for LLM Mid-Training](https://arxiv.org/abs/2606.17024) *(2026)* — A reference-conditioned judge scores rollouts against a problem-specific rubric for dense mid-training reward.
 - [ToolPRMBench: Evaluating and Advancing Process Reward Models for Tool-using Agents](https://arxiv.org/abs/2601.12294) *(2026)* — Step-level benchmark isolating single-step from multi-step tool-agent failures via multi-model-verified action pairs.
@@ -627,6 +632,7 @@ The substrate rubric rewards are built on. Kept deliberately compact relative to
 - [Diagnosing the Reliability of LLM-as-a-Judge via Item Response Theory](https://arxiv.org/abs/2602.00521) *(2026)* — Applies a graded response model to separate intrinsic judge consistency from human alignment.
 - [An Empirical Study of LLM-as-a-Judge: How Design Choices Impact Evaluation Reliability](https://arxiv.org/abs/2506.13639) *(2025)* — Finds stated evaluation criteria drive judge reliability more than decoding or added reasoning.
 - [Time to REFLECT: Can We Trust LLM Judges for Evidence-based Research Agents?](https://arxiv.org/abs/2605.19196) *(2026)* — A failure taxonomy plus controlled interventions expose where judges misread research-agent traces.
+- [Beyond the Illusion of Consensus: From Surface Heuristics to Knowledge-Grounded Evaluation in LLM-as-a-Judge](https://arxiv.org/abs/2603.11027) *(2026)* — Traces illusory judge consensus to shared rubric structure, proposing domain-grounded criteria instead.
 - [An Empirical Study of LLM-as-a-Judge for LLM Evaluation](https://arxiv.org/abs/2403.02839) *(2024)* — Finds fine-tuned judges overfit in-domain, generalizing worse than a prompted frontier judge.
 - [Aligning Large Language Models by On-Policy Self-Judgment](https://arxiv.org/abs/2402.11253) *(2024)* — Judge-augmented fine-tuning lets one model score its own on-policy samples without a separate reward model.
 - [PairJudge RM: Perform Best-of-N Sampling with Knockout Tournament](https://arxiv.org/abs/2501.13007) *(2025)* — A pairwise judge run as a knockout tournament replaces inconsistent pointwise best-of-N scoring.
@@ -715,6 +721,8 @@ Criteria-decomposed rewards outside text. For single-scalar visual preference sc
 - [RationalRewards: Reasoning Rewards Scale Visual Generation Both Training and Test Time](https://arxiv.org/abs/2604.11626) *(2026)* — Emits explicit multi-dimensional critiques before scoring, serving both training reward and test-time refinement.
 - [Unified Personalized Reward Model for Vision Generation](https://arxiv.org/abs/2602.02380) *(2026)* — Instantiates fine-grained criteria per request rather than scoring against one fixed evaluation rubric.
 - [AVE-Compass: Towards Holistic Evaluation for Audio-Video Editing Abilities](https://arxiv.org/abs/2607.24821) *(2026)* — Grades audio-video edits against thousands of checklist items plus a separate realism rubric.
+- [Evaluation-Verification Reward for Consistent Multi-Reference Image Editing](https://arxiv.org/abs/2607.29025) *(2026)* — Splits multi-reference edit evaluation into distinct visual criteria, each checked by a grounding verifier.
+- [ReasonEdit: Towards Interpretable Image Editing Evaluation via Reinforcement Learning](https://arxiv.org/abs/2605.07477) *(2026)* — Trains an image-edit reward model on human judgments of logicality, accuracy, and usefulness.
 - [FilmBench: A Film-Grade Benchmark for Cinematic Video Generation](https://arxiv.org/abs/2607.24241) *(2026)* — Scores generated video against a three-level taxonomy of cinematic craft criteria.
 - [RubiCap: Rubric-Guided Reinforcement Learning for Dense Image Captioning](https://arxiv.org/abs/2603.09160) *(2026)* — Applies criteria-guided reward specifically to dense image captioning.
 - [Visual Preference Optimization with Rubric Rewards](https://arxiv.org/abs/2604.13029) *(2026)* — Builds instance-specific essential-and-additional checklists to filter visual preference pairs.
@@ -842,6 +850,7 @@ The densest 2026 area. Verification mechanisms here — environment-state probin
 - [LongTraceRL: Learning Long-Context Reasoning from Search Agent Trajectories with Rubric Rewards](https://arxiv.org/abs/2605.31584) *(2026)* — Criteria rewards supervise long-context reasoning learned from search trajectories.
 - [Step-DeepResearch Technical Report](https://arxiv.org/abs/2512.20491) *(2025)* — A checklist-style judger hardens an autonomous research agent across a staged training pipeline.
 - [LH-Bench: Skill-Grounded Evaluation of Long-Horizon Agents on Subjective Enterprise Tasks](https://arxiv.org/abs/2603.22744) *(2026)* — Expert-grounded criteria give judges the domain context that model-authored rubrics lack.
+- [PRBench: End-to-end Paper Reproduction in Physics Research](https://arxiv.org/abs/2603.27646) *(2026)* — Grades end-to-end physics paper reproduction against detailed scoring rubrics and verified ground truth.
 - [Mock Worlds, Real Skills: Building Small Agentic Language Models with Synthetic Tasks, Simulated Environments, and Rubric-Based Rewards](https://arxiv.org/abs/2601.22511) *(2026)* — Trains small agentic models entirely in synthetic environments graded by criteria.
 - [CLI-Universe: Towards Verifiable Task Synthesis Engine for Terminal Agents](https://arxiv.org/abs/2606.22883) *(2026)* — Validates synthesized terminal tasks against explicit criteria for correctness and coverage.
 
@@ -887,6 +896,7 @@ Three strata cut across domain: **expert-authored** criteria written once by spe
 | [LiveMedBench](https://arxiv.org/abs/2602.10367) | 2026 | Medical QA | Automated criteria over contamination-free live cases |
 | [MedDialogRubrics](https://arxiv.org/abs/2601.03023) | 2026 | Medical consultation | Clinician-refined criteria over synthetic multi-turn cases |
 | [QuarkMedBench](https://arxiv.org/abs/2603.13691) | 2026 | Medical QA | Per-query criteria from multi-model consensus, hierarchically weighted |
+| [PanCanBench](https://arxiv.org/abs/2603.01343) | 2026 | Oncology QA | Question-specific expert criteria over real patient questions |
 | [Med-RewardBench](https://arxiv.org/abs/2508.21430) | 2025 | Medical multimodal | Six clinically critical dimensions over expert cases |
 | [GAPS](https://arxiv.org/abs/2510.13734) | 2025 | Clinical QA | Agent-synthesized guideline-anchored criteria, ensemble-judged |
 | [PaperBench](https://arxiv.org/abs/2504.01848) | 2025 | Research replication | Hierarchical criteria decomposing paper reproduction |
@@ -901,6 +911,9 @@ Three strata cut across domain: **expert-authored** criteria written once by spe
 | [MiroEval](https://arxiv.org/abs/2603.28407) | 2026 | Multimodal research | Per-query criteria plus atomic-claim factuality |
 | [Expert Consulting Benchmark](https://arxiv.org/abs/2605.17554) | 2026 | Consulting | Deterministic verifiers plus an expert criterion set |
 | [ProfBench](https://arxiv.org/abs/2510.18941) | 2025 | Professional reasoning | Criteria requiring expertise to answer and to grade |
+| [UpBench](https://arxiv.org/abs/2511.12306) | 2025 | Real labor-market tasks | Expert-decomposed acceptance criteria with per-criterion feedback |
+| [FrontierScience](https://arxiv.org/abs/2601.21165) | 2026 | Expert science tasks | Granular criteria grading the process, not just final answers |
+| [GIM](https://arxiv.org/abs/2605.18663) | 2026 | Cross-domain integration | Rubric-decomposed scoring, several independently judged criteria per item |
 | [COMPOSITE-Stem](https://arxiv.org/abs/2604.09836) | 2026 | Doctoral STEM | Criterion-based rubrics with an LLM-jury protocol beside exact match |
 | [PRBench](https://arxiv.org/abs/2511.11562) | 2025 | Legal and finance | Large expert-authored criteria sets |
 | [$OneMillion-Bench](https://arxiv.org/abs/2603.07980) | 2026 | Multi-domain expert | Accuracy, coherence, professional compliance |
@@ -922,6 +935,7 @@ Three strata cut across domain: **expert-authored** criteria written once by spe
 | [InFoBench](https://arxiv.org/abs/2401.03601) | 2024 | Instructions | Per-instruction yes/no decomposition |
 | [FollowBench](https://arxiv.org/abs/2310.20410) | 2023 | Instructions | Multi-level constraint difficulty ladder |
 | [M-IFEval](https://arxiv.org/abs/2502.04688) | 2025 | Multilingual instructions | Verifiable constraints in three languages |
+| [CoDI-Eval](https://arxiv.org/abs/2401.00690) | 2024 | Controllable generation | Explicit constraint attributes graded automatically for compliance |
 | [XIFBench](https://arxiv.org/abs/2503.07539) | 2025 | Multilingual instructions | Categorized content, style, format, and numerical constraints |
 | [SIFo](https://arxiv.org/abs/2406.19999) | 2024 | Sequential instructions | Final-step verification of an instruction chain |
 | [LLMBar](https://arxiv.org/abs/2310.07641) | 2023 | Judge meta-eval | Judge accuracy on instruction-following pairs |
@@ -982,6 +996,7 @@ Rubrics shaping human labels rather than model rewards. A small literature, but 
 - [Baichuan-M2: Scaling Medical Capability with Large Verifier System](https://arxiv.org/abs/2509.02208) *(2025)* — Pairs a patient simulator with a clinical criteria generator producing multi-dimensional metrics for medical RL.
 - [QED-Nano: Teaching a Tiny Model to Prove Hard Theorems](https://arxiv.org/abs/2604.04898) *(2026)* — Trains a small theorem prover with criteria-based rewards plus an iterative summarize-and-refine cache.
 - [ClinAlign: Scaling Healthcare Alignment from Clinician Preference](https://arxiv.org/abs/2602.09653) *(2026)* — Distills physician-refined criteria into reusable clinical principles for offline alignment and self-revision.
+- [Quark Medical Alignment: A Holistic Multi-Dimensional Alignment and Collaborative Optimization Paradigm](https://arxiv.org/abs/2602.11661) *(2026)* — Splits medical alignment into four categories, each driven by observable metrics yielding fine-grained supervision.
 - [Benchmarking and Learning Real-World Customer Service Dialogue](https://arxiv.org/abs/2510.22143) *(2025)* — Distills expert dialogue patterns, then trains with criteria-aware staged exploration for service agents.
 - [Improving Heart-Focused Medical Question Answering in LLMs via Variance-Aware Rubric Rewards with GRPO](https://arxiv.org/abs/2606.05174) *(2026)* — Variance-aware criteria weighting targeting cardiology question answering.
 - [OralGPT-Plus: Learning to Use Visual Tools via Reinforcement Learning for Panoramic X-ray Analysis](https://arxiv.org/abs/2603.06366) *(2026)* — Criteria-scored rewards train agentic reasoning over dental radiographs.
