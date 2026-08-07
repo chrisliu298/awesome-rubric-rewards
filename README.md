@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <!-- entry-count-start --><a href="#contents"><img src="https://img.shields.io/badge/Entries-861-000000?style=for-the-badge&labelColor=000000" alt="Entries"></a><!-- entry-count-end -->
+  <!-- entry-count-start --><a href="#contents"><img src="https://img.shields.io/badge/Entries-862-000000?style=for-the-badge&labelColor=000000" alt="Entries"></a><!-- entry-count-end -->
   <a href="https://github.com/chrisliu298/awesome-rubric-rewards/stargazers"><img src="https://img.shields.io/github/stars/chrisliu298/awesome-rubric-rewards?style=for-the-badge&logo=github&logoColor=white&label=Stars&labelColor=000000&color=000000" alt="GitHub Stars"></a>
   <a href="https://github.com/chrisliu298/awesome-rubric-rewards/network/members"><img src="https://img.shields.io/github/forks/chrisliu298/awesome-rubric-rewards?style=for-the-badge&logo=github&logoColor=white&label=Forks&labelColor=000000&color=000000" alt="GitHub Forks"></a>
   <a href="https://github.com/chrisliu298/awesome-rubric-rewards/commits"><img src="https://img.shields.io/github/last-commit/chrisliu298/awesome-rubric-rewards?style=for-the-badge&logo=github&logoColor=white&label=Last%20Commit&labelColor=000000&color=000000" alt="Last Commit"></a>
@@ -389,6 +389,7 @@ Where criteria come from is its own research problem. The four-way split below f
 - [Automated Refinement of Essay Scoring Rubrics for Language Models via Reflect-and-Revise](https://arxiv.org/abs/2510.09030) *(2025)* — Models iteratively refine their own scoring criteria by reflecting on discrepancies with human scores.
 - [LLM-based Automated Grading with Human-in-the-Loop](https://arxiv.org/abs/2504.05239) *(2025)* — Poses clarifying questions to human experts to dynamically refine grading criteria.
 - [Redefining Quality Criteria and Distance-Aware Score Modeling for Image Editing Assessment](https://arxiv.org/abs/2604.12175) *(2026)* — Optimizes the evaluation-criteria prompts themselves via probabilistic feedback instead of hand-written metric definitions.
+- [Learnable Assessment Skills for LLM-based Automated Scoring: Rubric Construction via Iterative Optimization](https://arxiv.org/abs/2605.29274) *(2026)* — Optimizes a reusable instruction for building rubrics from scoring errors, learning item-agnostic construction rules rather than one rubric per item.
 
 ### Online and co-evolving generation
 
