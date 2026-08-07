@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <!-- entry-count-start --><a href="#contents"><img src="https://img.shields.io/badge/Entries-964-000000?style=for-the-badge&labelColor=000000" alt="Entries"></a><!-- entry-count-end -->
+  <!-- entry-count-start --><a href="#contents"><img src="https://img.shields.io/badge/Entries-864-000000?style=for-the-badge&labelColor=000000" alt="Entries"></a><!-- entry-count-end -->
   <a href="https://github.com/chrisliu298/awesome-rubric-rewards/stargazers"><img src="https://img.shields.io/github/stars/chrisliu298/awesome-rubric-rewards?style=for-the-badge&logo=github&logoColor=white&label=Stars&labelColor=000000&color=000000" alt="GitHub Stars"></a>
   <a href="https://github.com/chrisliu298/awesome-rubric-rewards/network/members"><img src="https://img.shields.io/github/forks/chrisliu298/awesome-rubric-rewards?style=for-the-badge&logo=github&logoColor=white&label=Forks&labelColor=000000&color=000000" alt="GitHub Forks"></a>
   <a href="https://github.com/chrisliu298/awesome-rubric-rewards/commits"><img src="https://img.shields.io/github/last-commit/chrisliu298/awesome-rubric-rewards?style=for-the-badge&logo=github&logoColor=white&label=Last%20Commit&labelColor=000000&color=000000" alt="Last Commit"></a>
@@ -15,7 +15,7 @@ A curated collection of papers, datasets, benchmarks, and code for **rubric rewa
 
 > **Rubric reward** = an explicit, decomposed, human-readable set of criteria applied to a model output to produce a reward, a preference label, or a quality score. Three properties separate it from an ordinary reward model: the criteria are *written down* rather than latent in weights, *decomposed* into many items rather than collapsed to one scalar, and *inspectable* so a person can read, audit, and edit them.
 
-The organizing idea: **rubrics are how reinforcement learning escapes verifiable domains.** RLVR works wherever a checker already exists — a unit test, a math answer key. Rubrics manufacture a checker where none did, which is what makes RL tractable for writing, medicine, law, research, dialogue, and open-ended agentic work. Every entry here is either building that checker, using it as a reward, measuring whether it works, or documenting how it breaks.
+The organizing idea: **rubrics turn open-ended objectives into inspectable reward specifications.** RLVR works wherever a checker already exists — a unit test, a math answer key. Rubrics supply an auditable *proxy* where none did, which is what makes RL tractable for writing, medicine, law, research, dialogue, and open-ended agentic work. The proxy is not a guarantee: its validity depends on whether the criteria capture the intended construct, whether the judge applies them faithfully, and whether the policy exploits what they omit. Every entry here is either building that specification, using it as a reward, measuring whether it holds, or documenting how it breaks.
 
 This list deliberately ignores two distinctions the surrounding literature treats as important. **Reward model versus verifier** is not a boundary here — a learned rubric-conditioned reward model, an LLM judge reading a checklist, and a programmatic grader running assertions are three implementations of one idea. **Text versus everything else** is not a boundary either: criteria-decomposed rewards for image, video, audio, 3D, embodied, and GUI agents are first-class.
 
@@ -58,14 +58,14 @@ The field splits into four partially overlapping camps:
   - [Specs and instruction hierarchies](#specs-and-instruction-hierarchies)
   - [Instruction and constraint verification](#instruction-and-constraint-verification)
   - [Question decomposition and atomic-claim verification](#question-decomposition-and-atomic-claim-verification)
-- [Rubric-Conditioned and Fine-Grained Reward Models](#rubric-conditioned-and-fine-grained-reward-models)
+- [Rubric-Conditioned Reward Models](#rubric-conditioned-reward-models)
   - [Rubric- and criteria-conditioned reward models](#rubric--and-criteria-conditioned-reward-models)
   - [Multi-attribute and multi-objective reward models](#multi-attribute-and-multi-objective-reward-models)
   - [Fine-grained, dense, and span-level rewards](#fine-grained-dense-and-span-level-rewards)
   - [Self-rewarding and self-generated criteria](#self-rewarding-and-self-generated-criteria)
-- [Verifiers and Programmatic Graders](#verifiers-and-programmatic-graders)
+- [Criteria Compilers and Programmatic Rubric Graders](#criteria-compilers-and-programmatic-rubric-graders)
 - [Process Reward Models and Step-Level Criteria](#process-reward-models-and-step-level-criteria)
-- [LLM-as-a-Judge](#llm-as-a-judge)
+- [Rubric-Conditioned Judges and Rubric-Specific Judge Science](#rubric-conditioned-judges-and-rubric-specific-judge-science)
   - [Judge models and generative reward models](#judge-models-and-generative-reward-models)
   - [Critic models and explainable metrics](#critic-models-and-explainable-metrics)
   - [Judge behavior science: bias](#judge-behavior-science-bias)
@@ -121,7 +121,7 @@ The field splits into four partially overlapping camps:
 The fastest reading path through the area:
 
 1. **The founding trio.** [Rubrics as Rewards](https://arxiv.org/abs/2507.17746), [Reinforcement Learning with Rubric Anchors](https://arxiv.org/abs/2508.12790), and [Checklists Are Better Than Reward Models](https://arxiv.org/abs/2507.18624) landed within weeks of each other in mid-2025 and are the near-universal citation anchors. Almost every later paper cites at least one.
-2. **Why rubrics instead of a reward model.** [Chasing the Tail](https://arxiv.org/abs/2509.21500) shows where scalar reward models fail on fine gradations; [The Invisible Leash](https://arxiv.org/abs/2507.14843) argues verifiable-reward RL stays anchored near the base prior.
+2. **Why rubrics instead of a reward model.** [Chasing the Tail](https://arxiv.org/abs/2509.21500) shows where scalar reward models fail on fine gradations that a written criterion can name.
 3. **Where the criteria come from.** [OpenRubrics](https://arxiv.org/abs/2510.07743) mines them contrastively from preference pairs; [Auto-Rubric](https://arxiv.org/abs/2510.17314) distills them from implicit reward-model weights.
 4. **Making the reward hold up.** [Robust Reward Modeling via Causal Rubrics](https://arxiv.org/abs/2506.16507) anchors criteria causally so the reward tracks the intended construct rather than spurious cues.
 5. **How it breaks.** [Reward Hacking in Rubric-Based Reinforcement Learning](https://arxiv.org/abs/2605.12474) separates verifier failure from rubric-design failure; [Rubrics as an Attack Surface](https://arxiv.org/abs/2602.13576) shows judges can be drifted deliberately.
@@ -464,7 +464,9 @@ Structurally rubrics under different names.
 - [Self-Alignment for Factuality: Mitigating Hallucinations in LLMs via Self-Evaluation](https://arxiv.org/abs/2402.09267) *(2024)* — Uses self-evaluated confidence on generated claims as a factuality training signal.
 - [Agent-as-Judge for Factual Summarization of Long Narratives](https://arxiv.org/abs/2501.09993) *(2025)* — Extracts a character knowledge graph to check summary facts individually, flagging missing or erroneous ones.
 
-## Rubric-Conditioned and Fine-Grained Reward Models
+## Rubric-Conditioned Reward Models
+
+Scorers that consume or emit criteria. A reward model with several heads, or one that lands credit at token level, is not in scope here just for being fine-grained — granularity in *where* reward lands is not explicitness about *what standard* is applied. For general and dense reward models see [Adjacent collections](#adjacent-collections).
 
 ### Rubric- and criteria-conditioned reward models
 
@@ -527,17 +529,10 @@ Structurally rubrics under different names.
 - [CREAM: Consistency Regularized Self-Rewarding Language Models](https://arxiv.org/abs/2410.12735) *(2024)* — Regularizes self-rewarding with a consistency term to curb accumulated reward-estimate bias.
 - [Toward Evaluative Thinking: Meta Policy Optimization with Evolving Reward Models](https://arxiv.org/abs/2504.20157) *(2025)* — Co-evolves a generative reward model alongside the policy via meta-level optimization.
 
-## Verifiers and Programmatic Graders
+## Criteria Compilers and Programmatic Rubric Graders
 
-Reward-model versus verifier is not a boundary this list observes. What matters is whether the target is expressed as inspectable criteria.
+Reward-model versus verifier is not a boundary this list observes. What matters is whether the target is expressed as inspectable criteria — a program running several named predicates, acceptance conditions, or partial-credit rules. A monolithic correctness check (answer equals reference, proof checks, tests pass) is verification but not a rubric, and lives in the RLVR lists under [Adjacent collections](#adjacent-collections).
 
-- [Generative Verifiers: Reward Modeling as Next-Token Prediction](https://arxiv.org/abs/2408.15240) *(2024)* — Trains verification as chain-of-thought generation, enabling majority-vote scaling.
-- [Reinforcement Learning with Verifiable Rewards Implicitly Incentivizes Correct Reasoning in Base LLMs](https://arxiv.org/abs/2506.14245) *(2025)* — Binary correctness-verified group-relative RL extends reasoning boundaries.
-- [Crossing the Reward Bridge: Expanding RL with Verifiable Rewards Across Diverse Domains](https://arxiv.org/abs/2503.23829) *(2025)* — Replaces binary rule checking with a soft generative reward for domains lacking reference answers.
-- [Position: The Hidden Costs and Measurement Gaps of Reinforcement Learning with Verifiable Rewards](https://arxiv.org/abs/2509.21882) *(2025)* — Argues headline gains conflate policy improvement with budget and contamination confounds.
-- [Reinforcement Learning with Verifiable yet Noisy Rewards under Imperfect Verifiers](https://arxiv.org/abs/2510.00915) *(2025)* — Models verifier false-positive and false-negative rates as noise, deriving unbiased gradient corrections.
-- [An Imperfect Verifier is Good Enough: Learning with Noisy Rewards](https://arxiv.org/abs/2604.07666) *(2026)* — Shows RL tolerates a noisy verifier without a large drop in final policy quality.
-- [From Accuracy to Robustness: A Study of Rule- and Model-based Verifiers in Mathematical Reasoning](https://arxiv.org/abs/2505.22203) *(2025)* — Documents systematic failure modes of both rule-based and model-based verifiers.
 - [Reinforcement Learning with Robust Rubric Rewards](https://arxiv.org/abs/2605.30244) *(2026)* — Routes each criterion to a deterministic verifier or judge, limiting evidence exposure.
 - [An Efficient Rubric-based Generative Verifier for Search-Augmented LLMs](https://arxiv.org/abs/2510.14660) *(2025)* — Treats atomic information nuggets as structured criteria, distilling a compact verifier.
 - [The Art of Building Verifiers for Computer Use Agents](https://arxiv.org/abs/2604.06240) *(2026)* — A practical playbook for constructing programmatic verifiers grading interface trajectories.
@@ -548,14 +543,10 @@ Reward-model versus verifier is not a boundary this list observes. What matters 
 - [PlanningBench: Generating Scalable and Verifiable Planning Data for Evaluating and Training Large Language Models](https://arxiv.org/abs/2605.20873) *(2026)* — Taxonomy-driven synthesis instantiating planning problems with instance-level automatic verification checklists.
 - [Cited but Not Verified: Parsing and Evaluating Source Attribution in LLM Deep Research Agents](https://arxiv.org/abs/2605.06635) *(2026)* — Parses citations and scores sources on link validity, relevance, and factuality separately.
 - [LLM-as-a-Judge for Scalable Test Coverage Evaluation: Accuracy, Operational Reliability, and Cost](https://arxiv.org/abs/2512.01232) *(2025)* — A production criteria-driven judge grading acceptance tests, benchmarked on accuracy, reliability, and cost.
-- [Re:Form -- Reducing Human Annotations in Scalable Formal Software Verification with RL in LLMs](https://arxiv.org/abs/2507.16331) *(2025)* — Grounds reasoning in a formal verification language so RL signals come from provable proof checks.
-- [Proof-RM: A Scalable and Generalizable Reward Model for Math Proof](https://arxiv.org/abs/2602.02377) *(2026)* — Trains a proof-checking reward model on synthetic question-proof-check triplets spanning varied error types.
-- [CVeDRL: An Efficient Code Verifier via Difficulty-aware Reinforcement Learning](https://arxiv.org/abs/2601.22803) *(2026)* — Jointly models branch coverage, sample difficulty, and functional correctness as verification rewards.
 - [EDIT: Evidence-Diagnosed Intervention Training for Rule-Faithful LLM Grading](https://arxiv.org/abs/2606.06350) *(2026)* — Locates grading errors via posterior mark drift, then revises steps against an explicit mark scheme.
 - [OpenComputer: Verifiable Software Worlds for Computer-Use Agents](https://arxiv.org/abs/2605.19769) *(2026)* — Builds executable state checkers as first-class verifiers, outperforming a judge model.
 - [CUA-Gym: Scaling Verifiable Training Environments and Tasks for Computer-Use Agents](https://arxiv.org/abs/2605.25624) *(2026)* — Adversarially coupled agents co-synthesize task, environment, and reward together.
 - [TRON: Targeted Rule-Verifiable Online Environments for Visual Reasoning RL](https://arxiv.org/abs/2606.01599) *(2026)* — Generator-verifier programs produce difficulty-controlled visual tasks with exact rewards.
-- [Wan-R1: Verifiable-Reinforcement Learning for Video Reasoning](https://arxiv.org/abs/2603.27866) *(2026)* — Designs task-verifiable reward functions after showing MLLM judges fail catastrophically on reasoning videos.
 - [Quantitative Video World Model Evaluation for Geometric-Consistency](https://arxiv.org/abs/2605.15185) *(2026)* — PDI-Bench lifts tracked objects to world space and computes three named geometric residuals.
 - [Taming Camera-Controlled Video Generation with Verifiable Geometry Reward](https://arxiv.org/abs/2512.02870) *(2025)* — Scores segment-wise camera-pose alignment between estimated generated and reference 3D trajectories.
 - [SPATIALALIGN: Aligning Dynamic Spatial Relationships in Video Generation](https://arxiv.org/abs/2602.22745) *(2026)* — Geometric verifier checks whether prompted dynamic spatial relationships actually hold in generated video.
@@ -566,29 +557,14 @@ Reward-model versus verifier is not a boundary this list observes. What matters 
 - [Diagnosing Under-Development of Irreversible Processes in Video Generation](https://arxiv.org/abs/2608.00617) *(2026)* — Null-tests irreversibility metrics, surfacing a computable directional-progress plus stasis-rate protocol.
 - [Inference-Time Scaling for Joint Audio-Video Generation](https://arxiv.org/abs/2606.03183) *(2026)* — Fuses four named verifiers under adaptive reward weighting for best-of-N audio-video selection.
 - [RAPO++: Cross-Stage Prompt Optimization for Text-to-Video Generation via Data Alignment and Test-Time Scaling](https://arxiv.org/abs/2510.20206) *(2025)* — Closed-loop prompt optimizer refining against semantic, spatial, temporal, and optical-flow feedback signals.
-- [Golden Goose: A Simple Trick to Synthesize Unlimited RLVR Tasks from Unverifiable Internet Text](https://arxiv.org/abs/2601.22975) *(2026)* — Converts unverifiable web text into verifiable tasks via automatic answer construction.
-- [Self-Distilled RLVR](https://arxiv.org/abs/2604.03128) *(2026)* — Turns a teacher's answer-aware rescoring into per-token advantage weights, dropping the KL term.
-- [Reinforcing General Reasoning without Verifiers](https://arxiv.org/abs/2505.21493) *(2025)* — Skips rule-based checking by maximizing the policy's probability of the reference answer.
-- [Co-Evolving LLM Coder and Unit Tester via Reinforcement Learning](https://arxiv.org/abs/2506.03136) *(2025)* — Co-trains a generator and a unit-test writer against each other without ground-truth tests.
-- [Large Language Models are Better Reasoners with Self-Verification](https://arxiv.org/abs/2212.09561) *(2022)* — Backward-verifies candidate answers against their own premises to rerank solutions.
-- [On the Self-Verification Limitations of Large Language Models on Reasoning and Planning Tasks](https://arxiv.org/abs/2402.08115) *(2024)* — Finds self-critique alone degrades accuracy while sound external verification helps.
-- [The Invisible Leash: Why RLVR May or May Not Escape Its Origin](https://arxiv.org/abs/2507.14843) *(2025)* — Shows verifiable-reward RL mainly sharpens solutions the base model already reaches, narrowing exploration.
 - [Codifying the Judge: Scalable Evaluation via Program Distillation](https://arxiv.org/abs/2607.22561) *(2026)* — Distills judge decision logic into a committee of inspectable, editable scoring programs with fallback.
 - [VerifiAgent: a Unified Verification Agent in Language Model Reasoning](https://arxiv.org/abs/2504.00406) *(2025)* — Pairs completeness and consistency meta-checks with reasoning-type-selected verification tools instead of one fixed verifier.
 - [LLM-as-a-Verifier: A General-Purpose Verification Framework](https://arxiv.org/abs/2607.05391) *(2026)* — Scales training-free verification along criteria decomposition, repeated evaluation, and score granularity.
 
 ## Process Reward Models and Step-Level Criteria
 
-- [Let's Verify Step by Step](https://arxiv.org/abs/2305.20050) *(2023)* — Step-level process supervision beats outcome supervision, with a large human step-label set.
-- [Math-Shepherd: Verify and Reinforce LLMs Step-by-step without Human Annotations](https://arxiv.org/abs/2312.08935) *(2023)* — Automates step-quality labels via tree-search rollouts instead of manual annotation.
-- [Let's reward step by step: Step-Level reward model as the Navigators for Reasoning](https://arxiv.org/abs/2310.10080) *(2023)* — Uses per-step scores to guide a heuristic greedy search rather than only rerank solutions.
-- [What Are Step-Level Reward Models Rewarding? Counterintuitive Findings from MCTS-Boosted Mathematical Reasoning](https://arxiv.org/abs/2412.15904) *(2024)* — Finds removing a step's prose barely changes scores, revealing symbolic rather than linguistic tracking.
-- [The Lessons of Developing Process Reward Models in Mathematical Reasoning](https://arxiv.org/abs/2501.07301) *(2025)* — Identifies label-noise and evaluation pitfalls, releasing a consensus-filtering recipe.
-- [Process Reward Models That Think](https://arxiv.org/abs/2504.16828) *(2025)* — A generative process model reasons before emitting each step-level judgment.
-- [GenPRM: Scaling Test-Time Compute of Process Reward Models via Generative Reasoning](https://arxiv.org/abs/2504.00891) *(2025)* — Scales verifier test-time compute by generating reasoning chains before each score.
-- [Efficient Process Reward Model Training via Active Learning](https://arxiv.org/abs/2504.10559) *(2025)* — Cuts step-level annotation cost by actively selecting which steps to label.
-- [The Bidirectional Process Reward Model](https://arxiv.org/abs/2508.01682) *(2025)* — Scores each step using both forward history and backward look-ahead context.
-- [CoLD: Counterfactually-Guided Length Debiasing for Process Reward Models in Mathematical Reasoning](https://arxiv.org/abs/2507.15698) *(2025)* — Uses counterfactual step edits to remove a spurious preference for longer steps.
+Step-level scoring alone does not qualify — a binary "this step is correct" label is not a criteria set. Entries here carry an explicit criteria tree, error taxonomy, checklist, or independently weighted process components. General PRM literature is in [Adjacent collections](#adjacent-collections).
+
 - [Beyond Outcome Verification: Verifiable Process Reward Models for Structured Reasoning](https://arxiv.org/abs/2601.17223) *(2026)* — Checks intermediate steps with deterministic verifiers for risk-of-bias assessment in evidence synthesis.
 - [Dynamic and Generalizable Process Reward Modeling](https://arxiv.org/abs/2507.17849) *(2025)* — Stores multi-dimensional reward criteria in an explicit tree, selecting per step by Pareto dominance.
 - [PRMBench: A Fine-grained and Challenging Benchmark for Process-Level Reward Models](https://arxiv.org/abs/2501.03124) *(2025)* — Grades process reward models on explicit simplicity, soundness, and sensitivity error dimensions.
@@ -598,12 +574,9 @@ Reward-model versus verifier is not a boundary this list observes. What matters 
 - [RLAnything: Forge Environment, Policy, and Reward Model in Completely Dynamic RL System](https://arxiv.org/abs/2602.02488) *(2026)* — Co-trains a step-wise generative reward model with the policy via consistency feedback.
 - [ExpRL: Exploratory RL for LLM Mid-Training](https://arxiv.org/abs/2606.17024) *(2026)* — A reference-conditioned judge scores rollouts against a problem-specific rubric for dense mid-training reward.
 - [ToolPRMBench: Evaluating and Advancing Process Reward Models for Tool-using Agents](https://arxiv.org/abs/2601.12294) *(2026)* — Step-level benchmark isolating single-step from multi-step tool-agent failures via multi-model-verified action pairs.
-- [Entropy-Regularized Process Reward Model](https://arxiv.org/abs/2412.11006) *(2024)* — Adds entropy regularization to step-level reward modeling for multi-step mathematical reasoning.
-- [Stop Summation: Min-Form Credit Assignment Is All Process Reward Model Needs for Reasoning](https://arxiv.org/abs/2504.15275) *(2025)* — Traces process-reward hacking to summation-form credit assignment, replacing it with a min-form rule.
 - [SEVA: Self-Evolving Verification Agent with Process Reward for Fact Attribution](https://arxiv.org/abs/2606.29713) *(2026)* — Decomposes verification quality into independently weighted process components replacing an opaque binary label.
-- [StepWiser: Stepwise Generative Judges for Wiser Reasoning](https://arxiv.org/abs/2508.19229) *(2025)* — Reframes step-level reward modeling as meta-reasoning, emitting a thought trace before each verdict.
 
-## LLM-as-a-Judge
+## Rubric-Conditioned Judges and Rubric-Specific Judge Science
 
 The substrate rubric rewards are built on. Kept deliberately compact relative to its literature; for depth see the dedicated lists under [Adjacent collections](#adjacent-collections).
 
@@ -613,74 +586,22 @@ The substrate rubric rewards are built on. Kept deliberately compact relative to
 - [Prometheus 2: An Open Source Language Model Specialized in Evaluating Other Language Models](https://arxiv.org/abs/2405.01535) *(2024)* — Unifies direct assessment and pairwise ranking in one open judge model.
 - [M-Prometheus: A Suite of Open Multilingual LLM Judges](https://arxiv.org/abs/2504.04953) *(2025)* — Extends the rubric-conditioned evaluator family to multilingual judging.
 - [Prometheus-Vision: Vision-Language Model as a Judge for Fine-Grained Evaluation](https://arxiv.org/abs/2401.06591) *(2024)* — Carries the rubric-conditioned evaluator design into vision-language judgment.
-- [JudgeLM: Fine-tuned Large Language Models are Scalable Judges](https://arxiv.org/abs/2310.17631) *(2023)* — Fine-tunes multi-scale judges whose position bias is countered via swap augmentation.
-- [Generative Judge for Evaluating Alignment](https://arxiv.org/abs/2310.05470) *(2023)* — Trains on real user queries to emit both verdicts and natural-language critiques.
-- [CritiqueLLM: Towards an Informative Critique Generation Model for Evaluation of Large Language Model Generation](https://arxiv.org/abs/2311.18702) *(2023)* — Synthesizes pointwise and reference-free pairwise critique training data.
-- [Themis: A Reference-free NLG Evaluation Language Model with Flexibility and Interpretability](https://arxiv.org/abs/2406.18365) *(2024)* — Reference-free evaluator trained via multi-perspective consistency verification.
-- [PandaLM: An Automatic Evaluation Benchmark for LLM Instruction Tuning Optimization](https://arxiv.org/abs/2306.05087) *(2023)* — Trains a dedicated judge to rank instruction-tuned outputs for hyperparameter selection.
-- [CompassJudger-1: All-in-one Judge Model Helps Model Evaluation and Evolution](https://arxiv.org/abs/2410.16256) *(2024)* — Unifies scoring, pairwise comparison, and critique generation under one backbone.
 - [RM-R1: Reward Modeling as Reasoning](https://arxiv.org/abs/2505.02387) *(2025)* — Reframes reward modeling as chain-of-rubrics reasoning refined with verifiable-reward RL.
-- [JudgeLRM: Large Reasoning Models as a Judge](https://arxiv.org/abs/2504.00050) *(2025)* — Trains judgment-oriented reasoning models via outcome-driven RL rather than supervision.
-- [J1: Incentivizing Thinking in LLM-as-a-Judge via Reinforcement Learning](https://arxiv.org/abs/2505.10320) *(2025)* — RL-trains a judge to reason before its verdict, rewarded on judgment accuracy.
-- [Think-J: Learning to Think for Generative LLM-as-a-Judge](https://arxiv.org/abs/2505.14268) *(2025)* — Teaches a generative judge when and how to reason before rendering a verdict.
-- [J4R: Learning to Judge with Equivalent Initial State Group Relative Policy Optimization](https://arxiv.org/abs/2505.13346) *(2025)* — Group-relative RL over equivalent initial states trains a judge robust to answer position.
-- [Improve LLM-as-a-Judge Ability as a General Ability](https://arxiv.org/abs/2502.11689) *(2025)* — Two-stage supervised then preference training reaches strong judge accuracy on a fraction of the data.
-- [FairJudge: An Adaptive, Debiased, and Consistent LLM-as-a-Judge](https://arxiv.org/abs/2602.06625) *(2026)* — Curriculum training treats judging as a policy explicitly optimized for rubric adherence.
-- [LLaVA-Critic: Learning to Evaluate Multimodal Models](https://arxiv.org/abs/2410.02712) *(2024)* — Open generalist multimodal judge trained on a critic dataset spanning diverse evaluation criteria.
-- [Agent-as-a-Judge](https://arxiv.org/abs/2601.05111) *(2026)* — Survey tracing the shift from single-pass judges to agentic judges using planning and tool-augmented verification.
-- [MCTS-Judge: Test-Time Scaling in LLM-as-a-Judge for Code Correctness Evaluation](https://arxiv.org/abs/2502.12468) *(2025)* — Decomposes code judging into multi-perspective steps scored by a unit-test-level reward.
 - [Inference-Time Scaling for Generalist Reward Modeling](https://arxiv.org/abs/2504.02495) *(2025)* — Self-principled critique tuning lets reward models generate principles then scale by voting.
-- [Reward Reasoning Model](https://arxiv.org/abs/2505.14674) *(2025)* — Generative reward model reasoning explicitly before emitting a scalar judgment.
-- [Generative Reward Models](https://arxiv.org/abs/2410.12832) *(2024)* — Blends RLHF and RLAIF by training judges on self-generated reasoning traces.
-- [Beyond Scalar Reward Model: Learning Generative Judge from Preference Data](https://arxiv.org/abs/2410.03742) *(2024)* — Trains a rationale-producing judge on self-generated contrastive judgments.
-- [S2J: Bridging the Gap Between Solving and Judging Ability in Generative Reward Models](https://arxiv.org/abs/2509.22099) *(2025)* — Trains judges to draw on their own problem-solving ability to close the solve-judge gap.
-- [REAL: Regression-Aware Reinforcement Learning for LLM-as-a-Judge](https://arxiv.org/abs/2603.17145) *(2026)* — Adds a regression objective so ordinal scoring errors are penalized proportionally.
-- [Foundational Automatic Evaluators](https://arxiv.org/abs/2510.17793) *(2025)* — Scales iterative rejection-sampling fine-tuning to build reasoning-centric evaluators.
-- [Foundational Autoraters: Taming Large Language Models for Better Automatic Evaluation](https://arxiv.org/abs/2407.10817) *(2024)* — Trains an autorater family across many human-judgment tasks, then distills it.
 - [Incentivizing Agentic Reasoning in LLM Judges via Tool-Integrated Reinforcement Learning](https://arxiv.org/abs/2510.23038) *(2025)* — Trains a judge to call a code executor for constraint checks beyond text-only reasoning.
 - [Learning to Align Multi-Faceted Evaluation: A Unified and Robust Framework](https://arxiv.org/abs/2502.18874) *(2025)* — ARJudge formulates criteria per instruction, refining code-driven alongside text-based analyses into one judgment.
-- [CompassJudger-2: Towards Generalist Judge Model via Verifiable Rewards](https://arxiv.org/abs/2507.09104) *(2025)* — Supervises judgment tasks with verifiable rewards, using rejection sampling to elicit generalist critical reasoning.
 - [CodeVisionary: An Agent-based Framework for Evaluating Large Language Models in Code Generation](https://arxiv.org/abs/2504.13472) *(2025)* — Distills each task's requirements into evaluation context before scoring, replacing static single-prompt code judging.
 
 ### Critic models and explainable metrics
 
-- [Shepherd: A Critic for Language Model Generation](https://arxiv.org/abs/2308.04592) *(2023)* — Curated feedback data trains a compact critic to spot errors and suggest fixes.
-- [CriticEval: Evaluating Large Language Model as Critic](https://arxiv.org/abs/2402.13764) *(2024)* — Benchmarks scalar and textual critique ability for scalable-oversight research.
-- [LLM Critics Help Catch LLM Bugs](https://arxiv.org/abs/2407.00215) *(2024)* — An RLHF-trained critic catches naturally occurring code bugs that human reviewers missed.
 - [TIGERScore: Towards Building Explainable Metric for All Text Generation Tasks](https://arxiv.org/abs/2310.00752) *(2023)* — Instruction-tuned metric produces error-localized natural-language critique scores.
 - [INSTRUCTSCORE: Explainable Text Generation Evaluation with Finegrained Feedback](https://arxiv.org/abs/2305.14282) *(2023)* — Fine-tunes a diagnostic metric from model critiques guided by a human-authored error taxonomy.
-- [xFinder: Large Language Models as Automated Evaluators for Reliable Evaluation](https://arxiv.org/abs/2405.11874) *(2024)* — Replaces brittle regex answer extraction with a dedicated small extractor model.
 - [OS-Themis: A Scalable Critic Framework for Generalist GUI Rewards](https://arxiv.org/abs/2603.19191) *(2026)* — Adapts the critic-as-judge pattern to reward interface-agent trajectories at scale.
 
 ### Judge behavior science: bias
 
-- [Judging the Judges: A Systematic Study of Position Bias in LLM-as-a-Judge](https://arxiv.org/abs/2406.07791) *(2024)* — Introduces repetition-stability, position-consistency, and preference-fairness metrics.
-- [Large Language Models are not Fair Evaluators](https://arxiv.org/abs/2305.17926) *(2023)* — Response order alone flips judge rankings, corrected by multi-evidence calibration.
-- [Split and Merge: Aligning Position Biases in LLM-based Evaluators](https://arxiv.org/abs/2310.01432) *(2023)* — Splits answers into aligned segments before comparison, targeting position bias at its source.
-- [Verbosity Bias in Preference Labeling by Large Language Models](https://arxiv.org/abs/2310.10076) *(2023)* — Documents systematic preference for longer responses regardless of quality.
-- [Length-Controlled AlpacaEval: A Simple Way to Debias Automatic Evaluators](https://arxiv.org/abs/2404.04475) *(2024)* — Regression-adjusts win rates to a counterfactual equal-length comparison.
-- [Self-Preference Bias in LLM-as-a-Judge](https://arxiv.org/abs/2410.21819) *(2024)* — Links self-preference to lower perplexity of the judge's own generation style.
-- [LLM Evaluators Recognize and Favor Their Own Generations](https://arxiv.org/abs/2404.13076) *(2024)* — Links self-preference to a judge's ability to recognize its own text, establishing a causal path.
-- [Do LLM Evaluators Prefer Themselves for a Reason?](https://arxiv.org/abs/2504.03846) *(2025)* — Uses verifiable domains to separate legitimate self-preference from harmful bias.
-- [Beyond the Surface: Measuring Self-Preference in LLM Judgments](https://arxiv.org/abs/2506.02592) *(2025)* — Compares judge scores against gold judgments to isolate bias from genuine quality.
-- [Quantifying and Mitigating Self-Preference Bias of LLM Judges](https://arxiv.org/abs/2604.22891) *(2026)* — Cognitive-load decomposition into sub-evaluations reduces self-preference bias.
 - [Self-Preference Bias in Rubric-Based Evaluation of Large Language Models](https://arxiv.org/abs/2604.06996) *(2026)* — Shows criteria-based judges still favor same-family outputs despite itemized structure.
 - [Am I More Pointwise or Pairwise? Revealing Position Bias in Rubric-Based LLM-as-a-Judge](https://arxiv.org/abs/2602.02219) *(2026)* — Shows criteria-based judging behaves like multiple choice, with bias over score options and criterion order.
-- [BiasScope: Towards Automated Detection of Bias in LLM-as-a-Judge Evaluation](https://arxiv.org/abs/2602.09383) *(2026)* — Discovers unknown judge biases by automated exploration rather than testing a predefined bias list.
-- [Evaluative Fingerprints: Stable and Systematic Differences in LLM Evaluator Behavior](https://arxiv.org/abs/2601.05114) *(2026)* — Judges disagree on criteria scores yet so consistently that the disagreement pattern identifies the judge.
-- [Preference Leakage: A Contamination Problem in LLM-as-a-judge](https://arxiv.org/abs/2502.01534) *(2025)* — Identifies judges favoring outputs from data-generator models sharing their lineage.
-- [From Calculation to Adjudication: Examining LLM judges on Mathematical Reasoning Tasks](https://arxiv.org/abs/2409.04168) *(2024)* — Shows math judges favor higher-quality candidate models even when those answers are wrong.
-- [The Silent Judge: Unacknowledged Shortcut Bias in LLM-as-a-Judge](https://arxiv.org/abs/2509.26072) *(2025)* — Shows judges shift verdicts on provenance and recency cues without acknowledging them.
-- [Any Large Language Model Can Be a Reliable Judge: Debiasing with a Reasoning-based Bias Detector](https://arxiv.org/abs/2505.17100) *(2025)* — A plug-in detector flags biased verdicts and generates corrective reasoning without retraining the judge.
-- [Style Over Substance: Evaluation Biases for Large Language Models](https://arxiv.org/abs/2307.03025) *(2023)* — Shows crowd and model evaluators both reward factual errors over brevity.
-- [Style Outweighs Substance: Failure Modes of LLM Judges in Alignment Benchmarking](https://arxiv.org/abs/2409.15268) *(2024)* — Finds judge preferences uncorrelated with safety or knowledge, dominated by style.
-- [Style Wins, Substance Loses: A Diagnosis of LLM-as-Judge in Idea Generation](https://arxiv.org/abs/2608.01666) *(2026)* — Isolates presentation style from scientific content to quantify stylistic bias.
-- [Justice or Prejudice? Quantifying Biases in LLM-as-a-Judge](https://arxiv.org/abs/2410.02736) *(2024)* — Applies principle-guided perturbations to quantify twelve distinct judge bias types.
-- [Humans or LLMs as the Judge? A Study on Judgement Biases](https://arxiv.org/abs/2402.10669) *(2024)* — Ground-truth-free framework comparing misinformation, authority, and beauty bias.
-- [OffsetBias: Leveraging Debiased Data for Tuning Evaluators](https://arxiv.org/abs/2407.06551) *(2024)* — Constructs a debiased preference dataset to fine-tune bias-resistant evaluators.
-- [Toward Robust LLM-Based Judges: Taxonomic Bias Evaluation and Debiasing Optimization](https://arxiv.org/abs/2603.08091) *(2026)* — Trains bias-aware judges via reinforcement learning against an explicit bias-type taxonomy.
-- [Judging the Judges: A Systematic Evaluation of Bias Mitigation Strategies in LLM-as-a-Judge Pipelines](https://arxiv.org/abs/2604.23178) *(2026)* — Compares debiasing techniques, finding style bias outweighs position bias.
-- [Evaluating Scoring Bias in LLM-as-a-Judge](https://arxiv.org/abs/2506.22316) *(2025)* — Defines and quantifies three novel scoring biases: rubric order, score identifier, and reference-answer score.
 - [When Can You Debias an LLM Judge? Identifiability Limits, a Test, and Designs for Top-k Ranking](https://arxiv.org/abs/2607.02104) *(2026)* — Derives identifiability limits on debiasing and a test for reliable top-k ranking.
 - [Assistant-Guided Mitigation of Teacher Preference Bias in LLM-as-a-Judge](https://arxiv.org/abs/2505.19176) *(2025)* — An unbiased assistant supplements teacher-distilled data to remove teacher bias.
 - [Comparing Developer and LLM Biases in Code Evaluation](https://arxiv.org/abs/2603.24586) *(2026)* — Finds judges favor longer explanations that real developers do not want.
@@ -688,31 +609,14 @@ The substrate rubric rewards are built on. Kept deliberately compact relative to
 
 ### Judge behavior science: reliability and calibration
 
-- [Investigating Non-Transitivity in LLM-as-a-Judge](https://arxiv.org/abs/2502.14074) *(2025)* — Shows pairwise preferences violate transitivity, undermining ranking-based evaluation.
-- [TrustJudge: Inconsistencies of LLM-as-a-Judge and How to Alleviate Them](https://arxiv.org/abs/2509.21117) *(2025)* — Distribution-sensitive scoring fixes score-comparison and transitivity violations.
-- [The Coin Flip Judge? Reliability and Bias in LLM-as-a-Judge Evaluation](https://arxiv.org/abs/2606.13685) *(2026)* — Repeated-trial testing finds verdicts flip often enough to require aggregation.
-- [Overconfidence in LLM-as-a-Judge: Diagnosis and Confidence-Driven Solution](https://arxiv.org/abs/2508.06225) *(2025)* — Fuses judges into a risk-aware calibrated ensemble to correct diagnosed overconfidence.
-- [Reliability without Validity: A Systematic, Large-Scale Evaluation of LLM-as-a-Judge Models](https://arxiv.org/abs/2606.19544) *(2026)* — Shows agreement and consistency do not guarantee the judge measures the intended construct.
-- [Through the Judge's Eyes: Inferred Thinking Traces Improve Reliability of LLM Raters](https://arxiv.org/abs/2510.25860) *(2025)* — Infers human annotators' latent reasoning from label-only ratings to guide model raters.
-- [Who's Your Judge? On the Detectability of LLM-Generated Judgments](https://arxiv.org/abs/2509.25154) *(2025)* — Tests whether model-authored judgments are statistically distinguishable from human ones.
-- [LLMs Cannot Reliably Judge (Yet?): A Comprehensive Assessment on the Robustness of LLM-as-a-Judge](https://arxiv.org/abs/2506.09443) *(2025)* — Shows adversarial prompts reliably manipulate judge outcomes across many attack and defense pairings.
-- [How to Evaluate Reward Models for RLHF](https://arxiv.org/abs/2410.14872) *(2024)* — Proposes benchmarks testing whether a reward model actually improves downstream policies.
-- [Aligning with Human Judgement: The Role of Pairwise Preference in Large Language Model Evaluators](https://arxiv.org/abs/2403.16950) *(2024)* — Recasts evaluation as preference-based ranking rather than calibrating a judge's absolute scores.
-- [How to Correctly Report LLM-as-a-Judge Evaluations](https://arxiv.org/abs/2511.21140) *(2025)* — A plug-in correction for judge sensitivity and specificity, yielding principled confidence intervals.
-- [Diagnosing the Reliability of LLM-as-a-Judge via Item Response Theory](https://arxiv.org/abs/2602.00521) *(2026)* — Applies a graded response model to separate intrinsic judge consistency from human alignment.
-- [An Empirical Study of LLM-as-a-Judge: How Design Choices Impact Evaluation Reliability](https://arxiv.org/abs/2506.13639) *(2025)* — Finds stated evaluation criteria drive judge reliability more than decoding or added reasoning.
 - [Time to REFLECT: Can We Trust LLM Judges for Evidence-based Research Agents?](https://arxiv.org/abs/2605.19196) *(2026)* — A failure taxonomy plus controlled interventions expose where judges misread research-agent traces.
 - [Beyond the Illusion of Consensus: From Surface Heuristics to Knowledge-Grounded Evaluation in LLM-as-a-Judge](https://arxiv.org/abs/2603.11027) *(2026)* — Traces illusory judge consensus to shared rubric structure, proposing domain-grounded criteria instead.
 - [Can LLM be a Personalized Judge?](https://arxiv.org/abs/2406.11657) *(2024)* — Finds persona-conditioned judges unreliable, adding verbal uncertainty so they abstain when unsure.
-- [No Free Labels: Limitations of LLM-as-a-Judge Without Human Grounding](https://arxiv.org/abs/2503.05061) *(2025)* — Shows judge-generator correlation collapses on questions the judge itself cannot answer.
-- [Validating LLM-as-a-Judge Systems under Rating Indeterminacy](https://arxiv.org/abs/2503.05965) *(2025)* — A validation framework for when rating criteria admit several defensible human interpretations.
 - [Beyond Single-Point Judgment: Distribution Alignment for LLM-as-a-Judge](https://arxiv.org/abs/2505.12301) *(2025)* — Trains judges to match the full human rating distribution rather than a point estimate.
-- [Quantitative LLM Judges](https://arxiv.org/abs/2506.02945) *(2025)* — Post-hoc regression recalibrates an existing judge's textual evaluation and score toward human scores.
 - [Limits to scalable evaluation at the frontier: LLM as Judge won't beat twice the data](https://arxiv.org/abs/2410.13341) *(2024)* — Proves debiasing cannot halve ground-truth labels when the judge is no more accurate than the model.
 - [Evaluating Judges as Evaluators: The JETTS Benchmark of LLM-as-Judges as Test-Time Scaling Evaluators](https://arxiv.org/abs/2504.15253) *(2025)* — Benchmarks judges against process and outcome reward models across reranking, search, and refinement.
 - [An Empirical Study of LLM-as-a-Judge for LLM Evaluation](https://arxiv.org/abs/2403.02839) *(2024)* — Finds fine-tuned judges overfit in-domain, generalizing worse than a prompted frontier judge.
 - [Aligning Large Language Models by On-Policy Self-Judgment](https://arxiv.org/abs/2402.11253) *(2024)* — Judge-augmented fine-tuning lets one model score its own on-policy samples without a separate reward model.
-- [PairJudge RM: Perform Best-of-N Sampling with Knockout Tournament](https://arxiv.org/abs/2501.13007) *(2025)* — A pairwise judge run as a knockout tournament replaces inconsistent pointwise best-of-N scoring.
 - [Scaling Generative Verifiers For Natural Language Mathematical Proof Verification And Selection](https://arxiv.org/abs/2511.13027) *(2025)* — Finds proof verifiers reward procedural style over mathematical validity at long-context scale.
 
 ### Judge behavior science: adversarial robustness

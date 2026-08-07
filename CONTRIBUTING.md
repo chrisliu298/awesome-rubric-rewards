@@ -7,7 +7,7 @@ Contributions welcome! Open a PR to add papers, datasets, benchmarks, or tools r
 A resource must pass **one** of these two tests:
 
 1. **The work defines, trains, applies, evaluates, or critiques an explicit criteria-based reward, judge, or verifier.** This includes rubric-conditioned reward models, rubric- or checklist-driven RL, LLM/VLM judges, process reward models whose steps are graded against criteria, programmatic verifiers whose target is expressed as criteria, and work on how criteria are generated, weighted, or gamed.
-2. **The work directly enables criteria-based reward deployment.** Rubric and criteria datasets, rubric-graded benchmarks, judge meta-benchmarks, and tooling that makes criteria-based scoring practical.
+2. **The work directly enables criteria-based reward deployment *and* explicitly evaluates, represents, accepts, emits, or operates on a criteria artifact.** Rubric and criteria datasets, rubric-graded benchmarks, judge meta-benchmarks, and tooling that makes criteria-based scoring practical. Without the second clause this test admits any reward model or judge paper, which is exactly how the list drifted once already.
 
 The list deliberately does **not** distinguish reward model from verifier. A learned rubric-conditioned reward model, an LLM judge reading a checklist, and a programmatic grader running assertions are three implementations of the same idea, and all three belong.
 
@@ -21,9 +21,21 @@ The list is also **not text-only**. Criteria-decomposed rewards for image, video
 - **Pure supervised fine-tuning or distillation** with no reward, preference, or criteria signal.
 - **Domain applications** with no transferable methodological contribution beyond the domain.
 
-### When in doubt
+### The criteria-artifact test — apply to every submission
 
-Read the actual paper. The decisive question is: *are there explicit, written-down, inspectable criteria somewhere in the loop?* If the criteria exist only as latent structure in a reward model's weights, it is probably out of scope. If a human could read, audit, and edit them, it is probably in.
+Read the actual paper and answer this concretely: **where, exactly, are the criteria that get applied independently to the candidate output?** A submission qualifies only if you can fill this in:
+
+- **Location** — §4.2 / Appendix B / released YAML / prompt template
+- **Form** — natural-language items | executable predicates | scoring levels
+- **Granularity** — task | instance | claim | step
+- **Per-item output exposed** — yes / no
+
+If you cannot fill it in, the work belongs in **Foundations**, an **adjacent collection**, or nowhere. These are related but not the same object, and only the first is core scope: a written rubric item, a broad attribute name, a learned reward head, a generated rationale, a process reward, a correctness verifier, an executable test, a multi-objective vector, an LLM judge, an environment success condition.
+
+Two corollaries that have caused most of the drift here:
+
+- **Fine-grained credit is not a fine-grained rubric.** Token-level or span-level attribution says where reward lands, not what standard was applied.
+- **Named dimensions are not a rubric.** A composite of three opaque reward models is still a composite of opaque reward models, however well-named its components.
 
 ## Section placement
 
@@ -32,10 +44,10 @@ Read the live structure before placing anything — `grep -n '^## ' README.md` a
 - Criteria produce the RL training signal → **Rubrics as Reward Signals for RL** (core algorithms; exploration/stability/aggregation; self-evolving; process/step/token-level credit).
 - The contribution is *where criteria come from* → **Rubric Construction** (direct generation; contrastive generation; iterative refinement; online and co-evolving). This four-way split follows the field's own survey taxonomy.
 - Checklists, constitutions, principles, specs, instruction hierarchies, constraint verification, or QA/atomic-claim decomposition → **Checklists, Principles, Constitutions, and Specs**.
-- A trained scorer that consumes or emits criteria → **Rubric-Conditioned and Fine-Grained Reward Models**.
-- A programmatic, executable, or rule-based grader → **Verifiers and Programmatic Graders**.
-- Step-level grading of a reasoning trace → **Process Reward Models and Step-Level Criteria**.
-- Judge models, judge bias/reliability/robustness science, or judge meta-benchmarks → **LLM-as-a-Judge**. This wing is split three ways on purpose: trained artifacts, behavior science, and benchmarks. Keep it compact and cross-link to the dedicated judge lists rather than reproducing them.
+- A trained scorer that consumes or emits criteria → **Rubric-Conditioned Reward Models**. Multi-head or dense reward models do not qualify on granularity alone.
+- A program running several named predicates, acceptance conditions, or partial-credit rules → **Criteria Compilers and Programmatic Rubric Graders**. A monolithic correctness checker or proof verifier does not qualify.
+- Step-level grading against an explicit criteria tree, error taxonomy, or weighted process components → **Process Reward Models and Step-Level Criteria**. Binary step-correctness labels do not qualify.
+- Judges and judge science **specifically in their use of explicit criteria** → **Rubric-Conditioned Judges and Rubric-Specific Judge Science**. Generic judge training, position/verbosity bias, and calibration work goes to the dedicated judge lists. This wing is split three ways on purpose: trained artifacts, behavior science, and benchmarks. Keep it compact and cross-link to the dedicated judge lists rather than reproducing them.
 - Criteria gaming, over-optimization, specification gaming, reward tampering → **Reward Hacking and Robustness**.
 - Anything non-text → **Multimodal Rubric Rewards** or **Agent, GUI, and Embodied Verification**.
 - Whether criteria-based judging is reliable at all → **Rubric Quality and Meta-Evaluation**.
