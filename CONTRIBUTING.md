@@ -65,7 +65,7 @@ This literature has an unusual density of near-identical names. These are **diff
 - `OpenRubrics` vs `Open Rubric System`
 - `R3` vs `mR3`; `RM-R1` vs `R1-Reward`
 - `RubricRL` vs `RubiCap`
-- `RubricBench` vs `RubricEval` vs `RubricRAG` vs `RubricHub`
+- `PRBench (Professional Reasoning) / PRBench (Physics Reproduction) · RubricBench` vs `RubricEval` vs `RubricRAG` vs `RubricHub`
 
 ## Verification requirement
 
