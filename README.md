@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <!-- entry-count-start --><a href="#contents"><img src="https://img.shields.io/badge/Entries-864-000000?style=for-the-badge&labelColor=000000" alt="Entries"></a><!-- entry-count-end -->
+  <!-- entry-count-start --><a href="#contents"><img src="https://img.shields.io/badge/Entries-862-000000?style=for-the-badge&labelColor=000000" alt="Entries"></a><!-- entry-count-end -->
   <a href="https://github.com/chrisliu298/awesome-rubric-rewards/stargazers"><img src="https://img.shields.io/github/stars/chrisliu298/awesome-rubric-rewards?style=for-the-badge&logo=github&logoColor=white&label=Stars&labelColor=000000&color=000000" alt="GitHub Stars"></a>
   <a href="https://github.com/chrisliu298/awesome-rubric-rewards/network/members"><img src="https://img.shields.io/github/forks/chrisliu298/awesome-rubric-rewards?style=for-the-badge&logo=github&logoColor=white&label=Forks&labelColor=000000&color=000000" alt="GitHub Forks"></a>
   <a href="https://github.com/chrisliu298/awesome-rubric-rewards/commits"><img src="https://img.shields.io/github/last-commit/chrisliu298/awesome-rubric-rewards?style=for-the-badge&logo=github&logoColor=white&label=Last%20Commit&labelColor=000000&color=000000" alt="Last Commit"></a>
@@ -113,7 +113,7 @@ The field splits into four partially overlapping camps:
 | Building a rubric-conditioned reward model | [Robust Reward Modeling via Causal Rubrics](https://arxiv.org/abs/2506.16507), [RM-R1](https://arxiv.org/abs/2505.02387) | [C2](https://arxiv.org/abs/2604.13618), [Prometheus](https://arxiv.org/abs/2310.08491) |
 | Worried about reward hacking | [Reward Hacking in Rubric-Based RL](https://arxiv.org/abs/2605.12474), [Rubrics as an Attack Surface](https://arxiv.org/abs/2602.13576) | [RIFT](https://arxiv.org/abs/2604.01375), [Reinforcement Learning with Robust Rubric Rewards](https://arxiv.org/abs/2605.30244) |
 | Working on image or video generation | [VisionReward](https://arxiv.org/abs/2412.21059), [RubricRL](https://arxiv.org/abs/2511.20651) | [AutoRubric-T2I](https://arxiv.org/abs/2605.17602), [DeltaRubric](https://arxiv.org/abs/2605.09269), [Omni-RRM](https://arxiv.org/abs/2602.00846) |
-| Working on agents or computer use | [Agentic Rubrics as Contextual Verifiers](https://arxiv.org/abs/2601.04171), [CM2](https://arxiv.org/abs/2602.12268) | [ARCO](https://arxiv.org/abs/2606.21262), [GUI-Shepherd](https://arxiv.org/abs/2509.23738), [The Art of Building Verifiers](https://arxiv.org/abs/2604.06240) |
+| Working on agents or computer use | [Agentic Rubrics as Contextual Verifiers](https://arxiv.org/abs/2601.04171), [CM2](https://arxiv.org/abs/2602.12268) | [ARCO](https://arxiv.org/abs/2606.21262), [SeekJudge](https://arxiv.org/abs/2607.23263), [The Art of Building Verifiers](https://arxiv.org/abs/2604.06240) |
 | Evaluating with rubrics | [HealthBench](https://arxiv.org/abs/2505.08775), [PaperBench](https://arxiv.org/abs/2504.01848) | [ProfBench](https://arxiv.org/abs/2510.18941), [RubricEval](https://arxiv.org/abs/2603.25133), [PReMISE](https://arxiv.org/abs/2605.30803) |
 
 ## Start Here
@@ -151,11 +151,23 @@ Many papers fit multiple categories. The tables below are for orientation, not s
 | Applier | Typical papers |
 |---|---|
 | LLM or VLM judge | [Prometheus](https://arxiv.org/abs/2310.08491), [G-Eval](https://arxiv.org/abs/2303.16634), [MLLM-as-a-Judge](https://arxiv.org/abs/2402.04788) |
-| Trained rubric-conditioned reward model | [Robust Reward Modeling via Causal Rubrics](https://arxiv.org/abs/2506.16507), [C2](https://arxiv.org/abs/2604.13618), [Prometheus](https://arxiv.org/abs/2310.08491) |
-| Process reward model, step-level | [Step-wise Rubric Rewards](https://arxiv.org/abs/2605.17291), [GUI-Shepherd](https://arxiv.org/abs/2509.23738), [VisualPRM](https://arxiv.org/abs/2503.10291) |
+| Trained rubric-conditioned reward model | [Robust Reward Modeling via Causal Rubrics](https://arxiv.org/abs/2506.16507), [C2](https://arxiv.org/abs/2604.13618) |
+| Process reward model, step-level | [Step-wise Rubric Rewards](https://arxiv.org/abs/2605.17291), [Dynamic and Generalizable PRM](https://arxiv.org/abs/2507.17849), [VisualPRM](https://arxiv.org/abs/2503.10291) |
 | Programmatic verifier or rule engine | [Rule Based Rewards](https://arxiv.org/abs/2411.01111), [IFEval](https://arxiv.org/abs/2311.07911), [TRON](https://arxiv.org/abs/2606.01599) |
-| Execution or state check | [OpenComputer](https://arxiv.org/abs/2605.19769), [MCP-Universe](https://arxiv.org/abs/2508.14704), [Interactive Reward Agent](https://arxiv.org/abs/2607.25904) |
+| Agentic evaluator dispatching tools | [VISTA](https://arxiv.org/abs/2510.15831), [SeekJudge](https://arxiv.org/abs/2607.23263), [VideoWeaver](https://arxiv.org/abs/2606.08091) |
 | Hybrid routing across the above | [RLR3](https://arxiv.org/abs/2605.30244), [SCRIBE](https://arxiv.org/abs/2601.03555), [StitchCUDA](https://arxiv.org/abs/2603.02637) |
+
+### By what evidence the criteria are checked against
+
+A separate axis from the applier — the same judge can read a candidate alone, a reference, retrieved sources, or live environment state.
+
+| Evidence | Typical papers |
+|---|---|
+| Candidate output alone | [Rubrics as Rewards](https://arxiv.org/abs/2507.17746), [Checklists Are Better Than Reward Models](https://arxiv.org/abs/2507.18624) |
+| Reference answer or source text | [From Rubrics to Reliable Scores](https://arxiv.org/abs/2601.08654), [LLM-Rubric](https://arxiv.org/abs/2501.00274) |
+| Retrieved external evidence | [ARBOR](https://arxiv.org/abs/2606.03239), [DR Tulu](https://arxiv.org/abs/2511.19399) |
+| Environment or execution state | [OpenComputer](https://arxiv.org/abs/2605.19769), [MCP-Universe](https://arxiv.org/abs/2508.14704), [Interactive Reward Agent](https://arxiv.org/abs/2607.25904) |
+| Geometry, physics, or sensor signal | [VIGOR](https://arxiv.org/abs/2603.16271), [PhyGround](https://arxiv.org/abs/2605.10806), [CamVerse](https://arxiv.org/abs/2512.02870) |
 
 ### By how criteria aggregate into a signal
 
@@ -178,7 +190,7 @@ Many papers fit multiple categories. The tables below are for orientation, not s
 | Video | [VisionReward](https://arxiv.org/abs/2412.21059), [Claim-Level Rubric Rewards](https://arxiv.org/abs/2607.05150) |
 | Audio and music | [Evolving Rubrics for Audio Reasoning](https://arxiv.org/abs/2608.02831), [AnyAudio-Judge](https://arxiv.org/abs/2606.03116), [PrismAudio](https://arxiv.org/abs/2511.18833) |
 | 3D | [CREward](https://arxiv.org/abs/2511.19995), [3DGen-Bench](https://arxiv.org/abs/2503.21745) |
-| GUI and computer use | [GUI-Shepherd](https://arxiv.org/abs/2509.23738), [OSReward](https://arxiv.org/abs/2607.28609), [CUARewardBench](https://arxiv.org/abs/2510.18596) |
+| GUI and computer use | [SeekJudge](https://arxiv.org/abs/2607.23263), [OSReward](https://arxiv.org/abs/2607.28609), [CUARewardBench](https://arxiv.org/abs/2510.18596) |
 | Embodied and robotic | [Robo-Dopamine](https://arxiv.org/abs/2512.23703), [RoboAlign-R1](https://arxiv.org/abs/2605.03821) |
 
 ## Core Rubric Reward Papers
@@ -288,6 +300,7 @@ The heart of the list: work where a rubric produces the training signal.
 - [RubricEM: Meta-RL with Rubric-guided Policy Decomposition beyond Verifiable Rewards](https://arxiv.org/abs/2605.10899) *(2026)* — Uses criteria as a shared interface across agent, judge, and memory in a meta-RL loop.
 - [Reward and Guidance through Rubrics: Promoting Exploration to Improve Multi-Domain Reasoning](https://arxiv.org/abs/2511.12344) *(2025)* — Criteria-driven dense rewards widen exploration across several reasoning domains at once.
 - [When Rubrics Fail: Error Enumeration as Reward in Reference-Free RL Post-Training for Virtual Try-On](https://arxiv.org/abs/2603.05659) *(2026)* — Counts severity-weighted errors across task-relevant axes where no ideal reference answer exists.
+- [ACE-RL: Adaptive Constraint-Enhanced Reward for Long-form Generation Reinforcement Learning](https://arxiv.org/abs/2509.04903) *(2025)* — Decomposes each instruction into adaptive fine-grained constraint criteria whose satisfaction becomes the reward.
 
 ### Exploration, stability, and aggregation
 
@@ -431,6 +444,8 @@ Structurally rubrics under different names.
 
 ### Specs and instruction hierarchies
 
+- [OpenAI Model Spec](https://model-spec.openai.com/) — Public behavioral specification with worked examples, used as a target for training and evaluation.
+- [Claude's Constitution](https://www.anthropic.com/constitution) — Anthropic's published statement of intended values and behavior, written to shape training directly.
 - [Rule Based Rewards for Language Model Safety](https://arxiv.org/abs/2411.01111) *(2024)* — Composable judge-scored propositions replace human safety labels as the RL reward.
 - [Deliberative Alignment: Reasoning Enables Safer Language Models](https://arxiv.org/abs/2412.16339) *(2024)* — Trains models to reason explicitly over safety-specification text before answering.
 - [The Instruction Hierarchy: Training LLMs to Prioritize Privileged Instructions](https://arxiv.org/abs/2404.13208) *(2024)* — Trains on generated demonstrations so models prioritize higher-privilege instructions when sources conflict.
@@ -515,8 +530,6 @@ Scorers that consume or emit criteria. A reward model with several heads, or one
 ### Fine-grained, dense, and span-level rewards
 
 - [Fine-Grained Human Feedback Gives Better Rewards for Language Model Training](https://arxiv.org/abs/2306.01693) *(2023)* — Sentence-level rewards from separate factuality, relevance, and completeness models.
-- [Dense Reward for Free in Reinforcement Learning from Human Feedback](https://arxiv.org/abs/2402.00782) *(2024)* — Extracts per-token reward from an existing model's attention weights at no extra cost.
-- [RED: Unleashing Token-Level Rewards from Holistic Feedback via Reward Redistribution](https://arxiv.org/abs/2411.08302) *(2024)* — Redistributes one holistic preference score into token-level credit by attribution.
 - [Sentence-level Reward Model can Generalize Better for Aligning LLM from Human Preference](https://arxiv.org/abs/2503.04793) *(2025)* — Aggregates sentence-level scores to improve out-of-distribution generalization.
 
 ### Self-rewarding and self-generated criteria
@@ -631,6 +644,7 @@ The substrate rubric rewards are built on. Kept deliberately compact relative to
 - [Security in LLM-as-a-Judge: A Comprehensive SoK](https://arxiv.org/abs/2603.29403) *(2026)* — Systematizes judge security into attacks on judges, attacks via judges, and judge-based defenses.
 - [Helpful Agent Meets Deceptive Judge: Understanding Vulnerabilities in Agentic Workflows](https://arxiv.org/abs/2506.03332) *(2025)* — Web-evidence-grounded adversarial critiques flip correct agent answers, exposing judge feedback as an attack surface.
 - [One Token to Fool LLM-as-a-Judge](https://arxiv.org/abs/2507.08794) *(2025)* — Content-free master-key tokens elicit false positive rewards from reference-based generative verifiers.
+- [Reliable to Expressive: A Curriculum for Rubric-Following Safety Judges](https://arxiv.org/abs/2606.09165) *(2026)* — Trains judges on instance-conditioned dynamic rubrics so verdicts survive reformulation of the criteria.
 
 ### Multi-agent, debate, and ensemble judges
 
@@ -668,6 +682,7 @@ The substrate rubric rewards are built on. Kept deliberately compact relative to
 - [RIFT: A Rubric Failure Mode Taxonomy and Automated Diagnostics](https://arxiv.org/abs/2604.01375) *(2026)* — Taxonomizes how criteria grading fails and provides automated diagnostics.
 - [PReMISE: Policy Rubrics as Measurement Specifications for LLM Judges](https://arxiv.org/abs/2605.30803) *(2026)* — Audits criteria sets on structural adequacy, reliability, preference fit, and robustness.
 - [EST-PRM: Stress-Testing Process Reward Models Before They Become Load-Bearing](https://arxiv.org/abs/2606.00437) *(2026)* — Step inflation and reordering preserve correctness while fooling step-level scoring.
+- [Examining Reasoning LLMs-as-Judges in Non-Verifiable LLM Post-Training](https://arxiv.org/abs/2603.12246) *(2026)* — Finds policies trained against reasoning judges learn outputs that deceive the judge itself.
 
 ### Reward model over-optimization and mitigations
 
@@ -779,9 +794,6 @@ Three parallel lineages independently invented "decompose the prompt into checka
 - [VL-RewardBench: A Challenging Benchmark for Vision-Language Generative Reward Models](https://arxiv.org/abs/2411.17451) *(2024)* — Stress-tests generative reward models on hallucination detection where scorers fail.
 - [ViLBench: A Suite for Vision-Language Process Reward Modeling](https://arxiv.org/abs/2503.20271) *(2025)* — Benchmark and data suite for step-level reward models in vision-language reasoning.
 - [Multi-Crit: Benchmarking Multimodal Judges on Pluralistic Criteria-Following](https://arxiv.org/abs/2511.21662) *(2025)* — Tests whether judges follow multiple potentially conflicting user-specified criteria.
-- [R1-Reward: Training Multimodal Reward Model Through Stable Reinforcement Learning](https://arxiv.org/abs/2505.02835) *(2025)* — Trains a multimodal reward model with stabilized RL rather than supervised fitting.
-- [Skywork-VL Reward: An Effective Reward Model for Multimodal Understanding and Reasoning](https://arxiv.org/abs/2505.07263) *(2025)* — General-purpose multimodal reward model spanning understanding and reasoning.
-- [BaseReward: A Strong Baseline for Multimodal Reward Model](https://arxiv.org/abs/2509.16127) *(2025)* — Distills which design choices actually matter for multimodal reward modeling.
 - [Advancing Multimodal Judge Models through a Capability-Oriented Benchmark and MCTS-Driven Data Generation](https://arxiv.org/abs/2603.00546) *(2026)* — Organizes judge evaluation by capability and synthesizes harder training data by search.
 - [Omni-RRM: Advancing Omni Reward Modeling via Automatic Rubric-Grounded Preference Synthesis](https://arxiv.org/abs/2602.00846) *(2026)* — Synthesizes criteria-grounded preference justifications spanning text, image, video, and audio.
 - [VLFeedback: A Large-Scale AI Feedback Dataset for Large Vision-Language Models Alignment](https://arxiv.org/abs/2410.09421) *(2024)* — Multi-aspect feedback annotating helpfulness, visual faithfulness, and safety separately, used to train Silkie.
@@ -913,7 +925,6 @@ Judging whether a generated video follows its prompt and stays self-consistent i
 
 An emerging area: one 2020 anchor, then almost everything from late 2025 onward.
 
-- [BATON: Aligning Text-to-Audio Model with Human Preference Feedback](https://arxiv.org/abs/2402.00744) *(2024)* — Builds a human preference dataset for text-to-audio and aligns the generator to it.
 - [AGAV-Rater: Adapting Large Multimodal Model for AI-Generated Audio-Visual Quality Assessment](https://arxiv.org/abs/2501.18314) *(2025)* — Adapts a multimodal model to rate audio-visual quality jointly rather than per track.
 - [Workflow-Based Evaluation of Music Generation Systems](https://arxiv.org/abs/2507.01022) *(2025)* — Scores generated music on a standardized per-criterion scale inside an evaluator workflow.
 - [SCORE: Scaling audio generation using Standardized COmposite REwards](https://arxiv.org/abs/2509.19831) *(2025)* — Normalizes and combines several perceptual reward components into one composite signal.
@@ -931,7 +942,6 @@ An emerging area: one 2020 anchor, then almost everything from late 2025 onward.
 ### 3D generation
 
 - [3DGen-Bench: Comprehensive Benchmark Suite for 3D Generative Models](https://arxiv.org/abs/2503.21745) *(2025)* — Establishes a 3D preference arena plus a reward model for automatic evaluation.
-- [DreamCS: Geometry-Aware Text-to-3D Generation with Unpaired 3D Reward Supervision](https://arxiv.org/abs/2506.09814) *(2025)* — Trains an unpaired 3D preference reward model via a Cauchy-Schwarz divergence objective on annotated meshes.
 - [End-to-End Fine-Tuning of 3D Texture Generation using Differentiable Rewards](https://arxiv.org/abs/2506.18331) *(2025)* — Back-propagates differentiable reward through a 3D texture generation pipeline.
 - [CREward: A Type-Specific Creativity Reward Model](https://arxiv.org/abs/2511.19995) *(2025)* — Scores 3D asset creativity along geometry, material, and texture axes separately.
 - [VIGOR: VIdeo Geometry-Oriented Reward for Temporal Generative Alignment](https://arxiv.org/abs/2603.16271) *(2026)* — Scores multi-view consistency by cross-frame reprojection error from a geometry foundation model.
@@ -946,7 +956,6 @@ The densest 2026 area. Verification mechanisms here — environment-state probin
 
 ### GUI and computer-use agents
 
-- [GUI-Shepherd: Reliable Process Reward and Verification for Long-Sequence GUI Tasks](https://arxiv.org/abs/2509.23738) *(2025)* — Step-level process reward improving online RL for long-horizon interface trajectories.
 - [CUARewardBench: A Benchmark for Evaluating Reward Models on Computer-using Agent](https://arxiv.org/abs/2510.18596) *(2025)* — Benchmarks outcome and process reward models at trajectory and step level.
 - [Agentic Reward Modeling: Verifying GUI Agent via Progressive Trajectory-Grounded Interaction](https://arxiv.org/abs/2602.00575) *(2026)* — A verifier agent probes the environment for evidence rather than passively observing.
 - [Adaptive Milestone Reward for GUI Agents](https://arxiv.org/abs/2602.11524) *(2026)* — Anchors trajectories to milestones distilled from successful runs for credit assignment.
@@ -954,8 +963,8 @@ The densest 2026 area. Verification mechanisms here — environment-state probin
 - [Interactive Reward Agent: GUI Task Evaluation via Environment-State Verification](https://arxiv.org/abs/2607.25904) *(2026)* — Proposes completion conditions then verifies them by invoking system and app tools.
 - [OSReward: Instituting Standardized Evaluation for Cross-Platform Computer-Use Reward Models](https://arxiv.org/abs/2607.28609) *(2026)* — Standardized cross-platform protocol replacing hand-written per-task verifiers.
 - [MagicGUI-RMS: A Multi-Agent Reward Model System for Self-Evolving GUI Agents via Automated Feedback Reflux](https://arxiv.org/abs/2601.13060) *(2026)* — Reflows automated feedback so interface agents self-improve while cutting annotation cost.
-- [IntentScore: Intent-Conditioned Action Evaluation for Computer-Use Agents](https://arxiv.org/abs/2604.05157) *(2026)* — Plan-aware reward model scoring candidate interface actions from offline data.
 - [SeekJudge: A Practical Reward Framework for Reinforcement Learning in Computer-Use Agents](https://arxiv.org/abs/2607.23263) *(2026)* — Role-specialized agents seek trajectory evidence to emit step-level verdicts replacing brittle rule-based supervision.
+- [Orcust: Stepwise-Feedback Reinforcement Learning for GUI Agent](https://arxiv.org/abs/2509.17917) *(2025)* — Constrains stepwise GUI rewards by environment-verifiable and model-derived principles rather than outcome alone.
 
 ### Embodied and robotic verification
 
@@ -979,7 +988,6 @@ The densest 2026 area. Verification mechanisms here — environment-state probin
 - [ARBOR: Online Process Rewards via a Reusable Rubric Buffer for Search Agents](https://arxiv.org/abs/2606.03239) *(2026)* — A reusable criteria buffer supplies online process rewards for multi-hop search.
 - [RUBAS: Rubric-Based Reinforcement Learning for Agent Safety](https://arxiv.org/abs/2606.04051) *(2026)* — Multi-dimensional criteria rewards spanning tool-use, argument, and response safety.
 - [VideoWeaver: Evaluating and Evolving Skills for Agentic Long Video Generation](https://arxiv.org/abs/2606.08091) *(2026)* — Agent-as-judge grounds scores in execution traces and intermediate files across sixteen task categories.
-- [OpenReward: Learning to Reward Long-form Agentic Tasks via Reinforcement Learning](https://arxiv.org/abs/2510.24636) *(2025)* — Trains a reward model for long-form agentic tasks where terminal verification is sparse.
 - [LongTraceRL: Learning Long-Context Reasoning from Search Agent Trajectories with Rubric Rewards](https://arxiv.org/abs/2605.31584) *(2026)* — Criteria rewards supervise long-context reasoning learned from search trajectories.
 - [Step-DeepResearch Technical Report](https://arxiv.org/abs/2512.20491) *(2025)* — A checklist-style judger hardens an autonomous research agent across a staged training pipeline.
 - [Agent-as-a-Judge: Evaluate Agents with Agents](https://arxiv.org/abs/2410.10934) *(2024)* — Uses agentic systems to evaluate agentic code generation against hierarchical annotated task requirements.
@@ -1274,6 +1282,7 @@ Of the open frontier recipes checked against their primary sources, only Kimi K2
 
 ### Judge and eval harnesses with criteria graders
 
+- [Define success criteria and build evaluations](https://platform.claude.com/docs/en/build-with-claude/develop-tests) — Anthropic's practitioner guide to multidimensional success criteria and code-, human-, or model-graded evals.
 - [Inspect AI](https://github.com/UKGovernmentBEIS/inspect_ai) — Evaluation framework with built-in model-graded scorers and a custom scorer API.
 - [DeepEval](https://github.com/confident-ai/deepeval) — Pytest-style eval framework whose G-Eval and DAG metrics implement custom-criteria judging.
 - [promptfoo](https://github.com/promptfoo/promptfoo) — Prompt and agent testing CLI whose `llm-rubric` assertion grades output against a free-text rubric.
@@ -1307,6 +1316,7 @@ Widely cited entry points that have no arXiv version.
 
 - [Rubrics_Survey](https://github.com/RUC-NLPIR/Rubrics_Survey) — Companion to the dedicated rubric survey; construction, training, and evaluation taxonomy, text-only.
 - [Awesome-Rubrics](https://github.com/FreedomIntelligence/Awesome-Rubrics) — Survey-companion rubric list covering data, training, inference-time supervision, and reward-hacking risks.
+- [Rubric-RMs-Survey](https://github.com/EADMO/Rubric-RMs-Survey) — Narrower companion focused on analytic rubrics for holistic reward modeling.
 - [Awesome-LLMs-as-Judges](https://github.com/CSHaitao/Awesome-LLMs-as-Judges) — Judge-focused survey companion.
 - [Awesome-LLM-as-a-judge](https://github.com/llm-as-a-judge/Awesome-LLM-as-a-judge) — Second judge-focused survey companion.
 - [Awesome-LLM-Judges](https://github.com/haizelabs/Awesome-LLM-Judges) — Judge list including some tooling links.
@@ -1342,4 +1352,4 @@ Contributions welcome! Please open a PR if you know of papers, datasets, benchma
 
 ---
 
-*Repository last updated: 2026-08-07. Literature systematically searched through August 2026. Coverage: rubrics as RL reward signals, rubric construction and refinement, checklists and constitutions, rubric-conditioned and fine-grained reward models, verifiers and programmatic graders, process rewards, LLM-as-a-judge, reward hacking and robustness, multimodal and agentic criteria-based rewards, rubric-graded benchmarks, datasets, and tooling.*
+*Repository last updated: 2026-08-07. Literature systematically searched through August 2026. Coverage: rubrics as RL reward signals, rubric construction and refinement, checklists and constitutions, rubric-conditioned reward models, criteria compilers and programmatic rubric graders, criteria-based process rewards, rubric-conditioned judges, reward hacking and robustness, multimodal and agentic criteria-based rewards, rubric-graded benchmarks, datasets, and tooling. Scope is the criteria artifact: general reward models, judges, process reward models, and verifiers without one live in the [adjacent collections](#adjacent-collections).*
