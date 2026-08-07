@@ -232,7 +232,7 @@ Background rather than subject matter. These explain why modern rubric rewards l
 - [Skywork-Reward: Bag of Tricks for Reward Modeling in LLMs](https://arxiv.org/abs/2410.18451) *(2024)* — Curates a compact filtered preference set, showing data quality beats scale for reward accuracy.
 - [Skywork-Reward-V2: Scaling Preference Data Curation via Human-AI Synergy](https://arxiv.org/abs/2507.01352) *(2025)* — Combines human and model filtering signals to scale preference-data curation.
 - [Libra: Assessing and Improving Reward Model by Learning to Think](https://arxiv.org/abs/2507.21645) *(2025)* — Trains the reward model to reason before scoring rather than regress a scalar directly.
-- [ImplicitRM: Unbiased Reward Modeling from Implicit Preference Data](https://arxiv.org/abs/2603.23184) *(2026)* — Learns rewards from click-like implicit signals via stratification correcting action bias.
+- [ImplicitRM: Unbiased Reward Modeling from Implicit Preference Data for LLM alignment](https://arxiv.org/abs/2603.23184) *(2026)* — Learns rewards from click-like implicit signals via stratification correcting action bias.
 - [Sharpe Ratio-Guided Active Learning for Preference Optimization in RLHF](https://arxiv.org/abs/2503.22137) *(2025)* — Selects preference pairs by a risk-adjusted acquisition function rather than raw uncertainty.
 - [LoRe: Personalizing LLMs via Low-Rank Reward Modeling](https://arxiv.org/abs/2504.14439) *(2025)* — Decomposes per-user reward into a shared low-rank basis for efficient personalization.
 - [What Makes a Reward Model a Good Teacher? An Optimization Perspective](https://arxiv.org/abs/2503.15477) *(2025)* — Shows reward-model accuracy alone fails to predict downstream RL success.
@@ -341,7 +341,7 @@ Note the naming hazard: **EvoRubric**, **EvoRubrics**, and **EvoLM** are three d
 - [CoRT: Counterfactual Replay for Token-Level Rubric-Guided Policy Optimization](https://arxiv.org/abs/2607.25659) *(2026)* — Contrasts criteria-conditioned against criteria-free scoring on replayed rollouts to redistribute token-level credit.
 - [Web-Shepherd: Advancing PRMs for Reinforcing Web Agents](https://arxiv.org/abs/2505.15277) *(2025)* — Step-level process reward model for web navigation trained on annotated per-step checklists.
 - [Chaining the Evidence: Robust Reinforcement Learning for Deep Search Agents with Citation-Aware Rubric Rewards](https://arxiv.org/abs/2601.06021) *(2026)* — Decomposes search questions into single-hop criteria scored on citations and evidence chains.
-- [Enhancing Rubric-based RL via Self-Distillation](https://arxiv.org/abs/2607.18082) *(2026)* — On-policy self-distillation fixes unexplored and suppressed criteria.
+- [CriPO: Enhancing Rubric-based RL via Self-Distillation](https://arxiv.org/abs/2607.18082) *(2026)* — On-policy self-distillation fixes unexplored and suppressed criteria.
 
 ## Rubric Construction
 
@@ -355,13 +355,13 @@ Where criteria come from is its own research problem. The four-way split below f
 - [SedarEval: Automated Evaluation using Self-Adaptive Rubrics](https://arxiv.org/abs/2501.15595) *(2025)* — Generates per-question rubrics carrying explicit scoring and deduction points, then trains a matching evaluator.
 - [Rubric Is All You Need: Enhancing LLM-based Code Evaluation With Question-Specific Rubrics](https://arxiv.org/abs/2503.23989) *(2025)* — Grades code with per-problem criteria rather than one question-agnostic rubric.
 - [Configurable Preference Tuning with Rubric-Guided Synthetic Data](https://arxiv.org/abs/2506.11702) *(2025)* — Generates synthetic preference data from structured criteria so behavior is modulated by prompt directives.
-- [AutoLibra: Agent Metric Induction from Open-Ended Feedback](https://arxiv.org/abs/2505.02820) *(2025)* — Turns free-text feedback on agent trajectories into concrete clustered evaluation metrics.
+- [AutoLibra: Agent Metric Induction from Open-Ended Human Feedback](https://arxiv.org/abs/2505.02820) *(2025)* — Turns free-text feedback on agent trajectories into concrete clustered evaluation metrics.
 - [RubricRAG: Towards Interpretable and Reliable LLM Evaluation via Domain Knowledge Retrieval for Rubric Generation](https://arxiv.org/abs/2603.20882) *(2026)* — Retrieves criteria from related queries at inference time to ground evaluation.
 - [Many Voices, One Reward: Multi-Role Rubric Generation for LLM Judging and Reward Modeling](https://arxiv.org/abs/2607.01830) *(2026)* — Elicits criteria from complementary evaluator roles into one auditable scorer.
 - [Automated Rubrics for Reliable Evaluation of Medical Dialogue Systems](https://arxiv.org/abs/2601.15161) *(2026)* — Retrieval-augmented multi-agent pipeline decomposes medical evidence into atomic-fact criteria per instance.
 - [Generating Data-Driven Reasoning Rubrics for Domain-Adaptive Reward Modeling](https://arxiv.org/abs/2602.06795) *(2026)* — Builds granular reasoning-error taxonomies to train domain-adaptive classifiers.
 - [Rubric-as-Experts: Case-Specific MQM Rubrics for Translation Quality Evaluation](https://arxiv.org/abs/2606.21559) *(2026)* — Instantiates case-specific criteria from a generic translation-quality framework.
-- [Two-Level Meta-Rubrics for Evaluating Open-Ended Generation](https://arxiv.org/abs/2607.19322) *(2026)* — An expressive meta-rubric compiles into a flat binary machine-gradable checklist.
+- [Two-Level Meta-Rubrics for Evaluating Open-Ended Generation: GAMUT, a Benchmark for Factual Completeness](https://arxiv.org/abs/2607.19322) *(2026)* — An expressive meta-rubric compiles into a flat binary machine-gradable checklist.
 - [PREFINE: Personalized Story Generation via Simulated User Critics and User-Specific Rubric Generation](https://arxiv.org/abs/2510.21721) *(2025)* — Simulated user critics generate personalized criteria steering story generation.
 - [EvalLM: Interactive Evaluation of Large Language Model Prompts on User-Defined Criteria](https://arxiv.org/abs/2309.13633) *(2023)* — An interactive workbench lets developers author and revise evaluation criteria while diagnosing prompts.
 
@@ -628,7 +628,7 @@ The substrate rubric rewards are built on. Kept deliberately compact relative to
 - [Beyond Single-Point Judgment: Distribution Alignment for LLM-as-a-Judge](https://arxiv.org/abs/2505.12301) *(2025)* — Trains judges to match the full human rating distribution rather than a point estimate.
 - [Limits to scalable evaluation at the frontier: LLM as Judge won't beat twice the data](https://arxiv.org/abs/2410.13341) *(2024)* — Proves debiasing cannot halve ground-truth labels when the judge is no more accurate than the model.
 - [Evaluating Judges as Evaluators: The JETTS Benchmark of LLM-as-Judges as Test-Time Scaling Evaluators](https://arxiv.org/abs/2504.15253) *(2025)* — Benchmarks judges against process and outcome reward models across reranking, search, and refinement.
-- [An Empirical Study of LLM-as-a-Judge for LLM Evaluation](https://arxiv.org/abs/2403.02839) *(2024)* — Finds fine-tuned judges overfit in-domain, generalizing worse than a prompted frontier judge.
+- [An Empirical Study of LLM-as-a-Judge for LLM Evaluation: Fine-tuned Judge Model is not a General Substitute for GPT-4](https://arxiv.org/abs/2403.02839) *(2024)* — Finds fine-tuned judges overfit in-domain, generalizing worse than a prompted frontier judge.
 - [Aligning Large Language Models by On-Policy Self-Judgment](https://arxiv.org/abs/2402.11253) *(2024)* — Judge-augmented fine-tuning lets one model score its own on-policy samples without a separate reward model.
 - [Scaling Generative Verifiers For Natural Language Mathematical Proof Verification And Selection](https://arxiv.org/abs/2511.13027) *(2025)* — Finds proof verifiers reward procedural style over mathematical validity at long-context scale.
 
@@ -669,7 +669,7 @@ The substrate rubric rewards are built on. Kept deliberately compact relative to
 
 - [Reinforcement Learning-based Knowledge Distillation with LLM-as-a-Judge](https://arxiv.org/abs/2604.02621) *(2026)* — Distills a judge's single-token reward signal into student models over unlabeled data.
 - [Reasoning Is Not Free: Robust Adaptive Cost-Efficient Routing for LLM-as-a-Judge](https://arxiv.org/abs/2605.10805) *(2026)* — Routes each case between reasoning and non-reasoning judges to balance cost.
-- [RTLC: Research, Teach-to-Learn, Critique](https://arxiv.org/abs/2605.13695) *(2026)* — Three-stage prompting lifts judge accuracy with no fine-tuning.
+- [RTLC -- Research, Teach-to-Learn, Critique](https://arxiv.org/abs/2605.13695) *(2026)* — Three-stage Feynman-inspired prompting lifts judge accuracy with no fine-tuning.
 - [You Only Judge Once: Multi-response Reward Modeling in a Single Forward Pass](https://arxiv.org/abs/2604.10966) *(2026)* — Scores multiple image and video candidates in a single vision-language forward pass.
 
 ## Reward Hacking and Robustness
@@ -831,7 +831,7 @@ Judging whether a generated video follows its prompt and stays self-consistent i
 - [T2V-CompBench: A Comprehensive Benchmark for Compositional Text-to-video Generation](https://arxiv.org/abs/2407.14505) *(2024)* — Splits compositional generation into per-category criteria with a dedicated evaluator each.
 - [WorldModelBench: Judging Video Generation Models As World Models](https://arxiv.org/abs/2502.20694) *(2025)* — Judges generated video against instruction-following and physical-law criteria as a world model.
 - [WorldSimBench: Towards Video Generation Models as World Simulators](https://arxiv.org/abs/2410.18072) *(2024)* — Pairs explicit-criteria perceptual scoring with embodied action-level task verification.
-- [WorldReasonBench: Human-Aligned Stress Testing of Video Generators as Future Predictors](https://arxiv.org/abs/2605.10434) *(2026)* — Expert pairwise comparisons meta-evaluate reward models judging world-model video rollouts.
+- [WorldReasonBench: Human-Aligned Stress Testing of Video Generators as Future World-State Predictors](https://arxiv.org/abs/2605.10434) *(2026)* — Expert pairwise comparisons meta-evaluate reward models judging world-model video rollouts.
 - [Q-Eval-100K: Evaluating Visual Quality and Alignment Level for Text-to-Vision Content](https://arxiv.org/abs/2503.02357) *(2025)* — Separates visual quality from text alignment as independently annotated opinion scores.
 - [Benchmarking Multi-dimensional AIGC Video Quality Assessment: A Dataset and Unified Model](https://arxiv.org/abs/2407.21408) *(2024)* — Scores generated video on spatial quality, temporal quality, and text alignment separately.
 - [Thinking in Video: Can Video Generators Really Reason About the Real World?](https://arxiv.org/abs/2607.17523) *(2026)* — Dual-judge audit separates explicit causal perception from the implicit perception-prediction gap.
