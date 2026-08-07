@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <!-- entry-count-start --><a href="#contents"><img src="https://img.shields.io/badge/Entries-667-000000?style=for-the-badge&labelColor=000000" alt="Entries"></a><!-- entry-count-end -->
+  <!-- entry-count-start --><a href="#contents"><img src="https://img.shields.io/badge/Entries-685-000000?style=for-the-badge&labelColor=000000" alt="Entries"></a><!-- entry-count-end -->
   <a href="https://github.com/chrisliu298/awesome-rubric-rewards/stargazers"><img src="https://img.shields.io/github/stars/chrisliu298/awesome-rubric-rewards?style=for-the-badge&logo=github&logoColor=white&label=Stars&labelColor=000000&color=000000" alt="GitHub Stars"></a>
   <a href="https://github.com/chrisliu298/awesome-rubric-rewards/network/members"><img src="https://img.shields.io/github/forks/chrisliu298/awesome-rubric-rewards?style=for-the-badge&logo=github&logoColor=white&label=Forks&labelColor=000000&color=000000" alt="GitHub Forks"></a>
   <a href="https://github.com/chrisliu298/awesome-rubric-rewards/commits"><img src="https://img.shields.io/github/last-commit/chrisliu298/awesome-rubric-rewards?style=for-the-badge&logo=github&logoColor=white&label=Last%20Commit&labelColor=000000&color=000000" alt="Last Commit"></a>
@@ -779,8 +779,26 @@ Three parallel lineages independently invented "decompose the prompt into checka
 
 ### Video
 
-The sibling lists [awesome-rm-for-video-generation](https://github.com/chrisliu298/awesome-rm-for-video-generation) and [awesome-rl-for-video-generation](https://github.com/chrisliu298/awesome-rl-for-video-generation) cover video reward modeling in depth. Only the criteria-decomposed cut appears here.
+Judging whether a generated video follows its prompt and stays self-consistent is a first-class use case for this list. Entries here are the criteria-decomposed cut — multi-dimensional, checklist, or claim-level scoring — as distinct from single-scalar video preference scorers.
 
+- [VBench: Comprehensive Benchmark Suite for Video Generative Models](https://arxiv.org/abs/2311.17982) *(2023)* — Splits video generation quality into sixteen disentangled dimensions, each validated against human annotation.
+- [VBench++: Comprehensive and Versatile Benchmark Suite for Video Generative Models](https://arxiv.org/abs/2411.13503) *(2024)* — Extends the per-dimension suite with trustworthiness axes such as bias and safety.
+- [VBench-2.0: Advancing Video Generation Benchmark Suite for Intrinsic Faithfulness](https://arxiv.org/abs/2503.21755) *(2025)* — Shifts the dimension set from surface fidelity toward intrinsic faithfulness criteria.
+- [VideoScore: Building Automatic Metrics to Simulate Fine-grained Human Feedback for Video Generation](https://arxiv.org/abs/2406.15252) *(2024)* — Trains an evaluator on five separately annotated quality dimensions rather than one score.
+- [VideoScore2: Think before You Score in Generative Video Evaluation](https://arxiv.org/abs/2509.22799) *(2025)* — Produces reasoning traces before scoring visual quality, alignment, and physical plausibility separately.
+- [MJ-VIDEO: Fine-Grained Benchmarking and Rewarding Video Preferences in Video Generation](https://arxiv.org/abs/2502.01719) *(2025)* — Mixture-of-experts reward model routing each of many fine-grained criteria to a dedicated head.
+- [VR-Thinker: Boosting Video Reward Models through Thinking-with-Image Reasoning](https://arxiv.org/abs/2510.10518) *(2025)* — Reward model actively re-selects frames as visual evidence while forming its judgment.
+- [VideoDPO: Omni-Preference Alignment for Video Diffusion Generation](https://arxiv.org/abs/2412.14167) *(2024)* — Builds preference pairs from a composite multi-dimension score rather than human labels.
+- [Refining Multidimensional Video Reward Models via Disentangled Influence Functions](https://arxiv.org/abs/2605.28203) *(2026)* — Uses influence functions to find which training samples corrupt each reward dimension.
+- [EvalCrafter: Benchmarking and Evaluating Large Video Generation Models](https://arxiv.org/abs/2310.11440) *(2023)* — Scores video generators on seventeen objective metrics regressed onto human opinion.
+- [FETV: A Benchmark for Fine-Grained Evaluation of Open-Domain Text-to-Video Generation](https://arxiv.org/abs/2311.01813) *(2023)* — Categorizes prompts along content and challenge axes to expose per-category failures.
+- [VideoPhy: Evaluating Physical Commonsense for Video Generation](https://arxiv.org/abs/2406.03520) *(2024)* — Grades generated video against physical-law criteria rather than perceptual quality.
+- [TC-Bench: Benchmarking Temporal Compositionality in Text-to-Video and Image-to-Video Generation](https://arxiv.org/abs/2406.08656) *(2024)* — Verifies prompted state transitions with per-prompt temporal criteria instead of aggregate motion scores.
+- [T2V-CompBench: A Comprehensive Benchmark for Compositional Text-to-video Generation](https://arxiv.org/abs/2407.14505) *(2024)* — Splits compositional generation into per-category criteria with a dedicated evaluator each.
+- [WorldModelBench: Judging Video Generation Models As World Models](https://arxiv.org/abs/2502.20694) *(2025)* — Judges generated video against instruction-following and physical-law criteria as a world model.
+- [WorldSimBench: Towards Video Generation Models as World Simulators](https://arxiv.org/abs/2410.18072) *(2024)* — Pairs explicit-criteria perceptual scoring with embodied action-level task verification.
+- [WorldReasonBench: Human-Aligned Stress Testing of Video Generators as Future Predictors](https://arxiv.org/abs/2605.10434) *(2026)* — Expert pairwise comparisons meta-evaluate reward models judging world-model video rollouts.
+- [ReWorld: Multi-Dimensional Reward Modeling for Embodied World Models](https://arxiv.org/abs/2601.12428) *(2026)* — Extends multi-dimension reward modeling to embodied world-model rollouts.
 - [Claim-Level Rubric Rewards for Video Caption Reinforcement Learning](https://arxiv.org/abs/2607.05150) *(2026)* — Decomposes video captions into individually verifiable claims scored as reward.
 - [Incentivizing Vision Language Models to Search for Long Video Question Answering](https://arxiv.org/abs/2607.02959) *(2026)* — Compiles questions into temporal-logic evidence checklists for dense verifiable reward.
 - [TimeThink: Reasoning with Time for Video LLMs](https://arxiv.org/abs/2607.05089) *(2026)* — Combines step-wise temporal process rewards with joint process-outcome optimization.

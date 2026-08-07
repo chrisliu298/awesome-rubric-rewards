@@ -43,7 +43,7 @@ Read the live structure before placing anything — `grep -n '^## ' README.md` a
 
 **Foundations is background, not subject matter.** It is deliberately selective and rarely updated. When unsure, prefer a specific topical section.
 
-**Video overlap rule.** The sibling lists `awesome-rm-for-video-generation` and `awesome-rl-for-video-generation` cover video reward modeling in depth. Only the genuinely criteria-decomposed cut belongs here; cross-link rather than duplicating their taxonomy.
+**Sibling lists are independent, not a division of labour.** The maintainer's other awesome-lists (`awesome-rm-for-video-generation`, `awesome-rl-for-video-generation`, `awesome-on-policy-distillation`, `awesome-llm-unlearning`) are each self-contained on their own scope, and so is this one. Overlap is expected and fine: a paper that is genuinely a criteria-decomposed reward belongs here whether or not another list also carries it. The only cross-repo use is the reverse direction — diffing a sibling to *find* relevant work this list is missing. Never omit an in-scope paper on the grounds that a sibling covers it.
 
 ## Entry format
 
