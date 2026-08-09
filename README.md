@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <!-- entry-count-start --><a href="#contents"><img src="https://img.shields.io/badge/Entries-862-000000?style=for-the-badge&labelColor=000000" alt="Entries"></a><!-- entry-count-end -->
+  <!-- entry-count-start --><a href="#contents"><img src="https://img.shields.io/badge/Entries-867-000000?style=for-the-badge&labelColor=000000" alt="Entries"></a><!-- entry-count-end -->
   <a href="https://github.com/chrisliu298/awesome-rubric-rewards/stargazers"><img src="https://img.shields.io/github/stars/chrisliu298/awesome-rubric-rewards?style=for-the-badge&logo=github&logoColor=white&label=Stars&labelColor=000000&color=000000" alt="GitHub Stars"></a>
   <a href="https://github.com/chrisliu298/awesome-rubric-rewards/network/members"><img src="https://img.shields.io/github/forks/chrisliu298/awesome-rubric-rewards?style=for-the-badge&logo=github&logoColor=white&label=Forks&labelColor=000000&color=000000" alt="GitHub Forks"></a>
   <a href="https://github.com/chrisliu298/awesome-rubric-rewards/commits"><img src="https://img.shields.io/github/last-commit/chrisliu298/awesome-rubric-rewards?style=for-the-badge&logo=github&logoColor=white&label=Last%20Commit&labelColor=000000&color=000000" alt="Last Commit"></a>
@@ -154,7 +154,7 @@ Many papers fit multiple categories. The tables below are for orientation, not s
 | Trained rubric-conditioned reward model | [Robust Reward Modeling via Causal Rubrics](https://arxiv.org/abs/2506.16507), [C2](https://arxiv.org/abs/2604.13618) |
 | Process reward model, step-level | [Step-wise Rubric Rewards](https://arxiv.org/abs/2605.17291), [Dynamic and Generalizable PRM](https://arxiv.org/abs/2507.17849), [VisualPRM](https://arxiv.org/abs/2503.10291) |
 | Programmatic verifier or rule engine | [Rule Based Rewards](https://arxiv.org/abs/2411.01111), [IFEval](https://arxiv.org/abs/2311.07911), [TRON](https://arxiv.org/abs/2606.01599) |
-| Agentic evaluator dispatching tools | [VISTA](https://arxiv.org/abs/2510.15831), [SeekJudge](https://arxiv.org/abs/2607.23263), [VideoWeaver](https://arxiv.org/abs/2606.08091) |
+| Agentic evaluator dispatching tools | [VISTA](https://arxiv.org/abs/2510.15831), [SeekJudge](https://arxiv.org/abs/2607.23263), [VideoWeaver](https://arxiv.org/abs/2606.08091), [VideoArgus](https://arxiv.org/abs/2608.05485) |
 | Hybrid routing across the above | [RLR3](https://arxiv.org/abs/2605.30244), [SCRIBE](https://arxiv.org/abs/2601.03555), [StitchCUDA](https://arxiv.org/abs/2603.02637) |
 
 ### By what evidence the criteria are checked against
@@ -364,6 +364,7 @@ Where criteria come from is its own research problem. The four-way split below f
 - [Two-Level Meta-Rubrics for Evaluating Open-Ended Generation: GAMUT, a Benchmark for Factual Completeness](https://arxiv.org/abs/2607.19322) *(2026)* — An expressive meta-rubric compiles into a flat binary machine-gradable checklist.
 - [PREFINE: Personalized Story Generation via Simulated User Critics and User-Specific Rubric Generation](https://arxiv.org/abs/2510.21721) *(2025)* — Simulated user critics generate personalized criteria steering story generation.
 - [EvalLM: Interactive Evaluation of Large Language Model Prompts on User-Defined Criteria](https://arxiv.org/abs/2309.13633) *(2023)* — An interactive workbench lets developers author and revise evaluation criteria while diagnosing prompts.
+- [RubricReviewer: From Direct Critique to Objective and Comprehensive Rubric-Driven Peer Review](https://arxiv.org/abs/2608.00005) *(2026)* — Makes the rubric an explicit latent stage, mining criteria from public reviews of the manuscript's key citations.
 
 ### Contrastive generation
 
@@ -390,6 +391,7 @@ Where criteria come from is its own research problem. The four-way split below f
 - [LLM-based Automated Grading with Human-in-the-Loop](https://arxiv.org/abs/2504.05239) *(2025)* — Poses clarifying questions to human experts to dynamically refine grading criteria.
 - [Redefining Quality Criteria and Distance-Aware Score Modeling for Image Editing Assessment](https://arxiv.org/abs/2604.12175) *(2026)* — Optimizes the evaluation-criteria prompts themselves via probabilistic feedback instead of hand-written metric definitions.
 - [Learnable Assessment Skills for LLM-based Automated Scoring: Rubric Construction via Iterative Optimization](https://arxiv.org/abs/2605.29274) *(2026)* — Optimizes a reusable instruction for building rubrics from scoring errors, learning item-agnostic construction rules rather than one rubric per item.
+- [Beyond Rubrics: Exploration-Guided Evaluation Skills for Reward Modeling](https://arxiv.org/abs/2606.07040) *(2026)* — Evolves one reusable domain-level skill offline, replacing per-query rubric generation that often degrades the judge it guides.
 
 ### Online and co-evolving generation
 
@@ -405,6 +407,7 @@ Where criteria come from is its own research problem. The four-way split below f
 - [GrowLoop: Self-Evolving Conversation Evaluation Seeded by Human](https://arxiv.org/abs/2605.28882) *(2026)* — Rubric-case co-evolution grows conversation evaluation criteria from minimal human seeds as models improve.
 - [Who Grades the Grader? Co-Evolving Evaluation Metrics and Skills for Self-Improving LLM Agents](https://arxiv.org/abs/2607.12790) *(2026)* — Evolves compositions of typed drawback detectors into an inspectable grading expression validated against anchored references.
 - [Co-Evolving LLM Evaluators and Policies via DynamicRubric](https://arxiv.org/abs/2607.20083) *(2026)* — Generates weighted binary criteria conditioned on the candidate response set, keeping score gaps informative.
+- [Elmes*: Automated Construction of Fine-Grained Evaluation Rubrics for Large Language Models in Long-Tail Educational Scenarios](https://arxiv.org/abs/2606.06546) *(2026)* — Co-evolves scenario criteria with the test data probing them, using frozen anchor items to detect criterion drift.
 
 ## Checklists, Principles, Constitutions, and Specs
 
@@ -620,6 +623,7 @@ The substrate rubric rewards are built on. Kept deliberately compact relative to
 - [Assistant-Guided Mitigation of Teacher Preference Bias in LLM-as-a-Judge](https://arxiv.org/abs/2505.19176) *(2025)* — An unbiased assistant supplements teacher-distilled data to remove teacher bias.
 - [Comparing Developer and LLM Biases in Code Evaluation](https://arxiv.org/abs/2603.24586) *(2026)* — Finds judges favor longer explanations that real developers do not want.
 - [Great Models Think Alike and this Undermines AI Oversight](https://arxiv.org/abs/2502.04313) *(2025)* — A chance-adjusted similarity metric shows judges favor models resembling themselves.
+- [Quantifying and Mitigating Self-Preference Bias of LLM Judges](https://arxiv.org/abs/2604.22891) *(2026)* — Finds per-dimension forced choice reduces self-preference, measured against a third-party baseline on quality-matched pairs.
 
 ### Judge behavior science: reliability and calibration
 
@@ -871,6 +875,7 @@ Judging whether a generated video follows its prompt and stays self-consistent i
 - [Multi-Dimensional Quality Assessment for AI-Generated Human-Centric Videos: Dataset and Model](https://arxiv.org/abs/2607.16742) *(2026)* — Mixture-of-experts rater unifies dimensional scoring, pairwise comparison, and category-specific question answering.
 - [VlogReward: Learning Multi-Dimensional Evaluation for Vlog Editing](https://arxiv.org/abs/2607.22632) *(2026)* — Six-dimension vlog-editing taxonomy trains a reward model emitting scores plus actionable refinement feedback.
 - [Aligning Anime Video Generation with Human Feedback](https://arxiv.org/abs/2504.10044) *(2025)* — AnimeReward assigns a dedicated vision-language model to each named appearance and consistency dimension.
+- [VideoArgus: Agentic Rubric-Grounded Unified Evaluation for Video Generation and Editing](https://arxiv.org/abs/2608.05485) *(2026)* — Freezes one output-blind rubric per input instance, so every candidate video meets identical tool-verified criteria.
 
 #### Question and claim decomposition
 
@@ -1352,4 +1357,4 @@ Contributions welcome! Please open a PR if you know of papers, datasets, benchma
 
 ---
 
-*Repository last updated: 2026-08-07. Literature systematically searched through August 2026. Coverage: rubrics as RL reward signals, rubric construction and refinement, checklists and constitutions, rubric-conditioned reward models, criteria compilers and programmatic rubric graders, criteria-based process rewards, rubric-conditioned judges, reward hacking and robustness, multimodal and agentic criteria-based rewards, rubric-graded benchmarks, datasets, and tooling. Scope is the criteria artifact: general reward models, judges, process reward models, and verifiers without one live in the [adjacent collections](#adjacent-collections).*
+*Repository last updated: 2026-08-09. Literature systematically searched through August 2026. Coverage: rubrics as RL reward signals, rubric construction and refinement, checklists and constitutions, rubric-conditioned reward models, criteria compilers and programmatic rubric graders, criteria-based process rewards, rubric-conditioned judges, reward hacking and robustness, multimodal and agentic criteria-based rewards, rubric-graded benchmarks, datasets, and tooling. Scope is the criteria artifact: general reward models, judges, process reward models, and verifiers without one live in the [adjacent collections](#adjacent-collections).*
