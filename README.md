@@ -290,6 +290,7 @@ The heart of the list: work where a rubric produces the training signal.
 - [Open Rubric System: Scaling Reinforcement Learning with Pairwise Adaptive Rubric](https://arxiv.org/abs/2602.14069) *(2026)* — Instantiates pairwise adaptive criteria from two candidates' semantic differences on the fly.
 - [Bootstrapping Post-training Signals for Open-ended Tasks via Rubric-based Self-play on Pre-training Text](https://arxiv.org/abs/2604.20051) *(2026)* — Self-play over raw pretraining text bootstraps criteria reward with no labels.
 - [Rubric-based On-policy Distillation](https://arxiv.org/abs/2605.07396) *(2026)* — Scores student rollouts against generated weighted criteria instead of matching teacher logits.
+- [Rubrics as Privileged Information for Open-Ended Generation](https://arxiv.org/abs/2608.02948) *(2026)* — Uses rubrics as dense privileged context for on-policy self-distillation, preserving the valid-response set better than reference completions.
 - [ARCANE: A Multi-Agent Framework for Interpretable and Configurable Alignment](https://arxiv.org/abs/2512.06196) *(2025)* — Represents stakeholder preferences as weighted verifiable criteria generated per request, optimized by regularized policy updates.
 - [Prompt-Level Reward Specifications for Open-Ended Post-Training](https://arxiv.org/abs/2605.29275) *(2026)* — Separates reward specification from computation, building reusable task-adaptive criteria and executable hard-constraint checkers offline.
 - [Improving Data and Reward Design for Scientific Reasoning in Large Language Models](https://arxiv.org/abs/2602.08321) *(2026)* — Builds fine-grained criteria for open-ended science answers and trains against them for stability.
@@ -326,6 +327,7 @@ Note the naming hazard: **EvoRubric**, **EvoRubrics**, and **EvoLM** are three d
 - [EvoLM: Self-Evolving Language Models through Co-Evolved Discriminative Rubrics](https://arxiv.org/abs/2605.03871) *(2026)* — Alternately trains a discriminative criteria generator and the policy from its own outputs.
 - [SERPO: Self-Evolving Rubric Policy Optimization for Open-Ended Test-Time Reinforcement Learning](https://arxiv.org/abs/2607.26873) *(2026)* — Evolves criteria at test time with no offline rubric set or external reward model.
 - [SibylSense: Adaptive Rubric Learning via Memory Tuning and Adversarial Probing](https://arxiv.org/abs/2602.20751) *(2026)* — Alternates memory-bank updates with adversarial probing to expose new quality gaps.
+- [AMARIS: A Memory-Augmented Rubric Improvement System for Rubric-Based Reinforcement Learning](https://arxiv.org/abs/2605.18592) *(2026)* — Retrieves longitudinal rollout analyses and prior edits to revise rubrics without oscillating around local batch failures.
 - [Reinforcing Chain-of-Thought Reasoning with Self-Evolving Rubrics](https://arxiv.org/abs/2602.10885) *(2026)* — Rewards reasoning with self-proposed criteria that evolve alongside the policy.
 - [Compute as Teacher: Turning Inference Compute Into Reference-Free Supervision](https://arxiv.org/abs/2509.14234) *(2025)* — Rewards the fraction of self-proposed binary auditable criteria an independent judge marks satisfied.
 - [LLM-as-a-Tutor: Policy-Aware Prompt Adaptation for Non-Verifiable RL](https://arxiv.org/abs/2607.04412) *(2026)* — Appends difficulty-raising constraints to prompts so criteria-based reward stays discriminative as the policy improves.
@@ -392,6 +394,7 @@ Where criteria come from is its own research problem. The four-way split below f
 - [Redefining Quality Criteria and Distance-Aware Score Modeling for Image Editing Assessment](https://arxiv.org/abs/2604.12175) *(2026)* — Optimizes the evaluation-criteria prompts themselves via probabilistic feedback instead of hand-written metric definitions.
 - [Learnable Assessment Skills for LLM-based Automated Scoring: Rubric Construction via Iterative Optimization](https://arxiv.org/abs/2605.29274) *(2026)* — Optimizes a reusable instruction for building rubrics from scoring errors, learning item-agnostic construction rules rather than one rubric per item.
 - [Beyond Rubrics: Exploration-Guided Evaluation Skills for Reward Modeling](https://arxiv.org/abs/2606.07040) *(2026)* — Evolves one reusable domain-level skill offline, replacing per-query rubric generation that often degrades the judge it guides.
+- [Rubrics on Trial: Evolving Rubrics from a Single Query via Synthetic Pairwise Evidence](https://arxiv.org/abs/2607.15092) *(2026)* — Evolves query-specific criteria from synthetic response pairs, admitting only discriminative rubrics that avoid style and strategy traps.
 
 ### Online and co-evolving generation
 
@@ -408,6 +411,7 @@ Where criteria come from is its own research problem. The four-way split below f
 - [Who Grades the Grader? Co-Evolving Evaluation Metrics and Skills for Self-Improving LLM Agents](https://arxiv.org/abs/2607.12790) *(2026)* — Evolves compositions of typed drawback detectors into an inspectable grading expression validated against anchored references.
 - [Co-Evolving LLM Evaluators and Policies via DynamicRubric](https://arxiv.org/abs/2607.20083) *(2026)* — Generates weighted binary criteria conditioned on the candidate response set, keeping score gaps informative.
 - [Elmes*: Automated Construction of Fine-Grained Evaluation Rubrics for Large Language Models in Long-Tail Educational Scenarios](https://arxiv.org/abs/2606.06546) *(2026)* — Co-evolves scenario criteria with the test data probing them, using frozen anchor items to detect criterion drift.
+- [DecoEvo: Score-Decoupled Co-Evolution of Solver and Rubric-Generator Skills in Text Space](https://arxiv.org/abs/2607.25675) *(2026)* — Co-evolves solver and rubric-generator skills under decoupled objectives, preventing easier criteria from masquerading as solver progress.
 
 ## Checklists, Principles, Constitutions, and Specs
 
@@ -819,6 +823,7 @@ Three parallel lineages independently invented "decompose the prompt into checka
 - [Improving Vision-language Models with Perception-centric Process Reward Models](https://arxiv.org/abs/2604.24583) *(2026)* — Grounds process errors at token level by extracting image-related claims for verification.
 - [Judging the Judges: Can Large Vision-Language Models Fairly Evaluate Chart Comprehension and Reasoning?](https://arxiv.org/abs/2505.08468) *(2025)* — Pairwise and pointwise criteria for grading chart comprehension.
 - [Multimodal Reinforcement Learning with Adaptive Verifier for AI Agents](https://arxiv.org/abs/2512.03438) *(2025)* — Selects per-sample scoring functions grading answer accuracy, spatiotemporal grounding, and reasoning quality separately.
+- [PRISM: Priority-aware Rubric Internalization via Structured Multimodal Data Synthesis](https://arxiv.org/abs/2608.05249) *(2026)* — Trains multimodal models to execute prioritized typed rubrics with structured per-rule verification traces.
 
 ### Video
 
@@ -1051,6 +1056,8 @@ Whether criteria-based judging is reliable at all.
 - [Quantifying the Statistical Effect of Rubric Modifications on Human-Autorater Agreement](https://arxiv.org/abs/2605.06283) *(2026)* — Analyzes how holistic versus decomposed criteria edits shift human-autorater agreement.
 - [Does Context Matter? ContextualJudgeBench for Evaluating LLM-based Judges in Contextual Settings](https://arxiv.org/abs/2503.15620) *(2025)* — A judge benchmark built on conditional criteria ordering for retrieval-grounded settings.
 - [Do You Need a Frontier Model as a Citation Verifier? Benchmarking Rubric LLMs for Deep-Research Source Attribution](https://arxiv.org/abs/2607.08700) *(2026)* — Benchmarks judges scoring citation relevance and factual support, finding cheaper models calibrate adequately.
+- [Judging Is Not Enumerating: Silent Omissions in LLM-Authored Acceptable Sets](https://arxiv.org/abs/2608.01000) *(2026)* — Shows models author incomplete acceptable sets despite strong judging, exposing silent omission failures in rubric and verifier generation.
+- [RADAR: Rubric-Aware Dependency and Redundancy Analysis for LLM-as-Judge Evaluation](https://arxiv.org/abs/2608.01810) *(2026)* — Generates criterion-targeted probes to reveal directional coupling, redundancy, and aggregation sensitivity before large-scale judging.
 
 ## Rubric-Graded Benchmarks
 
@@ -1122,6 +1129,7 @@ Three strata cut across domain: **expert-authored** criteria written once by spe
 | [IF-RewardBench](https://arxiv.org/abs/2603.04738) | 2026 | Judges | Preference-graph instruction-following ranking |
 | [MCJudgeBench](https://arxiv.org/abs/2605.03858) | 2026 | Judges (instructions) | Per-constraint gold labels over multi-constraint instructions |
 | [UEval](https://arxiv.org/abs/2601.22155) | 2026 | Unified multimodal generation | Human-validated per-question criteria for image and text output |
+| [PerceptionRubrics](https://arxiv.org/abs/2606.28322) | 2026 | Multimodal perception | Mandatory visual facts and fine-grained details with gated penalties |
 | [XpertBench](https://arxiv.org/abs/2604.02368) | 2026 | Expert tasks | Granular per-task criteria under a dedicated judge |
 | [JobBench](https://arxiv.org/abs/2605.26329) | 2026 | Delegated work | Chained all-or-nothing criteria |
 | [Long-Horizon-Terminal-Bench](https://arxiv.org/abs/2607.08964) | 2026 | Terminal agents | Subtask-level partial-credit grading |
