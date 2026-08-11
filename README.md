@@ -317,6 +317,7 @@ The heart of the list: work where a rubric produces the training signal.
 - [Experience is the Best Teacher: Motivating Effective Exploration in Reinforcement Learning for LLMs](https://arxiv.org/abs/2603.20046) *(2026)* — Treats rollouts that miss criteria as hindsight guidance, bonusing high-improvement responses.
 - [RuCL: Stratified Rubric-Based Curriculum Learning for Multimodal Large Language Model Reasoning](https://arxiv.org/abs/2602.21628) *(2026)* — Stratifies criteria by model competence to weight curriculum rewards across stages.
 - [SCRIBE: Structured Mid-Level Supervision for Tool-Using Language Models](https://arxiv.org/abs/2601.03555) *(2026)* — Routes subgoals to skill-prototype verifiers instead of one monolithic judge, cutting variance.
+- [RISE-RL: Rubric-Informed Selective Exploration for Open-Ended Reinforcement Learning](https://arxiv.org/abs/2608.09123) *(2026)* — Targets repeatedly missed criteria with filtered privileged trajectories, preserving autonomous exploration after guidance is withdrawn.
 
 ### Self-evolving and adaptive rubrics
 
@@ -449,6 +450,7 @@ Structurally rubrics under different names.
 - [Reflect: Transparent Principle-Guided Reasoning for Constitutional Alignment at Scale](https://arxiv.org/abs/2601.18730) *(2026)* — Aligns purely at inference time via constitution-conditioned drafting then self-revision.
 - [Beyond Preferences: Learning Alignment Principles Grounded in Human Reasons and Values](https://arxiv.org/abs/2601.18760) *(2026)* — Extracts principles from the stated reasons behind preferences rather than labels alone.
 - [Latent Principle Discovery for Language Model Self-Improvement](https://arxiv.org/abs/2505.16927) *(2025)* — Mines and clusters implicit principles from self-improvement traces.
+- [A Constitution-Grid Instrument for Data-Efficient RL Alignment (C-Guard)](https://arxiv.org/abs/2608.00180) *(2026)* — Organizes safety policies into a constitution grid whose per-cell learnability directs RL data generation.
 
 ### Specs and instruction hierarchies
 
@@ -581,6 +583,7 @@ Reward-model versus verifier is not a boundary this list observes. What matters 
 - [Codifying the Judge: Scalable Evaluation via Program Distillation](https://arxiv.org/abs/2607.22561) *(2026)* — Distills judge decision logic into a committee of inspectable, editable scoring programs with fallback.
 - [VerifiAgent: a Unified Verification Agent in Language Model Reasoning](https://arxiv.org/abs/2504.00406) *(2025)* — Pairs completeness and consistency meta-checks with reasoning-type-selected verification tools instead of one fixed verifier.
 - [LLM-as-a-Verifier: A General-Purpose Verification Framework](https://arxiv.org/abs/2607.05391) *(2026)* — Scales training-free verification along criteria decomposition, repeated evaluation, and score granularity.
+- [WebGrader: Training LLMs for Web Development with Self-Evolving Programmatic Grader](https://arxiv.org/abs/2608.06474) *(2026)* — Compiles website requests into executable flow contracts, rewarding only browser-observed state transitions.
 
 ## Process Reward Models and Step-Level Criteria
 
@@ -1026,6 +1029,7 @@ The densest 2026 area. Verification mechanisms here — environment-state probin
 - [AgentDisCo: Towards Disentanglement and Collaboration in Open-ended Deep Research Agents](https://arxiv.org/abs/2605.11732) *(2026)* — Repurposes the generator as a scoring agent that evaluates critic outputs into quality signals.
 - [Self-Evolving Deep Research via Joint Generation and Evaluation](https://arxiv.org/abs/2606.04507) *(2026)* — Shared-parameter evaluator and solver co-evolve, with a meta-harness policing which evaluation dimensions stay valid.
 - [Inference-Time Scaling of Verification: Self-Evolving Deep Research Agents via Test-Time Rubric-Guided Verification](https://arxiv.org/abs/2601.15808) *(2026)* — Derives verification criteria from an automatically constructed failure taxonomy, feeding critiques back at test time.
+- [Training Documents Reranker with Search Rubrics for Deep Research Agent](https://arxiv.org/abs/2608.03527) *(2026)* — Trains a document reranker on hierarchical query-specific criteria spanning set coverage plus source quality.
 
 ## Rubric Quality and Meta-Evaluation
 
@@ -1058,6 +1062,7 @@ Whether criteria-based judging is reliable at all.
 - [Do You Need a Frontier Model as a Citation Verifier? Benchmarking Rubric LLMs for Deep-Research Source Attribution](https://arxiv.org/abs/2607.08700) *(2026)* — Benchmarks judges scoring citation relevance and factual support, finding cheaper models calibrate adequately.
 - [Judging Is Not Enumerating: Silent Omissions in LLM-Authored Acceptable Sets](https://arxiv.org/abs/2608.01000) *(2026)* — Shows models author incomplete acceptable sets despite strong judging, exposing silent omission failures in rubric and verifier generation.
 - [RADAR: Rubric-Aware Dependency and Redundancy Analysis for LLM-as-Judge Evaluation](https://arxiv.org/abs/2608.01810) *(2026)* — Generates criterion-targeted probes to reveal directional coupling, redundancy, and aggregation sensitivity before large-scale judging.
+- [Can LLMs Write Reliable Rubrics? A Meta-Evaluation for Experiment Reproduction](https://arxiv.org/abs/2607.12835) *(2026)* — Meta-evaluates generated paper-reproduction checklists against human rubrics, exposing granularity-related score bias.
 
 ## Rubric-Graded Benchmarks
 
@@ -1106,6 +1111,7 @@ Three strata cut across domain: **expert-authored** criteria written once by spe
 | [Magis-Bench](https://arxiv.org/abs/2605.08437) | 2026 | Legal reasoning | Criteria-based magistrate-level grading |
 | [Legal Issue Tree Rubrics](https://arxiv.org/abs/2512.01020) | 2025 | Legal traces | Tree-structured criteria for issue-spotting |
 | [FinResearchBench II](https://arxiv.org/abs/2607.12252) | 2026 | Financial reports | Consensus-derived gold criteria |
+| [FinProBench](https://arxiv.org/abs/2608.04077) | 2026 | Financial agents | Role-grounded criteria synthesized from professional deliverables |
 | [WritingBench](https://arxiv.org/abs/2503.05244) | 2025 | Generative writing | Query-specific dynamic criteria via a critic model |
 | [Benchmarking LLM-as-a-Judge for Long-Form Output Evaluation](https://arxiv.org/abs/2606.01629) | 2026 | Long-form output | Meta-eval of judge reliability on document-length text |
 | [HelloBench](https://arxiv.org/abs/2409.16191) | 2024 | Long text | Hierarchical checklist across five task types |
@@ -1179,6 +1185,7 @@ Three strata cut across domain: **expert-authored** criteria written once by spe
 | [CultureVidBench](https://arxiv.org/abs/2608.01942) | 2026 | Cultural text-to-video | Fourteen cultural aspects scored for faithfulness and rendering |
 | [WorldExam](https://arxiv.org/abs/2608.02603) | 2026 | Video world models | Visual quality, control adherence, spatial consistency, and world reactivity |
 | [OmniEdit-Bench](https://arxiv.org/abs/2608.05049) | 2026 | Instruction-based video editing | Preservation, realism, and consistency gated on edit accuracy |
+| [RAVEN-Eval](https://arxiv.org/abs/2608.09111) | 2026 | Video generation | Task-specific rubrics for pairwise video-model preference judgments |
 | [GAUGE](https://arxiv.org/abs/2608.05948) | 2026 | Physical fidelity | Task-specific physical observables calibrated from real-world trajectories |
 | [Mind2Web 2](https://arxiv.org/abs/2506.21506) | 2025 | Agentic search | Tree-structured per-task rubrics grading correctness and source attribution |
 | [FinResearchBench](https://arxiv.org/abs/2507.16248) | 2025 | Financial research agents | Extracted logic trees of the research outcome per task type |
@@ -1194,6 +1201,7 @@ Three strata cut across domain: **expert-authored** criteria written once by spe
 | [SVBench](https://arxiv.org/abs/2512.21507) | 2025 | Social reasoning in video | Five interpretable social-reasoning dimensions over thirty psychology paradigms |
 | [MechVerse](https://arxiv.org/abs/2605.14843) | 2026 | Mechanical motion in video | Part identity, motion primitive, and inter-part coupling constraints per clip |
 | [BlueFin](https://arxiv.org/abs/2605.30907) | 2026 | Financial spreadsheet agents | Expert-validated granular rubric criteria per task, graded by a judge |
+| [GAUGE (Financial Models)](https://arxiv.org/abs/2607.24889) | 2026 | Financial spreadsheet agents | Auditable facets plus validity gates calibrated against analyst workbooks |
 | [V2V-Bench](https://arxiv.org/abs/2606.05665) | 2026 | Video-to-video generation | Eleven dimensions across temporal alignment, structural fidelity, and semantic alignment |
 | [StrongREJECT](https://arxiv.org/abs/2402.10260) | 2024 | Safety | Detailed harmfulness rubric for jailbreak responses |
 | [Claw-Eval](https://arxiv.org/abs/2604.06132) | 2026 | Autonomous agents | Trajectory-aware safety and robustness criteria |
@@ -1365,4 +1373,4 @@ Contributions welcome! Please open a PR if you know of papers, datasets, benchma
 
 ---
 
-*Repository last updated: 2026-08-09. Literature systematically searched through August 2026. Coverage: rubrics as RL reward signals, rubric construction and refinement, checklists and constitutions, rubric-conditioned reward models, criteria compilers and programmatic rubric graders, criteria-based process rewards, rubric-conditioned judges, reward hacking and robustness, multimodal and agentic criteria-based rewards, rubric-graded benchmarks, datasets, and tooling. Scope is the criteria artifact: general reward models, judges, process reward models, and verifiers without one live in the [adjacent collections](#adjacent-collections).*
+*Repository last updated: 2026-08-11. Literature systematically searched through August 2026. Coverage: rubrics as RL reward signals, rubric construction and refinement, checklists and constitutions, rubric-conditioned reward models, criteria compilers and programmatic rubric graders, criteria-based process rewards, rubric-conditioned judges, reward hacking and robustness, multimodal and agentic criteria-based rewards, rubric-graded benchmarks, datasets, and tooling. Scope is the criteria artifact: general reward models, judges, process reward models, and verifiers without one live in the [adjacent collections](#adjacent-collections).*
