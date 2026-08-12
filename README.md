@@ -302,6 +302,7 @@ The heart of the list: work where a rubric produces the training signal.
 - [Reward and Guidance through Rubrics: Promoting Exploration to Improve Multi-Domain Reasoning](https://arxiv.org/abs/2511.12344) *(2025)* — Criteria-driven dense rewards widen exploration across several reasoning domains at once.
 - [When Rubrics Fail: Error Enumeration as Reward in Reference-Free RL Post-Training for Virtual Try-On](https://arxiv.org/abs/2603.05659) *(2026)* — Counts severity-weighted errors across task-relevant axes where no ideal reference answer exists.
 - [ACE-RL: Adaptive Constraint-Enhanced Reward for Long-form Generation Reinforcement Learning](https://arxiv.org/abs/2509.04903) *(2025)* — Decomposes each instruction into adaptive fine-grained constraint criteria whose satisfaction becomes the reward.
+- [ConRub-Med: Reinforcement Learning with Consensus Rubrics for Open-Ended Medical Question Answering](https://arxiv.org/abs/2608.10996) *(2026)* — Builds consensus atomic criteria across three generators, preserving missing-versus-wrong distinctions through three-state scoring.
 
 ### Exploration, stability, and aggregation
 
@@ -378,6 +379,7 @@ Where criteria come from is its own research problem. The four-way split below f
 - [Learning Query-Specific Rubrics from Human Preferences for DeepResearch Report Generation](https://arxiv.org/abs/2602.03619) *(2026)* — Trains criteria generators by RL on human preference data over research reports.
 - [Support Vector Rubrics: Closing the Gap Between Self-Generated and Human Rubrics](https://arxiv.org/abs/2606.08077) *(2026)* — Recasts rubric construction as max-margin boundary learning over preference data.
 - [CritiQ: Mining Data Quality Criteria from Human Preferences](https://arxiv.org/abs/2502.19279) *(2025)* — Mines explicit data-quality criteria from preference judgments instead of hand-crafted rules.
+- [UNSPECIFIC: General Constraint Synthesis for Breaking Copy-and-Paste Shortcut in LLM Instruction Following](https://arxiv.org/abs/2608.09154) *(2026)* — Synthesizes constraints shared by paired references, testing summary persistence to distinguish substantive compliance from copy-pasted satisfaction.
 
 ### Iterative refinement
 
@@ -814,6 +816,7 @@ Three parallel lineages independently invented "decompose the prompt into checka
 - [Visual-ERM: Reward Modeling for Visual Equivalence](https://arxiv.org/abs/2603.13224) *(2026)* — Generative reward model judging vision-to-code output in rendered pixel space rather than by text rules.
 - [Unified Multimodal Chain-of-Thought Reward Model through Reinforcement Fine-Tuning](https://arxiv.org/abs/2505.03318) *(2025)* — Long chain-of-thought reward model writes out task-relevant dimensions, scoring each before aggregating.
 - [MJ1: Multimodal Judgment via Grounded Verification](https://arxiv.org/abs/2603.07990) *(2026)* — Routes every verdict through an explicit observation-to-claim-to-verification chain rather than scoring the response directly.
+- [Open Evaluation Agent: Efficient and Promptable Evaluation of Visual Generative Models](https://arxiv.org/abs/2608.09666) *(2026)* — Decomposes evaluation requests into adaptive sub-aspects, collecting tool-grounded observations through iterative visual-generator probes.
 
 ### Multimodal reasoning rubrics
 
@@ -933,6 +936,7 @@ Judging whether a generated video follows its prompt and stays self-consistent i
 - [Video Understanding Reward Modeling: A Robust Benchmark and Performant Reward Models](https://arxiv.org/abs/2605.07872) *(2026)* — Benchmark plus reward models for long-reasoning video preference judgment.
 - [VideoRewardBench: Comprehensive Evaluation of Multimodal Reward Models for Video Understanding](https://arxiv.org/abs/2509.00484) *(2025)* — Evaluates reward models on video-understanding judgment, distinct from generation.
 - [A Benchmark for Omni-Modal Reasoning in Long Videos](https://arxiv.org/abs/2512.16978) *(2025)* — Weighted criterion-level grading across vision, speech, and ambient audio.
+- [REVEAL: A Rubric-Guided Agent for Explicit Evidence Sufficiency Verificationin Long-Video Question Answering](https://arxiv.org/abs/2608.08612) *(2026)* — Checks retrieved video evidence against automatically constructed sufficiency rubrics, directing targeted retrieval toward missing temporal or causal clues.
 
 ### Audio, speech, and music
 
@@ -1186,6 +1190,7 @@ Three strata cut across domain: **expert-authored** criteria written once by spe
 | [WorldExam](https://arxiv.org/abs/2608.02603) | 2026 | Video world models | Visual quality, control adherence, spatial consistency, and world reactivity |
 | [OmniEdit-Bench](https://arxiv.org/abs/2608.05049) | 2026 | Instruction-based video editing | Preservation, realism, and consistency gated on edit accuracy |
 | [RAVEN-Eval](https://arxiv.org/abs/2608.09111) | 2026 | Video generation | Task-specific rubrics for pairwise video-model preference judgments |
+| [Sci-VBench](https://arxiv.org/abs/2608.09873) | 2026 | Scientific video generation | Per-example scientific causality, prompt grounding, spatiotemporal consistency, and perceptual fidelity |
 | [GAUGE](https://arxiv.org/abs/2608.05948) | 2026 | Physical fidelity | Task-specific physical observables calibrated from real-world trajectories |
 | [Mind2Web 2](https://arxiv.org/abs/2506.21506) | 2025 | Agentic search | Tree-structured per-task rubrics grading correctness and source attribution |
 | [FinResearchBench](https://arxiv.org/abs/2507.16248) | 2025 | Financial research agents | Extracted logic trees of the research outcome per task type |
@@ -1373,4 +1378,4 @@ Contributions welcome! Please open a PR if you know of papers, datasets, benchma
 
 ---
 
-*Repository last updated: 2026-08-11. Literature systematically searched through August 2026. Coverage: rubrics as RL reward signals, rubric construction and refinement, checklists and constitutions, rubric-conditioned reward models, criteria compilers and programmatic rubric graders, criteria-based process rewards, rubric-conditioned judges, reward hacking and robustness, multimodal and agentic criteria-based rewards, rubric-graded benchmarks, datasets, and tooling. Scope is the criteria artifact: general reward models, judges, process reward models, and verifiers without one live in the [adjacent collections](#adjacent-collections).*
+*Repository last updated: 2026-08-12. Literature systematically searched through August 2026. Coverage: rubrics as RL reward signals, rubric construction and refinement, checklists and constitutions, rubric-conditioned reward models, criteria compilers and programmatic rubric graders, criteria-based process rewards, rubric-conditioned judges, reward hacking and robustness, multimodal and agentic criteria-based rewards, rubric-graded benchmarks, datasets, and tooling. Scope is the criteria artifact: general reward models, judges, process reward models, and verifiers without one live in the [adjacent collections](#adjacent-collections).*
