@@ -481,6 +481,7 @@ Structurally rubrics under different names.
 - [The SIFo Benchmark: Investigating the Sequential Instruction Following Ability of Large Language Models](https://arxiv.org/abs/2406.19999) *(2024)* — Verifies an entire instruction chain by checking only the final-step output.
 - [AdvancedIF: Rubric-Based Benchmarking and Reinforcement Learning for Advancing LLM Instruction Following](https://arxiv.org/abs/2511.10507) *(2025)* — Chains criteria generation, verifier fine-tuning, and reward shaping into one pipeline.
 - [DIALEVAL: Automated Type-Theoretic Evaluation of LLM Instruction Following](https://arxiv.org/abs/2603.03321) *(2026)* — Decomposes instructions into typed predicates whose satisfaction semantics differ by predicate type.
+- [Dead text or binding clause? Measuring and restoring constraint influence in black-box LLM dialogues](https://arxiv.org/abs/2608.12599) *(2026)* — Compiles mutable dialogue constraints into a tombstoned contract ledger with executable per-clause checks.
 
 ### Question decomposition and atomic-claim verification
 
@@ -586,6 +587,8 @@ Reward-model versus verifier is not a boundary this list observes. What matters 
 - [VerifiAgent: a Unified Verification Agent in Language Model Reasoning](https://arxiv.org/abs/2504.00406) *(2025)* — Pairs completeness and consistency meta-checks with reasoning-type-selected verification tools instead of one fixed verifier.
 - [LLM-as-a-Verifier: A General-Purpose Verification Framework](https://arxiv.org/abs/2607.05391) *(2026)* — Scales training-free verification along criteria decomposition, repeated evaluation, and score granularity.
 - [WebGrader: Training LLMs for Web Development with Self-Evolving Programmatic Grader](https://arxiv.org/abs/2608.06474) *(2026)* — Compiles website requests into executable flow contracts, rewarding only browser-observed state transitions.
+- [Graph-Structured Rubrics: Compiling Rubrics into Typed Evaluation Graphs for LLM Judges](https://arxiv.org/abs/2608.12097) *(2026)* — Compiles flat criteria into typed evaluation graphs whose declared operators make aggregation reproducible.
+- [A Contract-Grade Verifier for LLM-Generated GPU Kernels, and a Native Blackwell Backward for the Gated-Linear-Recurrence Family](https://arxiv.org/abs/2608.12700) *(2026)* — Audits generated kernels through adversarial contracts exposing silent errors hidden by fixed-shape correctness tests.
 
 ## Process Reward Models and Step-Level Criteria
 
@@ -697,6 +700,7 @@ The substrate rubric rewards are built on. Kept deliberately compact relative to
 - [PReMISE: Policy Rubrics as Measurement Specifications for LLM Judges](https://arxiv.org/abs/2605.30803) *(2026)* — Audits criteria sets on structural adequacy, reliability, preference fit, and robustness.
 - [EST-PRM: Stress-Testing Process Reward Models Before They Become Load-Bearing](https://arxiv.org/abs/2606.00437) *(2026)* — Step inflation and reordering preserve correctness while fooling step-level scoring.
 - [Examining Reasoning LLMs-as-Judges in Non-Verifiable LLM Post-Training](https://arxiv.org/abs/2603.12246) *(2026)* — Finds policies trained against reasoning judges learn outputs that deceive the judge itself.
+- [Rubric Dropout: A Simple Way to Mitigate Reward Hacking in Rubric-as-Reward RL](https://arxiv.org/abs/2608.11669) *(2026)* — Randomly masks criteria per rollout group, reducing out-of-distribution reward hacking without extra judge calls.
 
 ### Reward model over-optimization and mitigations
 
@@ -955,6 +959,7 @@ An emerging area: one 2020 anchor, then almost everything from late 2025 onward.
 - [AcoustiTrace: When Plausible Sound Violates Physics](https://arxiv.org/abs/2608.02035) *(2026)* — Attributes audio-video violations to eight acoustic-process dimensions grounded in measurable physical quantities.
 - [Dual-Axis Generative Reward Model Toward Semantic and Turn-taking Robustness in Interactive Spoken Dialogue Models](https://arxiv.org/abs/2604.14920) *(2026)* — Taxonomy-trained reward model scores spoken-dialogue semantics and turn-taking timing separately for online RL.
 - [MMAE: A Massive Multitask Audio Editing Benchmark](https://arxiv.org/abs/2606.07229) *(2026)* — Decomposes free-form audio editing instructions into thousands of verifiable instruction-following and consistency criteria.
+- [MuseCritic: Learning Multi-Aspect Song Rewards through Natural-Language Aesthetic Critiques](https://arxiv.org/abs/2608.11755) *(2026)* — Generates dimension-specific song critiques before predicting aesthetic rewards, grounding scores in audible evidence.
 
 ### 3D generation
 
@@ -1034,6 +1039,7 @@ The densest 2026 area. Verification mechanisms here — environment-state probin
 - [Self-Evolving Deep Research via Joint Generation and Evaluation](https://arxiv.org/abs/2606.04507) *(2026)* — Shared-parameter evaluator and solver co-evolve, with a meta-harness policing which evaluation dimensions stay valid.
 - [Inference-Time Scaling of Verification: Self-Evolving Deep Research Agents via Test-Time Rubric-Guided Verification](https://arxiv.org/abs/2601.15808) *(2026)* — Derives verification criteria from an automatically constructed failure taxonomy, feeding critiques back at test time.
 - [Training Documents Reranker with Search Rubrics for Deep Research Agent](https://arxiv.org/abs/2608.03527) *(2026)* — Trains a document reranker on hierarchical query-specific criteria spanning set coverage plus source quality.
+- [Training AI Scientists to Replicate Research](https://arxiv.org/abs/2608.13331) *(2026)* — Trains research agents with auto-generated per-task rubrics, using agentic judges that can re-execute experiments.
 
 ## Rubric Quality and Meta-Evaluation
 
@@ -1088,6 +1094,7 @@ Three strata cut across domain: **expert-authored** criteria written once by spe
 | [GAPS](https://arxiv.org/abs/2510.13734) | 2025 | Clinical QA | Agent-synthesized guideline-anchored criteria, ensemble-judged |
 | [PaperBench](https://arxiv.org/abs/2504.01848) | 2025 | Research replication | Hierarchical criteria decomposing paper reproduction |
 | [SWE Atlas](https://arxiv.org/abs/2605.08366) | 2026 | Agentic coding | Code quality and design beyond issue resolution |
+| [Harness-IF](https://arxiv.org/abs/2608.11727) | 2026 | Coding agents | Per-rule execution evidence across configurable instruction surfaces |
 | [WebDevJudge](https://arxiv.org/abs/2510.18560) | 2025 | Web development | Structured query-grounded criteria as judge ground truth |
 | [OSWorld](https://arxiv.org/abs/2404.07972) | 2024 | Computer use | Per-task verifiable criteria with partial credit |
 | [DeepResearch Bench](https://arxiv.org/abs/2506.11763) | 2025 | Research reports | Report quality and citation accuracy criteria |
@@ -1262,6 +1269,7 @@ Rubrics shaping human labels rather than model rewards. A small literature, but 
 - [From Correctness to Preference: A Framework for Personalized Agentic Reinforcement Learning](https://arxiv.org/abs/2605.23382) *(2026)* — Decouples a generic task-quality reward from a personalized-preference reward for user-conditioned agentic RL.
 - [Training AI Co-Scientists Using Rubric Rewards](https://arxiv.org/abs/2512.23707) *(2025)* — Extracts goal-specific criteria from papers so a policy can self-grade research plans.
 - [Beyond Score Prediction: LLM-Based Essay Scoring and Feedback Generation via Reinforcement Learning with Rubric Rewards](https://arxiv.org/abs/2607.19219) *(2026)* — Binary criteria grade the quality of generated essay feedback, not just the score.
+- [GRPO for Financial Advice Generation: Outperforming Commercial LLMs under CATE Evaluation](https://arxiv.org/abs/2608.11787) *(2026)* — Trains financial-advice generation with safety-gated binary criteria, auditing judge reward against causal outcome estimates.
 
 ## Frontier-Lab Post-Training Recipes
 
@@ -1378,4 +1386,4 @@ Contributions welcome! Please open a PR if you know of papers, datasets, benchma
 
 ---
 
-*Repository last updated: 2026-08-12. Literature systematically searched through August 2026. Coverage: rubrics as RL reward signals, rubric construction and refinement, checklists and constitutions, rubric-conditioned reward models, criteria compilers and programmatic rubric graders, criteria-based process rewards, rubric-conditioned judges, reward hacking and robustness, multimodal and agentic criteria-based rewards, rubric-graded benchmarks, datasets, and tooling. Scope is the criteria artifact: general reward models, judges, process reward models, and verifiers without one live in the [adjacent collections](#adjacent-collections).*
+*Repository last updated: 2026-08-14. Literature systematically searched through August 2026. Coverage: rubrics as RL reward signals, rubric construction and refinement, checklists and constitutions, rubric-conditioned reward models, criteria compilers and programmatic rubric graders, criteria-based process rewards, rubric-conditioned judges, reward hacking and robustness, multimodal and agentic criteria-based rewards, rubric-graded benchmarks, datasets, and tooling. Scope is the criteria artifact: general reward models, judges, process reward models, and verifiers without one live in the [adjacent collections](#adjacent-collections).*
