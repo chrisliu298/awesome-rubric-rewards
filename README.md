@@ -155,7 +155,7 @@ Many papers fit multiple categories. The tables below are for orientation, not s
 | Process reward model, step-level | [Step-wise Rubric Rewards](https://arxiv.org/abs/2605.17291), [Dynamic and Generalizable PRM](https://arxiv.org/abs/2507.17849), [VisualPRM](https://arxiv.org/abs/2503.10291) |
 | Programmatic verifier or rule engine | [Rule Based Rewards](https://arxiv.org/abs/2411.01111), [IFEval](https://arxiv.org/abs/2311.07911), [TRON](https://arxiv.org/abs/2606.01599) |
 | Agentic evaluator dispatching tools | [VISTA](https://arxiv.org/abs/2510.15831), [SeekJudge](https://arxiv.org/abs/2607.23263), [VideoWeaver](https://arxiv.org/abs/2606.08091), [VideoArgus](https://arxiv.org/abs/2608.05485) |
-| Hybrid routing across the above | [RLR3](https://arxiv.org/abs/2605.30244), [SCRIBE](https://arxiv.org/abs/2601.03555), [StitchCUDA](https://arxiv.org/abs/2603.02637) |
+| Hybrid routing across the above | [RLR3](https://arxiv.org/abs/2605.30244), [SCRIBE](https://arxiv.org/abs/2601.03555), [StitchCUDA](https://arxiv.org/abs/2603.02637), [AsymmetryZero](https://arxiv.org/abs/2605.04083) |
 
 ### By what evidence the criteria are checked against
 
@@ -177,7 +177,7 @@ A separate axis from the applier — the same judge can read a candidate alone, 
 | Point-weighted sum | [Rubrics as Rewards](https://arxiv.org/abs/2507.17746), [HealthBench](https://arxiv.org/abs/2505.08775) |
 | Learned aggregator or expert gate | [ArmoRM](https://arxiv.org/abs/2406.12845), [MJ-VIDEO](https://arxiv.org/abs/2502.01719) |
 | Dynamic or policy-aware reweighting | [Not Every Rubric Teaches Equally](https://arxiv.org/abs/2605.20164), [Focal Reward](https://arxiv.org/abs/2605.26579), [Learning What Matters](https://arxiv.org/abs/2604.05445) |
-| Pairwise with criteria | [Open Rubric System](https://arxiv.org/abs/2602.14069), [DyCoRM](https://arxiv.org/abs/2605.25876) |
+| Pairwise with criteria | [Open Rubric System](https://arxiv.org/abs/2602.14069), [DyCoRM](https://arxiv.org/abs/2605.25876), [CriterAlign](https://arxiv.org/abs/2605.19665) |
 | Hierarchical or tree-structured | [Legal Issue Tree Rubrics](https://arxiv.org/abs/2512.01020), [QUEST](https://arxiv.org/abs/2605.24218), [DEEPRUBRIC](https://arxiv.org/abs/2606.17029) |
 | Explicitly non-scalarized | [Alternating RL with Contextual Rubric Rewards](https://arxiv.org/abs/2603.15646), [Probabilistic Graphical Reward Aggregation](https://arxiv.org/abs/2606.03361) |
 
@@ -319,6 +319,7 @@ The heart of the list: work where a rubric produces the training signal.
 - [RuCL: Stratified Rubric-Based Curriculum Learning for Multimodal Large Language Model Reasoning](https://arxiv.org/abs/2602.21628) *(2026)* — Stratifies criteria by model competence to weight curriculum rewards across stages.
 - [SCRIBE: Structured Mid-Level Supervision for Tool-Using Language Models](https://arxiv.org/abs/2601.03555) *(2026)* — Routes subgoals to skill-prototype verifiers instead of one monolithic judge, cutting variance.
 - [RISE-RL: Rubric-Informed Selective Exploration for Open-Ended Reinforcement Learning](https://arxiv.org/abs/2608.09123) *(2026)* — Targets repeatedly missed criteria with filtered privileged trajectories, preserving autonomous exploration after guidance is withdrawn.
+- [From Refuse to Richness: Rubric Rewards for Long-Form Hallucination Reinforcement Learning](https://arxiv.org/abs/2608.12337) *(2026)* — Combines per-question key-point coverage with grounding rewards to prevent factuality training from collapsing answer richness.
 
 ### Self-evolving and adaptive rubrics
 
@@ -589,6 +590,8 @@ Reward-model versus verifier is not a boundary this list observes. What matters 
 - [WebGrader: Training LLMs for Web Development with Self-Evolving Programmatic Grader](https://arxiv.org/abs/2608.06474) *(2026)* — Compiles website requests into executable flow contracts, rewarding only browser-observed state transitions.
 - [Graph-Structured Rubrics: Compiling Rubrics into Typed Evaluation Graphs for LLM Judges](https://arxiv.org/abs/2608.12097) *(2026)* — Compiles flat criteria into typed evaluation graphs whose declared operators make aggregation reproducible.
 - [A Contract-Grade Verifier for LLM-Generated GPU Kernels, and a Native Blackwell Backward for the Gated-Linear-Recurrence Family](https://arxiv.org/abs/2608.12700) *(2026)* — Audits generated kernels through adversarial contracts exposing silent errors hidden by fixed-shape correctness tests.
+- [AsymmetryZero: A Framework for Operationalizing Human Expert Preferences as Semantic Evals](https://arxiv.org/abs/2605.04083) *(2026)* — Packages weighted deterministic and semantic criteria into portable evaluation contracts with auditable criterion-level traces.
+- [How Powerful are LLMs in Generating Formal Program Specifications?](https://arxiv.org/abs/2608.13077) *(2026)* — Instantiates generated specifications on trusted positive and mutated negative cases, producing Rocq proof obligations.
 
 ## Process Reward Models and Step-Level Criteria
 
@@ -620,6 +623,7 @@ The substrate rubric rewards are built on. Kept deliberately compact relative to
 - [Incentivizing Agentic Reasoning in LLM Judges via Tool-Integrated Reinforcement Learning](https://arxiv.org/abs/2510.23038) *(2025)* — Trains a judge to call a code executor for constraint checks beyond text-only reasoning.
 - [Learning to Align Multi-Faceted Evaluation: A Unified and Robust Framework](https://arxiv.org/abs/2502.18874) *(2025)* — ARJudge formulates criteria per instruction, refining code-driven alongside text-based analyses into one judgment.
 - [CodeVisionary: An Agent-based Framework for Evaluating Large Language Models in Code Generation](https://arxiv.org/abs/2504.13472) *(2025)* — Distills each task's requirements into evaluation context before scoring, replacing static single-prompt code judging.
+- [CriterAlign: Criterion-Centric Rationale Alignment for Code Preference Judging](https://arxiv.org/abs/2605.19665) *(2026)* — Compares code responses under task-specific criteria with tie refinement plus position-consistency filtering.
 
 ### Critic models and explainable metrics
 
@@ -834,6 +838,7 @@ Three parallel lineages independently invented "decompose the prompt into checka
 - [Judging the Judges: Can Large Vision-Language Models Fairly Evaluate Chart Comprehension and Reasoning?](https://arxiv.org/abs/2505.08468) *(2025)* — Pairwise and pointwise criteria for grading chart comprehension.
 - [Multimodal Reinforcement Learning with Adaptive Verifier for AI Agents](https://arxiv.org/abs/2512.03438) *(2025)* — Selects per-sample scoring functions grading answer accuracy, spatiotemporal grounding, and reasoning quality separately.
 - [PRISM: Priority-aware Rubric Internalization via Structured Multimodal Data Synthesis](https://arxiv.org/abs/2608.05249) *(2026)* — Trains multimodal models to execute prioritized typed rubrics with structured per-rule verification traces.
+- [Beyond Correctness: Benchmarking and Aligning Response Behaviors in Hybrid-Thinking MLLMs](https://arxiv.org/abs/2608.12781) *(2026)* — Trains a four-label response-pattern reward model to align user-visible behavior across thinking modes.
 
 ### Video
 
@@ -1028,6 +1033,7 @@ The densest 2026 area. Verification mechanisms here — environment-state probin
 - [Aligning Agents via Planning: A Benchmark for Trajectory-Level Reward Modeling](https://arxiv.org/abs/2604.08178) *(2026)* — Tests trajectory judges on four tool-use task families against deliberately confusable hard negatives.
 - [WebCompass: Towards Multimodal Web Coding Evaluation for Code Language Models](https://arxiv.org/abs/2604.18224) *(2026)* — Checklist-guided judging of web editing plus an agent judge executing generated sites in-browser.
 - [AgentEval: DAG-Structured Step-Level Evaluation for Agentic Workflows with Error Propagation Tracking](https://arxiv.org/abs/2604.23581) *(2026)* — Grades each workflow node against typed quality metrics, attributing failures through a hierarchical error taxonomy.
+- [JADE: Expert-Grounded Dynamic Evaluation for Open-Ended Professional Tasks](https://arxiv.org/abs/2602.06486) *(2026)* — Combines expert evaluation skills with report-specific claim checks, gating conclusions on verified evidence.
 
 ### Rubric rewards for deep research
 
@@ -1093,6 +1099,7 @@ Three strata cut across domain: **expert-authored** criteria written once by spe
 | [Med-RewardBench](https://arxiv.org/abs/2508.21430) | 2025 | Medical multimodal | Six clinically critical dimensions over expert cases |
 | [GAPS](https://arxiv.org/abs/2510.13734) | 2025 | Clinical QA | Agent-synthesized guideline-anchored criteria, ensemble-judged |
 | [PaperBench](https://arxiv.org/abs/2504.01848) | 2025 | Research replication | Hierarchical criteria decomposing paper reproduction |
+| [ReviewBench / ReviewGrounder](https://arxiv.org/abs/2604.14261) | 2026 | Scientific peer review | Paper-specific criteria instantiated from official guidelines, submissions, and human reviews |
 | [SWE Atlas](https://arxiv.org/abs/2605.08366) | 2026 | Agentic coding | Code quality and design beyond issue resolution |
 | [Harness-IF](https://arxiv.org/abs/2608.11727) | 2026 | Coding agents | Per-rule execution evidence across configurable instruction surfaces |
 | [WebDevJudge](https://arxiv.org/abs/2510.18560) | 2025 | Web development | Structured query-grounded criteria as judge ground truth |
@@ -1386,4 +1393,4 @@ Contributions welcome! Please open a PR if you know of papers, datasets, benchma
 
 ---
 
-*Repository last updated: 2026-08-14. Literature systematically searched through August 2026. Coverage: rubrics as RL reward signals, rubric construction and refinement, checklists and constitutions, rubric-conditioned reward models, criteria compilers and programmatic rubric graders, criteria-based process rewards, rubric-conditioned judges, reward hacking and robustness, multimodal and agentic criteria-based rewards, rubric-graded benchmarks, datasets, and tooling. Scope is the criteria artifact: general reward models, judges, process reward models, and verifiers without one live in the [adjacent collections](#adjacent-collections).*
+*Repository last updated: 2026-08-15. Literature systematically searched through August 2026. Coverage: rubrics as RL reward signals, rubric construction and refinement, checklists and constitutions, rubric-conditioned reward models, criteria compilers and programmatic rubric graders, criteria-based process rewards, rubric-conditioned judges, reward hacking and robustness, multimodal and agentic criteria-based rewards, rubric-graded benchmarks, datasets, and tooling. Scope is the criteria artifact: general reward models, judges, process reward models, and verifiers without one live in the [adjacent collections](#adjacent-collections).*
